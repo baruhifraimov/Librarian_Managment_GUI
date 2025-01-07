@@ -3,6 +3,7 @@ import time
 import tkinter as tk
 from tkinter import messagebox, ttk
 from Book import Book
+from BookManager import BookManager
 import csv
 
 
@@ -53,8 +54,8 @@ class Menu:
             rows = list(reader)
             for row in rows[1:]:
                 b = Book (row[0],row[1],row[4],row[5],row[3],row[2])
-                Book.books.append(b)
-                
+                BookManager.books.append(b)
+
     def add_book(self):
         self.book_frame.destroy()
         self.book_frame = tk.Frame(self.menu_frame)
@@ -87,9 +88,12 @@ class Menu:
         self.add_button.grid(row=10,column=1,pady=20)
 
     def book_adder(self):
-        b = Book(self.entry_title.get(), self.entry_author.get(), self.entry_genre.get(), self.entry_year.get(),self.entry_copies.get())
-        Book.add(b,self.entry_title.get(), self.entry_author.get(), self.entry_genre.get(), self.entry_year.get(),self.entry_copies.get())
+        #b = Book(self.entry_title.get(), self.entry_author.get(), self.entry_genre.get(), self.entry_year.get(),self.entry_copies.get())
+        #Book.add(b,self.entry_title.get(), self.entry_author.get(), self.entry_genre.get(), self.entry_year.get(),self.entry_copies.get())
+        BookManager.add_book(self.entry_title.get(), self.entry_author.get(), self.entry_genre.get(), self.entry_year.get(),self.entry_copies.get())
 
+    def book_remover(self):
+        BookManager.remove_book(self.entry_title.get(), self.entry_author.get(), self.entry_genre.get(), self.entry_year.get())
     def remove_book(self):
         self.book_frame.destroy()
         self.book_frame = tk.Frame(self.menu_frame)
