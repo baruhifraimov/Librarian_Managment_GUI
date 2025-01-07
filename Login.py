@@ -14,19 +14,19 @@ class Login:
         self.root.title("Login Menu")
 
 
-        self.background_image = tk.PhotoImage(file="background.png")
-        self.background_label = tk.Label(root, image=self.background_image)
-        self.background_label.place(relwidth=1, relheight=1)
+        # self.background_image = tk.PhotoImage(file="background.png")
+        # self.background_label = tk.Label(root, image=self.background_image)
+        # self.background_label.place(relwidth=1, relheight=1)
 
-        self.frame = tk.Frame(self.root,bg="")  # Create a frame inside the root window
+        self.frame = tk.Frame(self.root)  # Create a frame inside the root window
 
         headline_label = tk.Label(self.frame, text="Login", font=("Arial", 32))
         username_label = tk.Label(self.frame, text="Username:", font=("Arial", 16))
         password_label = tk.Label(self.frame, text="Password:", font=("Arial", 16))
         self.username_box = tk.Entry(self.frame, font=("Arial", 16))
         self.password_box = tk.Entry(self.frame, show="*", font=("Arial", 16))
-        self.login_button = tk.Button(self.frame, text="LOGIN", font=('Arial', 18), width=8, command=self.login)
-        self.register_button = tk.Button(self.frame, text="REGISTER", font=('Arial', 18), width=8, bg="#FF3399", command=self.switch_to_register)
+        self.login_button = tk.Button(self.frame, text="Login", font=('Arial', 18), width=8, command=self.login)
+        self.register_button = tk.Button(self.frame, text="Register", font=('Arial', 18), width=8, bg="#FF3399", command=self.switch_to_register)
         self.exit_button = tk.Button(self.frame, text="Exit", font=('Arial', 18), width=8,command = self.root.destroy)
 
         headline_label.grid(row=0, column=1, columnspan=1, sticky="news", pady=15)
@@ -51,7 +51,8 @@ class Login:
             return False
 
     def login(self):
-        username = self.username_box.get()
+        username = self.username_box.get().lower()
+        username = ''.join(username.split()) #no white spaces
         password = self.password_box.get()
         if username == "" or password == "":
             messagebox.showerror("Error", "Username or Password is empty")

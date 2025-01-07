@@ -81,10 +81,6 @@ class Register:
                     writer.writerow(["Username", "Password"])
                     writer.writerow([username, password])
 
-        def create_csv():
-            with open("users.csv", 'w', newline="") as file:
-                writer = csv.writer(file)
-                writer.writerow(["Username", "Password"])
 
 
     def switch_to_login(self):
