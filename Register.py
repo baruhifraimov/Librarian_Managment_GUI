@@ -3,11 +3,17 @@ import tkinter as tk
 from tkinter import messagebox
 import csv
 
+from Encryption import Encryption
+
+
 class Register:
     def __init__(self, root):
         self.root = root  # Store the root window
-        self.frame = tk.Frame(self.root)  # Create a frame inside the root window
+        root.geometry("500x400")
+        self.root.title("Register Menu")
 
+
+        self.frame = tk.Frame(self.root)  # Create a frame inside the root window
         headline_label = tk.Label(self.frame, text="Register", font=("Arial", 32))
         username_label = tk.Label(self.frame, text="Username:", font=("Arial", 16))
         password_label = tk.Label(self.frame, text="Password:", font=("Arial", 16))
@@ -41,6 +47,7 @@ class Register:
         username = self.username_box.get().lower()
         username = ''.join(username.split()) #no white spaces
         password = self.password_box.get()
+        password = Encryption.encrypt_password(password)
         # if the username is blank
         if username == "":
             messagebox.showinfo("Invalid Username", "Please enter your username again")

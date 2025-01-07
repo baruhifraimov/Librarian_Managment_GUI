@@ -1,15 +1,24 @@
 import os
-import time
 import tkinter as tk
 from tkinter import messagebox
 import csv
+
+from Encryption import Encryption
 from Menu import Menu  # Import the Login class here
 
 
 class Login:
     def __init__(self, root):
         self.root = root  # Store the root window
-        self.frame = tk.Frame(self.root)  # Create a frame inside the root window
+        root.geometry("500x400")
+        self.root.title("Login Menu")
+
+
+        self.background_image = tk.PhotoImage(file="background.png")
+        self.background_label = tk.Label(root, image=self.background_image)
+        self.background_label.place(relwidth=1, relheight=1)
+
+        self.frame = tk.Frame(self.root,bg="")  # Create a frame inside the root window
 
         headline_label = tk.Label(self.frame, text="Login", font=("Arial", 32))
         username_label = tk.Label(self.frame, text="Username:", font=("Arial", 16))
@@ -49,17 +58,19 @@ class Login:
             return
         if os.path.exists("users.csv"): # check if the file exists
             if self.search_in_csv(username,password):
-                self.login_success = tk.Label(self.frame, text="Login Successful!", font=("Arial", 16), fg="green")
-                # Place the label in the next row below the buttons
-                self.login_success.grid(row=5, column=1, columnspan=2, pady=10)  # Positioned at row 5, under everything
-                # Use after() to remove the label after a delay (e.g., 1000 ms = 1 second)
-                self.frame.after(1000, self.remove_label_and_switch)
+                self.login_msg = tk.Label(self.frame, text="Login Successful!", font=("Arial", 16), fg="green")
+                self.login_msg.grid(row=5, column=1, columnspan=2, pady=10)  # Positioned at row 5, under everything
+                self.frame.after(1000, self.remove_label_and_switch) # Use after() to remove the label after a delay (e.g., 1000 ms = 1 second)
+            else:
+                self.login_msg = tk.Label(self.frame, text="Login Failed! User does not exists.", font=("Arial", 16), fg="red")
+                self.login_msg.grid(row=5, column=1, columnspan=2, pady=10)
+                self.login_msg.after(2000,self.login_msg.destroy)
         else:
             messagebox.showinfo("ERROR", "USER FILE DOES NOT EXIST")
 
     def remove_label_and_switch(self):
         # Destroy the label
-        self.login_success.destroy()
+        self.login_msg.destroy()
 
         # Call switch_to_menu function
         self.switch_to_menu()

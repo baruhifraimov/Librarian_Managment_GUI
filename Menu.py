@@ -7,6 +7,12 @@ import csv
 class Menu:
     def __init__(self, root,user_name =""):
         self.root = root  # Store the root window
+        root.geometry("800x600")
+
+        self.background_image = tk.PhotoImage(file="background.png")
+        self.background_label = tk.Label(root, image=self.background_image)
+        self.background_label.place(relwidth=1, relheight=1)
+
         self.menu_frame = tk.Frame(self.root)  # Create a frame inside the root window
         self.book_frame = tk.Frame(self.menu_frame)
         self.root.title("Menu")
@@ -35,6 +41,7 @@ class Menu:
         self.text_box = tk.Button(self.book_frame, text="THIS IS ADD BOOK", font=('David', 36), width=15)
         self.book_frame.grid(row=3, column=0,columnspan=3)
         self.text_box.grid(row=3, column=1)
+
 
     def remove_book(self):
         self.book_frame.destroy()
