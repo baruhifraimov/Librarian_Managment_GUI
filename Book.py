@@ -14,7 +14,7 @@ class Book:
         self.year = year
         self.genre = genre
         if not copies=="":
-            self.copies = copies
+            self.copies = int(copies)
         else:
             self.copies=1
         self.is_loaned = is_loaned
@@ -158,6 +158,8 @@ class Book:
     def get_genre(self):
         return self.genre
 
+    def get_is_lend(self):
+        return self.is_lend
     def get_year(self):
         return self.year
 
