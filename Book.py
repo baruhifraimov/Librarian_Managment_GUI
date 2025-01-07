@@ -8,13 +8,16 @@ class Book:
     books = []
 
 
-    def __init__(self,title,author,genre,year): # need to add availability field
+    def __init__(self,title,author,genre,year,copies=1,is_loaned='No'): # need to add availability field
         self.title = title
         self.author = author
         self.year = year
         self.genre = genre
-        self.copies = 1
-        self.is_loaned = "No"
+        if not copies=="":
+            self.copies = copies
+        else:
+            self.copies=1
+        self.is_loaned = is_loaned
 
         # checks if the book is already registered
         # uses equal and returns true or false, if true add else, not
@@ -27,10 +30,13 @@ class Book:
 
 
 
-    def add(self,title,author,genre,year):
+    def add(self,title,author,genre,year,copies):
 
-        #title = ''.join(title.split()) #no white spaces
-        #author = ''.join(author.split())
+        # Check if copies is a valid number, if not set to 1
+        if copies == '' or not copies.isdigit():
+            copies = 1  # Default value if it's empty or invalid
+        else:
+            copies = int(copies)  # Convert copies to integer if it's a valid number
 
         # if the username is blank
         if title == "" or author == "" or genre == "" or year == "":
@@ -38,7 +44,7 @@ class Book:
 
         # the book does not exist
         if not self.search_book_in_csv(title, author, genre, year):
-            book = Book(title, author, genre, year)
+            book = Book(title, author, genre, year,copies)
             self.export_to_file(book)
             return True
 
@@ -46,8 +52,10 @@ class Book:
         else:
             existing_book = self.find_book(Book.books,title, author, genre, year)
             if not existing_book is None:
-                self.update_copies_in_csv(existing_book.title,existing_book.author,existing_book.genre,existing_book.year)
-                existing_book.copies += 1
+                existing_book.copies += int(copies)
+                #x = existing_book.copies
+                self.update_copies_in_csv(existing_book.title, existing_book.author, existing_book.genre, existing_book.year,existing_book.copies)
+
 
     def find_book(self,books, title, author, genre, year):
         for book in books:
@@ -55,20 +63,16 @@ class Book:
                 return book
         return None  # Return None if no book is found
 
-    def update_copies_in_csv(self, title, author, genre, year):
+    def update_copies_in_csv(self, title, author, genre, year, copies):
         with open('books.csv', 'r') as file:
             reader = csv.reader(file)
             rows = list(reader)
             for row in rows:
                 is_update = False
                 if row[0] == title and row[1] == author and row[4] == genre and row[5] == str(year):
-                    row[3] = str(int(row[3]) + 1)
+                    row[3] = str(copies)
                     is_update = True
                     break
-            # if (is_update):
-            #     with open('books_copy.csv', 'a+') as file:
-            #         writer = csv.writer(file)
-            #         writer.writerow(row[3])
             if is_update:
                 with open('books.csv', 'w', newline="") as file:
                     writer = csv.writer(file)
@@ -107,7 +111,6 @@ class Book:
                     return True
             else:
                 return False
-
 
     def compare_with_csv_row(self,c_title,c_author,c_genre,c_year, row):
         """
@@ -165,7 +168,3 @@ class Book:
                     self.year == other.year and
                     self.genre == other.genre)
         return False
-
-
-
-

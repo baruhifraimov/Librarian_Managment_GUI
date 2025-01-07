@@ -10,7 +10,7 @@ class Menu:
     def __init__(self, root,user_name =""):
         self.root = root  # Store the root window
         root.geometry("800x600")
-
+        self.load_books()
         # self.background_image = tk.PhotoImage(file="background.png")
         # self.background_label = tk.Label(root, image=self.background_image)
         # self.background_label.place(relwidth=1, relheight=1)
@@ -46,6 +46,15 @@ class Menu:
 
         self.menu_frame.pack()
 
+
+    def load_books(self):
+        with open('books.csv', 'r') as file:
+            reader = csv.reader(file)
+            rows = list(reader)
+            for row in rows[1:]:
+                b = Book (row[0],row[1],row[4],row[5],row[3],row[2])
+                Book.books.append(b)
+                
     def add_book(self):
         self.book_frame.destroy()
         self.book_frame = tk.Frame(self.menu_frame)
@@ -54,13 +63,13 @@ class Menu:
         self.label_author = tk.Label(self.book_frame, text="Author:", font=('Arial', 15))
         self.label_genre = tk.Label(self.book_frame, text="Genre:", font=('Arial', 15))
         self.label_year = tk.Label(self.book_frame, text="Year:", font=('Arial', 15))
-        #self.label_copies = tk.Label(self.book_frame, text="Copies:", font=('Arial', 15))
+        self.label_copies = tk.Label(self.book_frame, text="Copies:", font=('Arial', 15))
 
         self.entry_title = tk.Entry(self.book_frame, width=15,)
         self.entry_author = tk.Entry(self.book_frame, width=15)
         self.entry_genre = tk.Entry(self.book_frame, width=15)
         self.entry_year = tk.Entry(self.book_frame, width=15)
-        #self.entry_copies = tk.Entry(self.book_frame, width=15)
+        self.entry_copies = tk.Entry(self.book_frame, width=15)
         self.add_button = tk.Button(self.menu_frame, text="Add", font=('Arial', 18), width=8, command=self.book_adder)
 
         self.book_frame.grid(row=4, column=0,columnspan=3,pady=40)
@@ -68,18 +77,18 @@ class Menu:
         self.label_author.grid(row=6, column=0)
         self.label_genre.grid(row=7, column=0)
         self.label_year.grid(row=8, column=0)
-        #self.label_copies.grid(row=9, column=0)
+        self.label_copies.grid(row=9, column=0)
         self.text_box.grid(row=4, column=1)
         self.entry_title.grid(row=5,column=1)
         self.entry_author.grid(row=6,column=1)
         self.entry_genre.grid(row=7,column=1)
         self.entry_year.grid(row=8,column=1)
-        #self.entry_copies.grid(row=9,column=1)
+        self.entry_copies.grid(row=9,column=1)
         self.add_button.grid(row=10,column=2)
 
     def book_adder(self):
-        b = Book(self.entry_title.get(), self.entry_author.get(), self.entry_genre.get(), self.entry_year.get())
-        Book.add(b,self.entry_title.get(),self.entry_author.get(),self.entry_genre.get(),self.entry_year.get())
+        b = Book(self.entry_title.get(), self.entry_author.get(), self.entry_genre.get(), self.entry_year.get(),self.entry_copies.get())
+        Book.add(b,self.entry_title.get(), self.entry_author.get(), self.entry_genre.get(), self.entry_year.get(),self.entry_copies.get())
 
     def remove_book(self):
         self.book_frame.destroy()
