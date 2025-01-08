@@ -36,6 +36,8 @@ class BookManager:
         if book_to_remove:
             self.books.remove(book_to_remove)
             self.remove_book_in_csv(book_to_remove)
+            return True
+        return False
 
 
     @classmethod
@@ -79,11 +81,11 @@ class BookManager:
             with open("books.csv", 'a+', newline="") as file:
                 writer = csv.writer(file)
                 if os.stat("books.csv").st_size == 0:  # Check if the file is empty
-                    writer.writerow(["title", "author", "is_loaned", "copies", "genre", "year"])
-                writer.writerow([book.title, book.author, book.is_loaned, book.copies, book.genre, book.year])
+                    writer.writerow(["title", "author", "is_lend", "copies", "genre", "year"])
+                writer.writerow([book.title, book.author, book.is_lend, book.copies, book.genre, book.year])
         else:
             # The file does not exist, create it
             with open('books.csv', 'w', newline="") as file:
                 writer = csv.writer(file)
-                writer.writerow(["title", "author", "is_loaned", "copies", "genre", "year"])
-                writer.writerow([book.title, book.author, book.is_loaned, book.copies, book.genre, book.year])
+                writer.writerow(["title", "author", "is_lend", "copies", "genre", "year"])
+                writer.writerow([book.title, book.author, book.is_lend, book.copies, book.genre, book.year])

@@ -4,7 +4,7 @@ import os
 
 class Book:
 
-    def __init__(self, title, author, genre, year, copies=1, is_lend='No'): # need to add availability field
+    def __init__(self, title, author, genre, year, copies=1, is_lend="No"): # need to add availability field
         self.title = title
         self.author = author
         self.year = year
@@ -52,6 +52,7 @@ class Book:
 
     def get_is_lend(self):
         return self.is_lend
+
     def get_year(self):
         return self.year
 
