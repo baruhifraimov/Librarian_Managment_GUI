@@ -13,7 +13,6 @@ class Login:
         root.geometry("500x400")
         self.root.title("Login Menu")
 
-
         # self.background_image = tk.PhotoImage(file="background.png")
         # self.background_label = tk.Label(root, image=self.background_image)
         # self.background_label.place(relwidth=1, relheight=1)
@@ -26,16 +25,17 @@ class Login:
         self.username_box = tk.Entry(self.frame, font=("Arial", 16))
         self.password_box = tk.Entry(self.frame, show="*", font=("Arial", 16))
         self.login_button = tk.Button(self.frame, text="Login", font=('Arial', 18), width=8, command=self.login)
-        self.register_button = tk.Button(self.frame, text="Register", font=('Arial', 18), width=8, bg="#FF3399", command=self.switch_to_register)
-        self.exit_button = tk.Button(self.frame, text="Exit", font=('Arial', 18), width=8,command = self.root.destroy)
+        self.register_button = tk.Button(self.frame, text="Register", font=('Arial', 18), width=8, bg="#FF3399",
+                                         command=self.switch_to_register)
+        self.exit_button = tk.Button(self.frame, text="Exit", font=('Arial', 18), width=8, command=self.root.destroy)
 
-        headline_label.grid(row=0, column=1, columnspan=1, sticky="news", pady=15)
-        username_label.grid(row=1, column=0, pady=10)
-        password_label.grid(row=2, column=0, pady=10)
-        self.username_box.grid(row=1, column=1)
-        self.password_box.grid(row=2, column=1)
-        self.login_button.grid(row=3, column=1, pady=10, columnspan=2)
-        self.register_button.grid(row=4, column=1, columnspan=2)
+        headline_label.grid(row=1, column=1, columnspan=1, sticky="news", pady=15)
+        username_label.grid(row=2, column=0, pady=10)
+        password_label.grid(row=3, column=0, pady=10)
+        self.username_box.grid(row=2, column=1)
+        self.password_box.grid(row=3, column=1)
+        self.login_button.grid(row=4, column=1, pady=10, columnspan=2)
+        self.register_button.grid(row=5, column=1, columnspan=2)
         self.exit_button.grid(row=6, column=1, columnspan=1)
 
         self.frame.pack()
@@ -52,20 +52,23 @@ class Login:
 
     def login(self):
         username = self.username_box.get().lower()
-        username = ''.join(username.split()) #no white spaces
+        username = ''.join(username.split())  # no white spaces
         password = self.password_box.get()
         if username == "" or password == "":
             messagebox.showerror("Error", "Username or Password is empty")
             return
-        if os.path.exists("users.csv"): # check if the file exists
-            if self.search_in_csv(username,password):
+        if os.path.exists("users.csv"):  # check if the file exists
+            if self.search_in_csv(username, password):
                 self.login_msg = tk.Label(self.frame, text="Login Successful!", font=("Arial", 16), fg="green")
-                self.login_msg.grid(row=5, column=1, columnspan=2, pady=10)  # Positioned at row 5, under everything
-                self.frame.after(1000, self.remove_label_and_switch) # Use after() to remove the label after a delay (e.g., 1000 ms = 1 second)
+                self.login_msg.grid(row=0, column=1, columnspan=2, pady=10)  # Positioned at row 5, under everything
+                self.frame.after(1000,
+                                 self.remove_label_and_switch)  # Use after() to remove the label after a delay (
+                # e.g., 1000 ms = 1 second)
             else:
-                self.login_msg = tk.Label(self.frame, text="Login Failed! User does not exists.", font=("Arial", 16), fg="red")
-                self.login_msg.grid(row=5, column=1, columnspan=2, pady=10)
-                self.login_msg.after(2000,self.login_msg.destroy)
+                self.login_msg = tk.Label(self.frame, text="Login Failed! User does not exists.", font=("Arial", 16),
+                                          fg="red")
+                self.login_msg.grid(row=0, column=1, columnspan=2, pady=10)
+                self.login_msg.after(2000, self.login_msg.destroy)
         else:
             messagebox.showinfo("ERROR", "USER FILE DOES NOT EXIST")
 
@@ -83,5 +86,5 @@ class Login:
 
     def switch_to_menu(self):
         logged_user = str(self.username_box.get())
-        self.frame.destroy()# Destroy the current register frame
-        Menu(self.root,logged_user)  # Pass the root window to Login screen
+        self.frame.destroy()  # Destroy the current register frame
+        Menu(self.root, logged_user)  # Pass the root window to Login screen

@@ -24,10 +24,12 @@ class BookManager:
             existing_book.copies += int(copies)
             self.update_copies_in_csv(existing_book.title, existing_book.author, existing_book.genre,
                                       existing_book.year, existing_book.copies)
+            return True
         else:
             book = Book(title, author, genre, year, copies)
             self.books.append(book)
             self.export_to_file(book)
+            return True
 
 
     @classmethod
