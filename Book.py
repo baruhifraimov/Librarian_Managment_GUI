@@ -38,11 +38,11 @@ class Book:
     def get_Available_books_num(self):
         return self.copies - self.lent_count
 
-    def get_watch_list(self):
-        return self.watch_list
-
     def get_watch_list_size(self):
         return len(self.watch_list)
+
+    def get_watch_list(self):
+        return self.watch_list
 
     def add_to_watch_list(self,user):
         if user in self.watch_list:

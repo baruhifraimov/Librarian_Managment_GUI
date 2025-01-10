@@ -120,7 +120,6 @@ class BookManager:
                 b.get_watch_list().append(user)
 
 
-
     @classmethod
     def export_to_file(self, book):
         if os.path.exists("books.csv"):  # Check if the file exists
