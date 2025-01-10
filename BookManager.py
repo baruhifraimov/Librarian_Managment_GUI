@@ -1,6 +1,10 @@
 import csv
 import os
 from Book import Book
+from ExceptionWatchedBookRemovalError import WatchedBookRemovalError
+from RecordNotFoundError import RecordNotFoundError
+
+
 class BookManager:
     # This class manages the list of books
     books = []  # The list of books is now managed by the BookManager class
@@ -14,16 +18,15 @@ class BookManager:
         else:
             copies = int(copies)  # Convert copies to integer if it's a valid number
 
-        # if the username is blank
+        # if the book fields are blank
         if title == "" or author == "" or genre == "" or year == "":
             return False
 
         # Check if the book already exists in the list
         existing_book = self.search_book(title, author, genre, year)
         if existing_book:
-            existing_book.copies += int(copies)
-            self.update_copies_in_csv(existing_book.title, existing_book.author, existing_book.genre,
-                                      existing_book.year, existing_book.copies)
+            existing_book.update_copies(int(copies))
+            self.update_in_csv(existing_book,0)
             return True
         else:
             book = Book(title, author, genre, year, copies)
@@ -36,9 +39,14 @@ class BookManager:
     def remove_book(self, title, author, genre, year):
         book_to_remove = self.search_book(title, author, genre, year)
         if book_to_remove:
-            self.books.remove(book_to_remove)
-            self.remove_book_in_csv(book_to_remove)
-            return True
+            # check if the book is still borrowed, raise exception
+            if book_to_remove.get_watch_list_size() >0:
+                raise WatchedBookRemovalError
+            else:
+                self.books.remove(book_to_remove)
+                self.remove_book_in_csv(book_to_remove)
+                return True
+
         return False
 
 
@@ -65,17 +73,52 @@ class BookManager:
         return None # Return None if no book is found
 
     @classmethod
-    def update_copies_in_csv(self, title, author, genre, year, copies):
+    def update_in_csv(self, book,filter):
+        # book = self.search_book(title, author, genre, year)
         with open('books.csv', 'r') as file:
             reader = csv.reader(file)
             rows = list(reader)
             for row in rows:
-                if row[0] == title and row[1] == author and row[4] == genre and row[5] == str(year):
-                    row[3] = int(copies)
-                    break
+                if row[0] == book.get_title() and row[1] == book.get_author() and row[4] == book.get_genre() and row[5] == book.get_year():
+                    match(filter):
+                        case 0:
+                            row[3] = book.get_copies()
+                            row[6] = int(book.get_copies())- int(book.get_lent_count())
+                            row[2] = book.get_is_lent()
+                            break
+                        case 1: #change in copies
+                            if book:
+                                row[6] = book.get_copies()- book.get_lent_count()
+                                row[2] = book.get_is_lent()
+                            else:
+                                raise RecordNotFoundError(
+                                    f"No record found for title='{book.get_title()}', author='{book.get_author()}', genre='{book.get_genre()}', year='{book.get_year()}'."
+                                )
+
             with open('books.csv', 'w', newline="") as file:
                 writer = csv.writer(file)
                 writer.writerows(rows)
+
+    @classmethod
+    def load_books(self):
+        with open('books.csv', 'r') as file:
+            reader = csv.reader(file)
+            rows = list(reader)
+            for row in rows[1:]:
+                # TODO add the feature that he knows the lent count for each book
+                b = Book(row[0], row[1], row[4], row[5], row[3], row[2],int(row[3])-int(row[6]))
+                BookManager.books.append(b)
+
+    @classmethod
+    def load_watch_list(self):
+        with open('waiting_list.csv', 'r') as file:
+            reader = csv.reader(file)
+            rows = list(reader)
+            for row in rows[1:]:
+                b=BookManager.search_book(row[3], row[4], row[5], row[6])
+                user = [row[0],row[1],row[2]]
+                b.get_watch_list().append(user)
+
 
     @classmethod
     def export_to_file(self, book):
@@ -83,11 +126,11 @@ class BookManager:
             with open("books.csv", 'a+', newline="") as file:
                 writer = csv.writer(file)
                 if os.stat("books.csv").st_size == 0:  # Check if the file is empty
-                    writer.writerow(["title", "author", "is_lend", "copies", "genre", "year"])
-                writer.writerow([book.title, book.author, book.is_lend, book.copies, book.genre, book.year])
+                    writer.writerow(["title", "author", "is_lent", "copies", "genre", "year","Available_copies"])
+                writer.writerow([book.get_title(), book.get_author(), book.get_is_lent(), book.get_copies(), book.get_genre(), book.get_year(), book.get_copies()- book.get_lent_count()])
         else:
             # The file does not exist, create it
             with open('books.csv', 'w', newline="") as file:
                 writer = csv.writer(file)
-                writer.writerow(["title", "author", "is_lend", "copies", "genre", "year"])
-                writer.writerow([book.title, book.author, book.is_lend, book.copies, book.genre, book.year])
+                writer.writerow(["title", "author", "is_lent", "copies", "genre", "year", "Available_copies"])
+                writer.writerow([book.get_title(), book.get_author(), book.get_is_lend(), book.get_copies(), book.get_genre(), book.get_year(), book.get_copies()- book.get_lent_count()])

@@ -63,7 +63,6 @@ class Register:
             messagebox.showinfo("Register Success", "Registered successfully!")
             self.switch_to_login()  # Switch to Login screen
 
-
     def export_to_file(self,username,password):
         if os.path.exists("users.csv"): # check if the file exists
             # with open("users.csv","r") as file:  # Open in read mode
@@ -80,8 +79,6 @@ class Register:
                     writer = csv.writer(file)
                     writer.writerow(["Username", "Password"])
                     writer.writerow([username, password])
-
-
 
     def switch_to_login(self):
         self.frame.destroy()  # Destroy the current register frame

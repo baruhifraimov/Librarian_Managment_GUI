@@ -1,10 +1,17 @@
 import csv
 import os
+import queue
+from collections import deque
+
+from ExceptionBelowZeroExceeded import ExceptionBelowZero
+from ExceptionBorrowingLimitExceeded import BorrowingLimitExceeded
+from ExceptionReturnLimitExceeded import ReturnLimitExceeded
+from ExceptionUserAlreadyInList import UserAlreadyInList
 
 
 class Book:
 
-    def __init__(self, title, author, genre, year, copies=1, is_lend="No"): # need to add availability field
+    def __init__(self, title, author, genre, year, copies=1, is_lent="No",lent_count = 0): # need to add availability field
         self.title = title
         self.author = author
         self.year = year
@@ -13,30 +20,72 @@ class Book:
             self.copies = int(copies)
         else:
             self.copies=1
-        self.is_lend = is_lend
+        # if available change to "No" else change to "Yes"
+        self.is_lent = is_lent
+        # number of borrowed book, lent_count <= copies
+        self.lent_count = lent_count
+        self.watch_list = deque()
 
-    def remove(self):
-        pass
+    def update_copies(self,num):
+        self.copies += num
+        self.is_lent = "No"
 
-    def update_book(self):
-        pass
+        # TODO need to notify that the book available
+        while self.get_watch_list_size()>0 and num>0:
+            self.decrease_watch_list()
+            num -= 1
 
-    def update_title(self,new_title):
-        self.title = new_title
+    def get_Available_books_num(self):
+        return self.copies - self.lent_count
 
-    def update_author(self,new_author):
-        self.author = new_author
+    def get_watch_list(self):
+        return self.watch_list
 
-    def update_year(self,new_year):
-        self.year = new_year
+    def get_watch_list_size(self):
+        return len(self.watch_list)
+
+    def add_to_watch_list(self,user):
+        if user in self.watch_list:
+            raise UserAlreadyInList
+        else:
+            self.watch_list.append(user)
+
+    def decrease_watch_list(self):
+        if len(self.watch_list) > 0:
+            self.watch_list.pop()
+        else:
+            raise ExceptionBelowZero
+
+    def return_action(self):
+        if self.lent_count > 0:
+            self.lent_count -=1
+            self.is_lent = "No"
+            # if someone returned the book
+            # the first guy in the queue gets the book
+            # TODO need to notify that the book available
+            if self.get_watch_list_size() > 0 :
+                self.decrease_watch_list()
+        else:
+            raise ReturnLimitExceeded()
+
+    def borrow_action(self):
+        if self.copies > self.lent_count:
+            self.lent_count += 1
+            if self.lent_count == self.copies:
+                self.is_lent = "Yes"
+            else:
+                self.is_lent = "No"
+        else:
+            raise BorrowingLimitExceeded(self.copies)
 
     def update_genre(self,new_genre):
         self.genre = new_genre
 
-
     def is_available(self):
-        return self.copies > 0
+        return self.copies - self.lent_count > 0
 
+    def get_lent_count(self):
+        return self.lent_count
 
     def get_copies(self):
         return self.copies
@@ -50,8 +99,8 @@ class Book:
     def get_genre(self):
         return self.genre
 
-    def get_is_lend(self):
-        return self.is_lend
+    def get_is_lent(self):
+        return self.is_lent
 
     def get_year(self):
         return self.year
