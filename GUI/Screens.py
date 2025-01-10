@@ -11,7 +11,7 @@ def show_login_screen(root):
     Login(root)  # Pass the root window to Login screen
 
 if __name__ == "__main__":
-    logging.basicConfig(filename='app.log',filemode= 'a+',format='%(name)s:%(levelname)s: %(message)s', level=logging.DEBUG)
+    logging.basicConfig(filename='../app.log', filemode='a+', format='%(name)s:%(levelname)s: %(message)s', level=logging.DEBUG)
     root = tk.Tk()  # Create the Tkinter root window
     root.geometry("500x400")
     logging.debug("OPENING APP")

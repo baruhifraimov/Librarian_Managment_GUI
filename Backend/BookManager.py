@@ -1,8 +1,8 @@
 import csv
 import os
-from Book import Book
-from ExceptionWatchedBookRemovalError import WatchedBookRemovalError
-from RecordNotFoundError import RecordNotFoundError
+from Backend.Book import Book
+from Exceptions.ExceptionWatchedBookRemovalError import WatchedBookRemovalError
+from Exceptions.RecordNotFoundError import RecordNotFoundError
 
 
 class BookManager:
@@ -52,14 +52,14 @@ class BookManager:
 
     @classmethod
     def remove_book_in_csv(self, book):
-        with open('books.csv', 'r') as file:
+        with open('../ConfigFiles/books.csv', 'r') as file:
             reader = csv.reader(file)
             rows = list(reader)
             for row in rows:
                 if row[0] == book.title and row[1] == book.author and row[4] == book.genre and row[5] == str(book.year):
                     row_to_remove = row
                     break
-            with open('books.csv', 'w', newline="") as file:
+            with open('../ConfigFiles/books.csv', 'w', newline="") as file:
                 writer = csv.writer(file)
                 for row in rows:
                     if row != row_to_remove:
@@ -75,7 +75,7 @@ class BookManager:
     @classmethod
     def update_in_csv(self, book,filter):
         # book = self.search_book(title, author, genre, year)
-        with open('books.csv', 'r') as file:
+        with open('../ConfigFiles/books.csv', 'r') as file:
             reader = csv.reader(file)
             rows = list(reader)
             for row in rows:
@@ -95,13 +95,13 @@ class BookManager:
                                     f"No record found for title='{book.get_title()}', author='{book.get_author()}', genre='{book.get_genre()}', year='{book.get_year()}'."
                                 )
 
-            with open('books.csv', 'w', newline="") as file:
+            with open('../ConfigFiles/books.csv', 'w', newline="") as file:
                 writer = csv.writer(file)
                 writer.writerows(rows)
 
     @classmethod
     def load_books(self):
-        with open('books.csv', 'r') as file:
+        with open('../ConfigFiles/books.csv', 'r') as file:
             reader = csv.reader(file)
             rows = list(reader)
             for row in rows[1:]:
@@ -111,7 +111,7 @@ class BookManager:
 
     @classmethod
     def load_watch_list(self):
-        with open('waiting_list.csv', 'r') as file:
+        with open('../ConfigFiles/waiting_list.csv', 'r') as file:
             reader = csv.reader(file)
             rows = list(reader)
             for row in rows[1:]:
@@ -122,15 +122,15 @@ class BookManager:
 
     @classmethod
     def export_to_file(self, book):
-        if os.path.exists("books.csv"):  # Check if the file exists
-            with open("books.csv", 'a+', newline="") as file:
+        if os.path.exists("../ConfigFiles/books.csv"):  # Check if the file exists
+            with open("../ConfigFiles/books.csv", 'a+', newline="") as file:
                 writer = csv.writer(file)
-                if os.stat("books.csv").st_size == 0:  # Check if the file is empty
+                if os.stat("../ConfigFiles/books.csv").st_size == 0:  # Check if the file is empty
                     writer.writerow(["title", "author", "is_lent", "copies", "genre", "year","Available_copies"])
                 writer.writerow([book.get_title(), book.get_author(), book.get_is_lent(), book.get_copies(), book.get_genre(), book.get_year(), book.get_copies()- book.get_lent_count()])
         else:
             # The file does not exist, create it
-            with open('books.csv', 'w', newline="") as file:
+            with open('../ConfigFiles/books.csv', 'w', newline="") as file:
                 writer = csv.writer(file)
                 writer.writerow(["title", "author", "is_lent", "copies", "genre", "year", "Available_copies"])
                 writer.writerow([book.get_title(), book.get_author(), book.get_is_lend(), book.get_copies(), book.get_genre(), book.get_year(), book.get_copies()- book.get_lent_count()])

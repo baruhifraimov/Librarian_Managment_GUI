@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import messagebox
 import csv
 
-from Encryption import Encryption
+from Backend.Encryption import Encryption
 from Menu import Menu  # Import the Login class here
 
 
@@ -42,7 +42,7 @@ class Login:
 
     def search_in_csv(self, username, password):
         password = Encryption.encrypt_password(password)
-        with open('users.csv', 'r') as file:
+        with open('../ConfigFiles/users.csv', 'r') as file:
             reader = csv.reader(file)
             rows = list(reader)
             for row in rows:
@@ -57,7 +57,7 @@ class Login:
         if username == "" or password == "":
             messagebox.showerror("Error", "Username or Password is empty")
             return
-        if os.path.exists("users.csv"):  # check if the file exists
+        if os.path.exists("../ConfigFiles/users.csv"):  # check if the file exists
             if self.search_in_csv(username, password):
                 self.login_msg = tk.Label(self.frame, text="Login Successful!", font=("Arial", 16), fg="green")
                 self.login_msg.grid(row=0, column=1, columnspan=2, pady=10)  # Positioned at row 5, under everything

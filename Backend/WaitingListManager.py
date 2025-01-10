@@ -1,23 +1,24 @@
 import csv
 import os
 import tkinter as tk
-from ExceptionUserAlreadyInList import UserAlreadyInList
-from tkinter import messagebox, ttk
+from Exceptions.ExceptionUserAlreadyInList import UserAlreadyInList
+from tkinter import messagebox
+
 
 class WaitingListManager:
 
     @classmethod
     def update_waiting_list_csv(self, book,user : list):
-        if os.path.exists("waiting_list.csv"):  # Check if the file exists
-            with open("waiting_list.csv", 'a+', newline="") as file:
+        if os.path.exists("../ConfigFiles/waiting_list.csv"):  # Check if the file exists
+            with open("../ConfigFiles/waiting_list.csv", 'a+', newline="") as file:
                 writer = csv.writer(file)
-                if os.stat("waiting_list.csv").st_size == 0:  # Check if the file is empty
+                if os.stat("../ConfigFiles/waiting_list.csv").st_size == 0:  # Check if the file is empty
                     writer.writerow(
                         ["Full Name", "Email", "Phone No.", "Book Title", "Book Author", "Book Genre", "Book Year","Queue No."])
                 writer.writerow([user[0],user[1],user[2],book.title, book.author, book.genre, book.year,book.get_watch_list_size()])
         else:
             # The file does not exist, create it
-            with open('waiting_list.csv', 'w', newline="") as file:
+            with open('../ConfigFiles/waiting_list.csv', 'w', newline="") as file:
                 writer = csv.writer(file)
                 writer.writerow(
                     ["Full Name", "Email", "Phone No.", "Book Title", "Book Author", "Book Genre", "Book Year",

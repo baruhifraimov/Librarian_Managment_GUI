@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import messagebox
 import csv
 
-from Encryption import Encryption
+from Backend.Encryption import Encryption
 
 
 class Register:
@@ -33,8 +33,8 @@ class Register:
         self.frame.pack()
 
     def search_user_in_csv(self, username,password):
-        if os.path.exists("users.csv"): # check if the file exists
-            with open('users.csv', 'r') as file:
+        if os.path.exists("../ConfigFiles/users.csv"): # check if the file exists
+            with open('../ConfigFiles/users.csv', 'r') as file:
                 reader = csv.reader(file)
                 rows = list(reader)
                 for row in rows:
@@ -64,18 +64,18 @@ class Register:
             self.switch_to_login()  # Switch to Login screen
 
     def export_to_file(self,username,password):
-        if os.path.exists("users.csv"): # check if the file exists
+        if os.path.exists("../ConfigFiles/users.csv"): # check if the file exists
             # with open("users.csv","r") as file:  # Open in read mode
             #     first_line = file.readline().strip()  # Read the first row
             #     lines = file.readlines()  # Read all lines into a list
 
-            with open("users.csv", 'a+', newline="") as file:
+            with open("../ConfigFiles/users.csv", 'a+', newline="") as file:
                 writer = csv.writer(file)
-                if os.stat("users.csv").st_size == 0:  # check if the file is empty
+                if os.stat("../ConfigFiles/users.csv").st_size == 0:  # check if the file is empty
                     writer.writerow(["Username", "Password"])
                 writer.writerow([username, password])
         else:
-            with open('users.csv','w',newline="") as file:
+            with open('../ConfigFiles/users.csv', 'w', newline="") as file:
                     writer = csv.writer(file)
                     writer.writerow(["Username", "Password"])
                     writer.writerow([username, password])

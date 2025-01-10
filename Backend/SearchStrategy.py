@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from BookManager import BookManager
+from Backend.BookManager import BookManager
 
 
 class SearchStrategy:
