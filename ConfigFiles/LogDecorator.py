@@ -37,13 +37,14 @@ def log_activity(action_name):
                 result = func(*args, **kwargs)
                 logger.info(f"{action_name} successfully")
                 return result
-
             except Exception as e:
-                # Log unhandled exceptions
-                logger.error(f"{action_name} fail")
-                raise # Re-raise the exception
+                # Log the exception and allow the program to continue
+                logger.error(f"{action_name} failed with exception: {e}")
+                # Return None or a custom error message to allow the program to continue
+                return None
 
         return wrapper
+
     return decorator
 
 

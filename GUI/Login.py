@@ -53,39 +53,36 @@ class Login:
 
     @log_activity("login")
     def login(self):
-        try:
-            username = self.username_box.get().lower()
-            username = ''.join(username.split())  # Remove white spaces
-            password = self.password_box.get()
+        """
+        Handle user login with messagebox feedback and exception raising:
+        - Username or password are empty.
+        - User file cannot be found.
+        - User cannot be found in the file.
+        """
+        username = self.username_box.get().lower()
+        username = ''.join(username.split())  # Remove white spaces
+        password = self.password_box.get()
 
-            # Check if username or password is empty
-            if username == "" or password == "":
-                messagebox.showerror("Error", "Username or Password is empty")
-                return
+        # Check if username or password is empty
+        if username == "" or password == "":
+            messagebox.showerror("Error", "Username or Password is empty.")
+            raise ValueError("Username or Password is empty.")
 
-            # Check if the users.csv file exists
-            if os.path.exists("../ConfigFiles/users.csv"):
-                try:
-                    # Search for user in the CSV file
-                    if self.search_in_csv(username, password):
-                        self.login_msg = tk.Label(self.frame, text="Login Successful!", font=("Arial", 16), fg="green")
-                        self.login_msg.grid(row=0, column=1, columnspan=2,
-                                            pady=10)  # Positioned at row 5, under everything
-                        self.frame.after(1000, self.remove_label_and_switch)  # Remove label after a delay
-                    else:
-                        self.login_msg = tk.Label(self.frame, text="Login Failed! User does not exist.",
-                                                  font=("Arial", 16),
-                                                  fg="red")
-                        self.login_msg.grid(row=0, column=1, columnspan=2, pady=10)
-                        self.login_msg.after(2000, self.login_msg.destroy)
-                except Exception:
-                    messagebox.showerror("Error", "An unexpected error occurred while searching in the user file.")
-            else:
-                # Handle case where the users.csv file does not exist
-                messagebox.showinfo("Error", "User file does not exist.")
-        except Exception as e:
-            # Handle any other unexpected errors
-            messagebox.showerror("Error", f"An unexpected error occurred: {e}")
+        # Check if the users.csv file exists
+        if not os.path.exists("../ConfigFiles/users.csv"):
+            messagebox.showerror("Error", "User file does not exist.")
+            raise FileNotFoundError("User file does not exist.")
+
+        # Search for user in the CSV file
+        if self.search_in_csv(username, password):
+            # Login successful
+            self.login_msg = tk.Label(self.frame, text="Login Successful!", font=("Arial", 16), fg="green")
+            self.login_msg.grid(row=0, column=1, columnspan=2, pady=10)
+            self.frame.after(1000, self.remove_label_and_switch)  # Remove label after a delay
+        else:
+            # User not found
+            messagebox.showerror("Error", "Login Failed! User does not exist.")
+            raise ValueError("Login Failed! User does not exist.")
 
 
     def remove_label_and_switch(self):

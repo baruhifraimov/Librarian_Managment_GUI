@@ -93,3 +93,22 @@
 [2025-01-11 21:26:53,831] INFO: login successfully
 [2025-01-11 21:35:54,169] INFO: login successfully
 [2025-01-11 21:36:00,375] INFO: login successfully
+[2025-01-11 21:40:07,940] ERROR: login fail
+[2025-01-11 21:41:49,241] ERROR: login failed with exception: Login Failed! User does not exist.
+[2025-01-11 21:42:40,872] ERROR: login failed with exception: Login Failed! User does not exist.
+[2025-01-11 21:42:47,600] ERROR: login failed with exception: Username or Password is empty.
+[2025-01-11 21:44:38,980] ERROR: login failed with exception: Username or Password is empty.
+[2025-01-11 21:44:43,909] ERROR: login failed with exception: Login Failed! User does not exist.
+[2025-01-11 21:45:31,211] ERROR: login failed with exception: Login Failed! User does not exist.
+[2025-01-11 21:45:34,637] INFO: login successfully
+[2025-01-11 21:45:37,000] INFO: Displayed all books successfully
+[2025-01-11 21:45:53,481] INFO: book borrowed successfully
+[2025-01-11 21:45:55,351] INFO: Displayed all books successfully
+[2025-01-11 21:45:56,146] INFO: Displayed borrowed books successfully
+[2025-01-11 21:45:56,148] INFO: Displayed borrowed books successfully
+[2025-01-11 21:45:57,647] INFO: book returned successfully
+[2025-01-11 21:45:59,054] INFO: Displayed borrowed books successfully
+[2025-01-11 21:46:01,102] INFO: book returned successfully
+[2025-01-11 21:46:02,594] INFO: Displayed borrowed books successfully
+[2025-01-11 21:46:05,370] INFO: Displayed popular books successfully
+[2025-01-11 21:46:07,294] INFO: Displayed popular books successfully
