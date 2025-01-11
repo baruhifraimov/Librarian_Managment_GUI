@@ -112,3 +112,8 @@
 [2025-01-11 21:46:02,594] INFO: Displayed borrowed books successfully
 [2025-01-11 21:46:05,370] INFO: Displayed popular books successfully
 [2025-01-11 21:46:07,294] INFO: Displayed popular books successfully
+[2025-01-11 21:53:21,874] ERROR: register failed with exception: Invalid Username: Username is blank.
+[2025-01-11 21:53:29,910] INFO: register successfully
+[2025-01-11 21:53:39,310] ERROR: login failed with exception: Username or Password is empty.
+[2025-01-11 21:53:51,692] INFO: register successfully
+[2025-01-11 21:53:55,817] ERROR: login failed with exception: Username or Password is empty.

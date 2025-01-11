@@ -4,7 +4,7 @@ from tkinter import messagebox
 import csv
 
 from Backend.Encryption import Encryption
-
+from ConfigFiles.LogDecorator import log_activity
 
 class Register:
     def __init__(self, root):
@@ -43,42 +43,69 @@ class Register:
                 return False
         return False
 
+    @log_activity("register")
     def register_user(self):
+        """
+        Handle user registration with messagebox feedback and exception raising:
+        - Username or password is blank.
+        - Username already exists.
+        """
+        # Get the username and password
         username = self.username_box.get().lower()
-        username = ''.join(username.split()) #no white spaces
+        username = ''.join(username.split())  # Remove white spaces
         password = self.password_box.get()
-        password = Encryption.encrypt_password(password)
-        # if the username is blank
+
+        # Encrypt the password
+        encrypted_password = Encryption.encrypt_password(password)
+
+        # Check if username is blank
         if username == "":
-            messagebox.showinfo("Invalid Username", "Please enter your username again")
-        # if the password is blank
-        elif password == "":
-            messagebox.showinfo("Invalid Password", "Please enter your password again")
-        # checking if user exists
-        elif self.search_user_in_csv(username,password):
-            messagebox.showinfo("Register Failed", "Username already exists!")
-        # saving user info
-        else:
-            self.export_to_file(username, password)
-            messagebox.showinfo("Register Success", "Registered successfully!")
-            self.switch_to_login()  # Switch to Login screen
+            messagebox.showerror("Invalid Username", "Please enter your username again.")
+            raise ValueError("Invalid Username: Username is blank.")
 
-    def export_to_file(self,username,password):
-        if os.path.exists("../ConfigFiles/users.csv"): # check if the file exists
-            # with open("users.csv","r") as file:  # Open in read mode
-            #     first_line = file.readline().strip()  # Read the first row
-            #     lines = file.readlines()  # Read all lines into a list
+        # Check if password is blank
+        if password == "":
+            messagebox.showerror("Invalid Password", "Please enter your password again.")
+            raise ValueError("Invalid Password: Password is blank.")
 
-            with open("../ConfigFiles/users.csv", 'a+', newline="") as file:
+        # Check if the user already exists
+        if self.search_user_in_csv(username, encrypted_password):
+            messagebox.showerror("Register Failed", "Username already exists!")
+            raise ValueError(f"Register Failed: Username '{username}' already exists.")
+
+        # Save user info and show success message
+        self.export_to_file(username, encrypted_password)
+        messagebox.showinfo("Register Success", "Registered successfully!")
+        self.switch_to_login()  # Switch to Login screen
+
+    def export_to_file(self, username, password):
+        """
+        Append the username and password to the users.csv file.
+        Create the file and add headers if it does not exist or is empty.
+        :param username: The username to save
+        :param password: The password to save
+        """
+        try:
+            file_path = "../ConfigFiles/users.csv"
+
+            # Ensure the parent directory exists
+            if not os.path.exists(os.path.dirname(file_path)):
+                raise FileNotFoundError(f"The directory for the file '{file_path}' does not exist.")
+
+            # Open the file in append mode
+            with open(file_path, 'a+', newline="", encoding="utf-8") as file:
                 writer = csv.writer(file)
-                if os.stat("../ConfigFiles/users.csv").st_size == 0:  # check if the file is empty
+
+                # Write headers if the file is empty
+                if os.stat(file_path).st_size == 0:  # Check if the file is empty
                     writer.writerow(["Username", "Password"])
+
+                # Write the new user's data
                 writer.writerow([username, password])
-        else:
-            with open('../ConfigFiles/users.csv', 'w', newline="") as file:
-                    writer = csv.writer(file)
-                    writer.writerow(["Username", "Password"])
-                    writer.writerow([username, password])
+
+        except Exception as e:
+            # Raise a runtime error for unexpected issues
+            raise RuntimeError(f"Failed to export user data to file: {e}")
 
     def switch_to_login(self):
         self.frame.destroy()  # Destroy the current register frame
