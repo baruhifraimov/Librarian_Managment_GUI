@@ -42,21 +42,18 @@ class BookManager:
     @classmethod
     @log_activity("book removed")
     def remove_book(self, title, author, genre, year):
-        try:
-            if title == "" or author == "" or genre == "" or year == "":
-                raise BlankFieldsError
-            book_to_remove = self.extracting_book(title, author, genre, year)
-            # check if the book is still borrowed, raise exception
-            if book_to_remove.get_watch_list_size() >0:
-                raise WatchedBookRemovalError
+        if title == "" or author == "" or genre == "" or year == "":
+            raise BlankFieldsError
+        book_to_remove = self.extracting_book(title, author, genre, year)
+        # check if the book is still borrowed, raise exception
+        if book_to_remove.get_watch_list_size() >0:
+            raise WatchedBookRemovalError
 
-            else:
-                self.books.remove(book_to_remove)
-                self.remove_book_in_csv(book_to_remove)
-                return True
+        else:
+            self.books.remove(book_to_remove)
+            self.remove_book_in_csv(book_to_remove)
+            return True
 
-        except BookNotFound404:
-            return False  # Indicate exception was handled
 
     @classmethod
     def remove_book_in_csv(cls, book):

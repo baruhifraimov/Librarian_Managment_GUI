@@ -5,7 +5,7 @@ from Backend.WaitingListManager import WaitingListManager
 from Exceptions.ExceptionBelowZeroExceeded import ExceptionBelowZero
 from Exceptions.ExceptionBorrowingLimitExceeded import BorrowingLimitExceeded
 from Exceptions.ExceptionReturnLimitExceeded import ReturnLimitExceeded
-from Exceptions.ExceptionUserAlreadyInList import UserAlreadyInList
+from Exceptions.ExceptionUserAlreadyInList import UserAlreadyInListError
 from ConfigFiles.LogDecorator import log_activity
 
 
@@ -56,7 +56,7 @@ class Book:
 
     def add_to_watch_list(self,user):
         if user in self.watch_list:
-            raise UserAlreadyInList
+            raise UserAlreadyInListError
         else:
             self.watch_list.append(user)
 

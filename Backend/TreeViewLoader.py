@@ -77,15 +77,37 @@ class TreeViewLoader:
             # Call the appropriate method based on the filter
             match filter:
                 case 0:
-                    cls.load_all_books(treeview)
+                    try:
+                        cls.load_all_books(treeview)
+                    except ValueError:
+                        tk.messagebox.showinfo(
+                            "Loaded All Books Fail",
+                            "No books available in the library. Please try again later."
+                        )
                 case 1:
-                    cls.load_available_books(treeview)
+                    try:
+                        cls.load_available_books(treeview)
+                    except ValueError:
+                        "Loading Available Books Fail"
+                        "No available books found in the library. Please try again later."
                 case 2:
-                    cls.load_borrowed_books(treeview)
+                    try:
+                        cls.load_borrowed_books(treeview)
+                    except ValueError:
+                        "Loading Borrowed Books Fail"
+                        "No borrowed books found in the library. Please try again later."
                 case 3:
-                    cls.load_books_by_category(treeview)
+                    try:
+                        cls.load_books_by_category(treeview)
+                    except ValueError:
+                        "Loading Books By Category Fail"
+                        "No books found in the library. Please try again later."
                 case 4:
-                    cls.load_popular_books(treeview)
+                    try:
+                        cls.load_popular_books(treeview)
+                    except ValueError:
+                        "Loading Popular Books Fail"
+                        "No available books found in the library. Please try again later."
                 case default:
                     messagebox.showwarning("Invalid Filter", "No valid filter selected.")
         except Exception as e:

@@ -342,12 +342,13 @@ class Menu:
     def return_book_widget(self):
         self.book_frame.destroy()
         self.book_frame = tk.Frame(self.menu_frame)
-        self.book_frame.grid(row=4, column=0, columnspan=3, pady=40)
+        self.book_frame.grid(row=4, column=0, columnspan=3, pady=20, padx=20)
         # Configure the grid for centering
         self.book_frame.grid_columnconfigure(0, weight=1)
         self.book_frame.grid_columnconfigure(1, weight=1)
         self.book_frame.grid_columnconfigure(2, weight=1)
         self.book_frame.grid_columnconfigure(3, weight=1)
+
 
         # Title for the section
         self.text_box = tk.Label(self.book_frame, text="Return of Books", font=('David', 28), pady=10)
@@ -387,10 +388,10 @@ class Menu:
         # Place Treeview
         self.treeview.grid(row=1, column=0, columnspan=4, pady=10, padx=10)
 
-        self.button_return_book = tk.Button(self.book_frame, text="Return Book", font=('Arial', 14), width=15,
+        self.button_return_book = tk.Button(self.book_frame, text="Return Book", font=('Arial', 16), width=10,
                                             command=lambda: ReturnBook.book_returner(self.selected_item,self.treeview))
         # Place filter buttons in a centered row
-        self.button_return_book.grid(row=2, column=0, pady=10, padx=5)
+        self.button_return_book.grid(row=2, column=1, columnspan=2, pady=10)
 
         # Bind selection event
         self.treeview.bind("<<TreeviewSelect>>",

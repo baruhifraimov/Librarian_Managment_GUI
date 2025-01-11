@@ -1,7 +1,7 @@
 import csv
 import os
 import tkinter as tk
-from Exceptions.ExceptionUserAlreadyInList import UserAlreadyInList
+from Exceptions.ExceptionUserAlreadyInList import UserAlreadyInListError
 from tkinter import messagebox
 
 
@@ -45,7 +45,7 @@ class WaitingListManager:
                     f"Added {user[0]} to the waiting list for the book: \n'{book.get_title()}'.")
                 self.update_waiting_list_csv(book, user)
                 popup.destroy()
-            except UserAlreadyInList:
+            except UserAlreadyInListError:
                 tk.messagebox.showinfo(
                     "USER IS ALREADY WATCHING",
                     f" {user[0]} Is already in the watching list for: \n'{book.get_title()}'.")

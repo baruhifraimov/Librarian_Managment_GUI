@@ -1,7 +1,7 @@
 title,author,is_loaned,copies,genre,year,available_copies
 The Catcher in the Rye,J.D. Salinger,Yes,3,Fiction,1951,0
-To Kill a Mockingbird,Harper Lee,Yes,2,Fiction,1960,0
-1984,George Orwell,No,5,Dystopian,1949,3
+To Kill a Mockingbird,Harper Lee,No,2,Fiction,1960,2
+1984,George Orwell,No,5,Dystopian,1949,1
 The Great Gatsby,F. Scott Fitzgerald,No,4,Classic,1925,1
 Moby Dick,Herman Melville,Yes,4,Adventure,1851,0
 Pride and Prejudice,Jane Austen,No,3,Romance,1813,3
@@ -23,12 +23,12 @@ Slaughterhouse-Five,Kurt Vonnegut,Yes,2,Science Fiction,1969,0
 Brave New World,Aldous Huxley,No,5,Dystopian,1932,5
 Heart of Darkness,Joseph Conrad,No,3,Adventure,1899,1
 The Grapes of Wrath,John Steinbeck,No,2,Fiction,1939,2
-Of Mice and Men,John Steinbeck,Yes,1,Tragedy,1937,0
+Of Mice and Men,John Steinbeck,No,1,Tragedy,1937,1
 The Old Man and the Sea,Ernest Hemingway,No,3,Fiction,1952,3
-The Hobbit,J.R.R. Tolkien,Yes,4,Fantasy,1937,0,4
+The Hobbit,J.R.R. Tolkien,No,4,Fantasy,1937,1,4
 The Lord of the Rings,J.R.R. Tolkien,Yes,3,Fantasy,1954,0
 A Game of Thrones,George R.R. Martin,No,5,Fantasy,1996,2
-The Name of the Wind,Patrick Rothfuss,No,2,Fantasy,2007,0
+The Name of the Wind,Patrick Rothfuss,No,2,Fantasy,2007,2
 Mistborn: The Final Empire,Brandon Sanderson,No,4,Fantasy,2006,2
 The Handmaid's Tale,Margaret Atwood,No,3,Dystopian,1985,3
 The Odyssey,Homer,No,2,Epic Poetry,-800,2

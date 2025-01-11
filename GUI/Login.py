@@ -4,6 +4,7 @@ from tkinter import messagebox
 import csv
 
 from Backend.Encryption import Encryption
+from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
 from Menu import Menu  # Import the Login class here
 from ConfigFiles.LogDecorator import log_activity
 
@@ -51,7 +52,6 @@ class Login:
                     return True
             return False
 
-    @log_activity("login")
     def login(self):
         """
         Handle user login with messagebox feedback and exception raising:
@@ -62,18 +62,23 @@ class Login:
         username = self.username_box.get().lower()
         username = ''.join(username.split())  # Remove white spaces
         password = self.password_box.get()
-
-        # Check if username or password is empty
-        if username == "" or password == "":
+        try:
+            self.login_verifier(username, password)
+        except BlankFieldsError:
             messagebox.showerror("Error", "Username or Password is empty.")
-            raise ValueError("Username or Password is empty.")
-
-        # Check if the users.csv file exists
-        if not os.path.exists("../ConfigFiles/users.csv"):
+        except ValueError as error:
             messagebox.showerror("Error", "User file does not exist.")
+        except FileNotFoundError as error:
+            messagebox.showerror("Error", "Login Failed! User does not exist.")
+
+    @log_activity("login")
+    def login_verifier(self, username, password):
+        if username == "" or password == "":
+            raise BlankFieldsError()
+
+        if not os.path.exists("../ConfigFiles/users.csv"):
             raise FileNotFoundError("User file does not exist.")
 
-        # Search for user in the CSV file
         if self.search_in_csv(username, password):
             # Login successful
             self.login_msg = tk.Label(self.frame, text="Login Successful!", font=("Arial", 16), fg="green")
@@ -81,9 +86,7 @@ class Login:
             self.frame.after(1000, self.remove_label_and_switch)  # Remove label after a delay
         else:
             # User not found
-            messagebox.showerror("Error", "Login Failed! User does not exist.")
             raise ValueError("Login Failed! User does not exist.")
-
 
     def remove_label_and_switch(self):
         # Destroy the label

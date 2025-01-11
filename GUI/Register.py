@@ -5,6 +5,9 @@ import csv
 
 from Backend.Encryption import Encryption
 from ConfigFiles.LogDecorator import log_activity
+from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
+from Exceptions.ExceptionUserAlreadyInList import UserAlreadyInListError
+
 
 class Register:
     def __init__(self, root):
@@ -43,7 +46,6 @@ class Register:
                 return False
         return False
 
-    @log_activity("register")
     def register_user(self):
         """
         Handle user registration with messagebox feedback and exception raising:
@@ -58,20 +60,29 @@ class Register:
         # Encrypt the password
         encrypted_password = Encryption.encrypt_password(password)
 
+        try:
+            self.register_verifier(username, password,encrypted_password)
+        except BlankFieldsError as error:
+            if str(error) == "Invalid Username: Username is blank.":
+                messagebox.showerror("Invalid Username", "Please enter your username again.")
+            else:
+                messagebox.showerror("Invalid Password", "Please enter your password again.")
+        except UserAlreadyInListError as error:
+            messagebox.showerror("Register Failed", "Username already exists!")
+
+    @log_activity("register")
+    def register_verifier(self,username,password,encrypted_password):
         # Check if username is blank
         if username == "":
-            messagebox.showerror("Invalid Username", "Please enter your username again.")
-            raise ValueError("Invalid Username: Username is blank.")
+            raise BlankFieldsError("Invalid Username: Username is blank.")
 
         # Check if password is blank
         if password == "":
-            messagebox.showerror("Invalid Password", "Please enter your password again.")
-            raise ValueError("Invalid Password: Password is blank.")
+            raise BlankFieldsError("Invalid Password: Password is blank.")
 
         # Check if the user already exists
         if self.search_user_in_csv(username, encrypted_password):
-            messagebox.showerror("Register Failed", "Username already exists!")
-            raise ValueError(f"Register Failed: Username '{username}' already exists.")
+            raise UserAlreadyInListError(f"Register Failed: Username '{username}' already exists.")
 
         # Save user info and show success message
         self.export_to_file(username, encrypted_password)
