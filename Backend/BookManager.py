@@ -1,6 +1,9 @@
 import csv
 import os
 from Backend.Book import Book
+from ConfigFiles.LogDecorator import log_activity
+from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
+from Exceptions.ExceptionBookNotFound404 import BookNotFound404
 from Exceptions.ExceptionWatchedBookRemovalError import WatchedBookRemovalError
 from Exceptions.RecordNotFoundError import RecordNotFoundError
 
@@ -10,6 +13,7 @@ class BookManager:
     books = []  # The list of books is now managed by the BookManager class
 
     @classmethod
+    @log_activity("book added")
     def add_book(self, title, author, genre, year, copies):
 
         # Check if copies is a valid number, if not set to 1
@@ -20,61 +24,94 @@ class BookManager:
 
         # if the book fields are blank
         if title == "" or author == "" or genre == "" or year == "":
-            return False
+            raise BlankFieldsError
 
         # Check if the book already exists in the list
-        existing_book = self.search_book(title, author, genre, year)
-        if existing_book:
+        try:
+            existing_book = self.extracting_book(title, author, genre, year)
             existing_book.update_copies(int(copies))
             self.update_in_csv(existing_book,0)
-            return True
-        else:
+        except BookNotFound404:
             book = Book(title, author, genre, year, copies)
             self.books.append(book)
             self.export_to_file(book)
-            return True
 
 
     @classmethod
+    @log_activity("book removed")
     def remove_book(self, title, author, genre, year):
-        book_to_remove = self.search_book(title, author, genre, year)
-        if book_to_remove:
+        try:
+            if title == "" or author == "" or genre == "" or year == "":
+                raise BlankFieldsError
+            book_to_remove = self.extracting_book(title, author, genre, year)
             # check if the book is still borrowed, raise exception
             if book_to_remove.get_watch_list_size() >0:
                 raise WatchedBookRemovalError
+
             else:
                 self.books.remove(book_to_remove)
                 self.remove_book_in_csv(book_to_remove)
                 return True
 
-        return False
-
+        except BookNotFound404:
+            return False
 
     @classmethod
-    def remove_book_in_csv(self, book):
-        with open('../ConfigFiles/books.csv', 'r') as file:
-            reader = csv.reader(file)
-            rows = list(reader)
-            for row in rows:
-                if row[0] == book.title and row[1] == book.author and row[4] == book.genre and row[5] == str(book.year):
-                    row_to_remove = row
-                    break
+    def remove_book_in_csv(cls, book):
+        try:
+            # Check if the file exists
+            if not os.path.exists('../ConfigFiles/books.csv'):
+                raise FileNotFoundError("The books.csv file does not exist.")
+
+            # Read the CSV file
+            with open('../ConfigFiles/books.csv', 'r') as file:
+                reader = csv.reader(file)
+                rows = list(reader)
+
+                # Check if the file is empty
+                if not rows:
+                    raise ValueError("The books.csv file is empty.")
+
+                # Search for the book to remove
+                row_to_remove = None
+                for row in rows:
+                    if row[0] == book.title and row[1] == book.author and row[4] == book.genre and row[5] == str(
+                            book.year):
+                        row_to_remove = row
+                        break
+
+                if row_to_remove is None:
+                    raise ValueError(f"The book '{book.title}' by {book.author} was not found in the CSV file.")
+
+            # Write back the updated rows
             with open('../ConfigFiles/books.csv', 'w', newline="") as file:
                 writer = csv.writer(file)
                 for row in rows:
                     if row != row_to_remove:
                         writer.writerow(row)
 
+        except FileNotFoundError as fnf_error:
+            print(f"Error: {fnf_error}")
+            raise  # Re-raise the exception for higher-level handling
+
+        except ValueError as val_error:
+            print(f"Error: {val_error}")
+            raise  # Re-raise the exception for higher-level handling
+
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
+            raise  # Re-raise the exception for debugging or logging
+
     @classmethod
-    def search_book(self, title, author, genre, year):
+    # @log_activity("Extracting Book")
+    def extracting_book(self, title, author, genre, year):
         for book in self.books:
             if book.title == title and book.author == author and book.genre == genre and book.year == year:
                 return book
-        return None # Return None if no book is found
+        raise BookNotFound404(title, author, genre, year) # Return None if no book is found
 
     @classmethod
     def update_in_csv(self, book,filter):
-        # book = self.search_book(title, author, genre, year)
         with open('../ConfigFiles/books.csv', 'r') as file:
             reader = csv.reader(file)
             rows = list(reader)
@@ -101,6 +138,10 @@ class BookManager:
 
     @classmethod
     def load_books(self):
+        """
+        Syncs the books.csv file with the program
+        :return: None
+        """
         with open('../ConfigFiles/books.csv', 'r') as file:
             reader = csv.reader(file)
             rows = list(reader)
@@ -111,17 +152,29 @@ class BookManager:
 
     @classmethod
     def load_watch_list(self):
+        """
+        Syncs watch list for each book according to waiting_list.csv
+        :return: None
+        """
         with open('../ConfigFiles/waiting_list.csv', 'r') as file:
             reader = csv.reader(file)
             rows = list(reader)
             for row in rows[1:]:
-                b=BookManager.search_book(row[3], row[4], row[5], row[6])
-                user = [row[0],row[1],row[2]]
-                b.get_watch_list().append(user)
+                try:
+                    b= BookManager.extracting_book(row[3], row[4], row[5], row[6])
+                    user = [row[0],row[1],row[2]]
+                    b.get_watch_list().append(user)
+                except BookNotFound404:
+                    pass
 
 
     @classmethod
     def export_to_file(self, book):
+        """
+        Appending/Rewrites new book information to the books.csv file
+        :param book: The book you want to export
+        :return: None
+        """
         if os.path.exists("../ConfigFiles/books.csv"):  # Check if the file exists
             with open("../ConfigFiles/books.csv", 'a+', newline="") as file:
                 writer = csv.writer(file)

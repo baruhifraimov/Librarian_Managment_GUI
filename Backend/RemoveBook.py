@@ -1,3 +1,4 @@
+from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
 from Exceptions.ExceptionWatchedBookRemovalError import WatchedBookRemovalError
 import tkinter as tk
 from tkinter import messagebox
@@ -19,6 +20,11 @@ class RemoveBook:
                                     fg="red")
                 rmv_fail.grid(row=10, column=1, columnspan=2, pady=10)
                 rmv_fail.after(2000, rmv_fail.destroy)
+        except BlankFieldsError:
+            tk.messagebox.showinfo(
+                "Fields Are Blank",
+                "At least one of the fields are blank!"
+            )
         except WatchedBookRemovalError:
             tk.messagebox.showinfo(
                 "Watched Book Removal Error",

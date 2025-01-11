@@ -1,3 +1,4 @@
+from Exceptions.ExceptionBookNotFound404 import BookNotFound404
 from Exceptions.ExceptionReturnLimitExceeded import ReturnLimitExceeded
 import tkinter as tk
 from tkinter import messagebox
@@ -15,9 +16,8 @@ class ReturnBook:
             selected_year = str(selected_values[2])
             selected_genre = str(selected_values[3])
             # selected_copies = int(selected_values[4])  # Convert copies to int if necessary
-
-            book = BookManager.search_book(selected_title, selected_author, selected_genre, selected_year)
-            if book:
+            try:
+                book = BookManager.extracting_book(selected_title, selected_author, selected_genre, selected_year)
                 try:
                     book.return_action()  # Return the book and sub -1 to book lent counter
                     BookManager.update_in_csv(book, 1)
@@ -31,7 +31,7 @@ class ReturnBook:
                         "Failed",
                         f"Selected book: '{selected_title}' cannot be returned!\n"
                     )
-            else:
+            except BookNotFound404:
                 tk.messagebox.showinfo(
                     "Failed",
                     f"Selected book: '{selected_title}'  not found in the book list!"

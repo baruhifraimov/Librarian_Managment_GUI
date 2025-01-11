@@ -17,10 +17,19 @@ class Book:
             self.copies = int(copies)
         else:
             self.copies=1
+
         # if available change to "No" else change to "Yes"
         self.is_lent = is_lent
+
         # number of borrowed book, lent_count <= copies
         self.lent_count = lent_count
+
+        #When syncing, make sure to fix kid mistakes
+        if int(self.lent_count) == int(self.copies):
+            self.is_lent = "Yes"
+        else:
+            self.is_lent = "No"
+
         self.watch_list = deque()
 
     def update_copies(self,num):
