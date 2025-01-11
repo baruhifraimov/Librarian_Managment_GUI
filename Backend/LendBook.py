@@ -20,7 +20,7 @@ class LendBook:
         :return: None
         """
 
-        if selected_item:
+        if selected_item is not None:
             selected_values = selected_item['values']
             selected_title = selected_values[0]
             selected_author = selected_values[1]

@@ -1,6 +1,95 @@
-[2025-01-11 14:49:55,012] ERROR: book removed failed (handled exception internally)
-[2025-01-11 14:50:26,200] ERROR: book removed failed with unhandled exception: Attempted to remove a book that is being actively watched. This operation is not permitted while the book is on the watched list.
-[2025-01-11 14:50:33,199] ERROR: book removed failed with unhandled exception: Attempted to remove a book that is being actively watched. This operation is not permitted while the book is on the watched list.
-[2025-01-11 14:51:27,561] ERROR: book removed failed with unhandled exception: The books.csv file does not exist.
-[2025-01-11 16:07:20,508] ERROR: book added failed (handled exception internally)
-[2025-01-11 16:12:26,293] ERROR: book added failed (handled exception internally)
+[2025-01-11 20:01:02,237] INFO: Displayed all books successfully
+[2025-01-11 20:06:17,811] INFO: Displayed all books successfully
+[2025-01-11 20:06:26,301] INFO: Displayed all books successfully
+[2025-01-11 20:06:26,301] INFO: book borrowed successfully
+[2025-01-11 20:06:38,143] INFO: Displayed all books successfully
+[2025-01-11 20:06:38,143] INFO: book borrowed successfully
+[2025-01-11 20:06:42,547] INFO: Adding to the waiting list successfully
+[2025-01-11 20:06:42,548] INFO: book borrowed successfully
+[2025-01-11 20:09:50,412] INFO: Displayed all books successfully
+[2025-01-11 20:10:01,027] INFO: Adding to the waiting list successfully
+[2025-01-11 20:10:12,785] ERROR: Lending a book fail
+[2025-01-11 20:14:31,913] INFO: Displayed all books successfully
+[2025-01-11 20:14:34,544] INFO: Adding to the waiting list successfully
+[2025-01-11 20:14:34,544] ERROR: Lending a book fail
+[2025-01-11 20:16:35,869] INFO: Displayed all books successfully
+[2025-01-11 20:16:37,380] INFO: Displayed all books successfully
+[2025-01-11 20:16:40,218] INFO: Adding to the waiting list successfully
+[2025-01-11 20:16:40,218] INFO: Lending a book successfully
+[2025-01-11 20:18:24,124] INFO: Displayed all books successfully
+[2025-01-11 20:18:26,294] INFO: Displayed all books successfully
+[2025-01-11 20:18:31,942] INFO: Book 'To Kill a Mockingbird' is unavailable. User redirected to the waiting list.
+[2025-01-11 20:18:31,951] ERROR: Lending a book fail
+[2025-01-11 20:19:27,021] INFO: Displayed all books successfully
+[2025-01-11 20:19:29,292] INFO: Displayed all books successfully
+[2025-01-11 20:19:32,137] INFO: Book 'To Kill a Mockingbird' is unavailable. User redirected to the waiting list.
+[2025-01-11 20:19:32,162] INFO: Lending a book successfully
+[2025-01-11 20:19:42,963] INFO: Adding a user to the waiting list successfully
+[2025-01-11 20:21:49,380] INFO: Displayed all books successfully
+[2025-01-11 20:21:50,830] INFO: Displayed all books successfully
+[2025-01-11 20:21:55,918] INFO: Book 'The Catcher in the Rye' is unavailable. User redirected to the waiting list.
+[2025-01-11 20:21:55,941] INFO: Lending a book successfully
+[2025-01-11 20:22:19,120] ERROR: Adding a user to the waiting list fail
+[2025-01-11 20:24:37,020] INFO: Displayed all books successfully
+[2025-01-11 20:24:43,232] INFO: Displayed all books successfully
+[2025-01-11 20:24:45,580] INFO: Adding to the waiting list successfully
+[2025-01-11 20:24:45,580] INFO: Lending a book successfully
+[2025-01-11 20:26:02,481] INFO: Displayed all books successfully
+[2025-01-11 20:26:05,716] INFO: Displayed all books successfully
+[2025-01-11 20:26:07,534] INFO: Lending a book successfully
+[2025-01-11 20:28:54,004] INFO: Displayed all books successfully
+[2025-01-11 20:28:56,259] INFO: Displayed all books successfully
+[2025-01-11 20:28:57,879] ERROR: Lending a book fail
+[2025-01-11 20:32:10,894] INFO: Displayed all books successfully
+[2025-01-11 20:32:13,924] INFO: Book 'To Kill a Mockingbird' is unavailable. User redirected to the waiting list.
+[2025-01-11 20:32:13,950] INFO: Lending a book successfully
+[2025-01-11 20:34:39,403] INFO: Displayed all books successfully
+[2025-01-11 20:34:42,469] INFO: Book 'The Catcher in the Rye' is unavailable. User redirected to the waiting list.
+[2025-01-11 20:34:42,485] INFO: Lending a book successfully
+[2025-01-11 20:36:44,128] INFO: Displayed all books successfully
+[2025-01-11 20:36:47,838] INFO: Book 'The Catcher in the Rye' is unavailable. Redirecting user to waiting list.
+[2025-01-11 20:36:47,862] ERROR: Lending a book fail
+[2025-01-11 20:39:06,726] INFO: Displayed borrowed books successfully
+[2025-01-11 20:39:06,728] INFO: Displayed borrowed books successfully
+[2025-01-11 20:39:07,691] INFO: Displayed all books successfully
+[2025-01-11 20:39:12,831] INFO: Displayed all books successfully
+[2025-01-11 20:39:16,792] INFO: Book 'The Catcher in the Rye' is unavailable. Redirecting user to waiting list.
+[2025-01-11 20:39:16,818] ERROR: Book 'The Catcher in the Rye' is unavailable. User redirected to the waiting list.
+[2025-01-11 20:39:16,818] INFO: Lending a book successfully
+[2025-01-11 20:53:59,567] INFO: Displayed borrowed books successfully
+[2025-01-11 20:53:59,571] INFO: Displayed borrowed books successfully
+[2025-01-11 20:54:03,223] INFO: book borrowed successfully
+[2025-01-11 20:54:08,991] INFO: Displayed borrowed books successfully
+[2025-01-11 20:54:16,552] INFO: book borrowed successfully
+[2025-01-11 20:54:18,049] INFO: Displayed borrowed books successfully
+[2025-01-11 20:55:21,825] INFO: Displayed borrowed books successfully
+[2025-01-11 20:55:21,828] INFO: Displayed borrowed books successfully
+[2025-01-11 20:55:24,129] INFO: book returned successfully
+[2025-01-11 20:55:25,392] INFO: Displayed borrowed books successfully
+[2025-01-11 20:55:48,508] INFO: book returned successfully
+[2025-01-11 20:55:49,474] INFO: Displayed borrowed books successfully
+[2025-01-11 20:58:22,948] INFO: Displayed all books successfully
+[2025-01-11 20:58:30,090] INFO: Book 'The Catcher in the Rye' is unavailable. Redirecting user to waiting list.
+[2025-01-11 20:58:30,121] ERROR: Book 'The Catcher in the Rye' is unavailable. User redirected to the waiting list.
+[2025-01-11 20:58:42,451] INFO: book borrowed successfully
+[2025-01-11 20:58:42,457] INFO: Displayed all books successfully
+[2025-01-11 21:04:08,393] INFO: Displayed all books successfully
+[2025-01-11 21:04:12,999] INFO: Displayed all books successfully
+[2025-01-11 21:04:20,486] INFO: book borrowed successfully
+[2025-01-11 21:04:22,112] INFO: Displayed all books successfully
+[2025-01-11 21:04:25,237] INFO: Displayed borrowed books successfully
+[2025-01-11 21:04:25,239] INFO: Displayed borrowed books successfully
+[2025-01-11 21:04:27,527] INFO: book returned successfully
+[2025-01-11 21:04:30,162] INFO: Displayed borrowed books successfully
+[2025-01-11 21:04:32,698] INFO: Displayed all books successfully
+[2025-01-11 21:04:36,671] INFO: book borrowed successfully
+[2025-01-11 21:04:37,722] INFO: Displayed all books successfully
+[2025-01-11 21:04:39,113] INFO: book borrowed successfully
+[2025-01-11 21:04:41,180] INFO: Displayed all books successfully
+[2025-01-11 21:23:40,809] INFO: login successfully
+[2025-01-11 21:23:46,937] INFO: login successfully
+[2025-01-11 21:26:31,299] INFO: login successfully
+[2025-01-11 21:26:42,612] INFO: login successfully
+[2025-01-11 21:26:53,831] INFO: login successfully
+[2025-01-11 21:35:54,169] INFO: login successfully
+[2025-01-11 21:36:00,375] INFO: login successfully

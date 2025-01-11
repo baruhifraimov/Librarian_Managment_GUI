@@ -5,6 +5,7 @@ import csv
 
 from Backend.Encryption import Encryption
 from Menu import Menu  # Import the Login class here
+from ConfigFiles.LogDecorator import log_activity
 
 
 class Login:
@@ -50,27 +51,42 @@ class Login:
                     return True
             return False
 
+    @log_activity("login")
     def login(self):
-        username = self.username_box.get().lower()
-        username = ''.join(username.split())  # no white spaces
-        password = self.password_box.get()
-        if username == "" or password == "":
-            messagebox.showerror("Error", "Username or Password is empty")
-            return
-        if os.path.exists("../ConfigFiles/users.csv"):  # check if the file exists
-            if self.search_in_csv(username, password):
-                self.login_msg = tk.Label(self.frame, text="Login Successful!", font=("Arial", 16), fg="green")
-                self.login_msg.grid(row=0, column=1, columnspan=2, pady=10)  # Positioned at row 5, under everything
-                self.frame.after(1000,
-                                 self.remove_label_and_switch)  # Use after() to remove the label after a delay (
-                # e.g., 1000 ms = 1 second)
+        try:
+            username = self.username_box.get().lower()
+            username = ''.join(username.split())  # Remove white spaces
+            password = self.password_box.get()
+
+            # Check if username or password is empty
+            if username == "" or password == "":
+                messagebox.showerror("Error", "Username or Password is empty")
+                return
+
+            # Check if the users.csv file exists
+            if os.path.exists("../ConfigFiles/users.csv"):
+                try:
+                    # Search for user in the CSV file
+                    if self.search_in_csv(username, password):
+                        self.login_msg = tk.Label(self.frame, text="Login Successful!", font=("Arial", 16), fg="green")
+                        self.login_msg.grid(row=0, column=1, columnspan=2,
+                                            pady=10)  # Positioned at row 5, under everything
+                        self.frame.after(1000, self.remove_label_and_switch)  # Remove label after a delay
+                    else:
+                        self.login_msg = tk.Label(self.frame, text="Login Failed! User does not exist.",
+                                                  font=("Arial", 16),
+                                                  fg="red")
+                        self.login_msg.grid(row=0, column=1, columnspan=2, pady=10)
+                        self.login_msg.after(2000, self.login_msg.destroy)
+                except Exception:
+                    messagebox.showerror("Error", "An unexpected error occurred while searching in the user file.")
             else:
-                self.login_msg = tk.Label(self.frame, text="Login Failed! User does not exists.", font=("Arial", 16),
-                                          fg="red")
-                self.login_msg.grid(row=0, column=1, columnspan=2, pady=10)
-                self.login_msg.after(2000, self.login_msg.destroy)
-        else:
-            messagebox.showinfo("ERROR", "USER FILE DOES NOT EXIST")
+                # Handle case where the users.csv file does not exist
+                messagebox.showinfo("Error", "User file does not exist.")
+        except Exception as e:
+            # Handle any other unexpected errors
+            messagebox.showerror("Error", f"An unexpected error occurred: {e}")
+
 
     def remove_label_and_switch(self):
         # Destroy the label

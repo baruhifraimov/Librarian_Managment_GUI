@@ -7,6 +7,8 @@ from Backend.SearchBook import SearchBook
 from Backend.BookManager import BookManager
 from Backend.TreeViewLoader import TreeViewLoader
 from Backend.ReturnBook import ReturnBook
+from tkinter import messagebox
+
 
 
 class Menu:
@@ -440,6 +442,22 @@ class Menu:
         self.treeview.grid(row=1, column=0, columnspan=4, pady=10, padx=10)
 
     def logout_button_func(self):
-        self.menu_frame.destroy()  # Destroy the current register frame
-        from Login import Login  # Import the Login class here
-        Login(self.root)  # Pass the root window to Login screen
+        try:
+            self.menu_frame.destroy()  # Destroy the current menu frame
+            from Login import Login  # Import the Login class
+            Login(self.root)  # Pass the root window to the Login screen
+        except ImportError:
+            tk.messagebox.showerror(
+                "Logout Failed",
+                "There was an error loading the Login module. Please try again."
+            )
+        except AttributeError:
+            tk.messagebox.showerror(
+                "Logout Failed",
+                "There was an error accessing the menu frame. Please try again."
+            )
+        except Exception:
+            tk.messagebox.showerror(
+                "Logout Failed",
+                "An unexpected error occurred while logging out. Please try again."
+            )

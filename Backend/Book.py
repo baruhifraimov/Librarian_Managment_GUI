@@ -6,6 +6,7 @@ from Exceptions.ExceptionBelowZeroExceeded import ExceptionBelowZero
 from Exceptions.ExceptionBorrowingLimitExceeded import BorrowingLimitExceeded
 from Exceptions.ExceptionReturnLimitExceeded import ReturnLimitExceeded
 from Exceptions.ExceptionUserAlreadyInList import UserAlreadyInList
+from ConfigFiles.LogDecorator import log_activity
 
 
 class Book:
@@ -67,7 +68,7 @@ class Book:
             self.borrow_action()
         else:
             raise ExceptionBelowZero(self.get_watch_list_size())
-
+    @log_activity("book returned")
     def return_action(self):
         if self.lent_count > 0:
             self.lent_count -=1
@@ -79,7 +80,7 @@ class Book:
                 self.decrease_watch_list()
         else:
             raise ReturnLimitExceeded()
-
+    @log_activity("book borrowed")
     def borrow_action(self):
         if self.copies > self.lent_count:
             self.lent_count += 1
