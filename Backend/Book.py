@@ -1,5 +1,7 @@
 from collections import deque
 
+from Backend.Notifier import Notifier
+from Backend.WaitingListManager import WaitingListManager
 from Exceptions.ExceptionBelowZeroExceeded import ExceptionBelowZero
 from Exceptions.ExceptionBorrowingLimitExceeded import BorrowingLimitExceeded
 from Exceptions.ExceptionReturnLimitExceeded import ReturnLimitExceeded
@@ -37,6 +39,7 @@ class Book:
         self.is_lent = "No"
 
         # TODO need to notify that the book available
+        # Clear watchlist with the size of copies (num)
         while self.get_watch_list_size()>0 and num>0:
             self.decrease_watch_list()
             num -= 1
@@ -58,9 +61,12 @@ class Book:
 
     def decrease_watch_list(self):
         if len(self.watch_list) > 0:
-            self.watch_list.pop()
+            user = self.watch_list.pop()
+            WaitingListManager.remove_watchlist_csv(user,self)
+            Notifier.notify(user)
+            self.borrow_action()
         else:
-            raise ExceptionBelowZero
+            raise ExceptionBelowZero(self.get_watch_list_size())
 
     def return_action(self):
         if self.lent_count > 0:
@@ -69,7 +75,7 @@ class Book:
             # if someone returned the book
             # the first guy in the queue gets the book
             # TODO need to notify that the book available
-            if self.get_watch_list_size() > 0 :
+            if self.get_watch_list_size()>0:
                 self.decrease_watch_list()
         else:
             raise ReturnLimitExceeded()

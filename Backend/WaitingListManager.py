@@ -52,3 +52,38 @@ class WaitingListManager:
 
         else:
             tk.messagebox.showerror("Error", "Please fill in all fields.")
+
+    @classmethod
+    def remove_watchlist_csv(cls,user,book):
+        try:
+            # Read the CSV file
+            with open('../ConfigFiles/waiting_list.csv', 'r') as file:
+                reader = csv.reader(file)
+                rows = list(reader)
+
+                # Search for the book to remove
+                row_to_remove = None
+                for row in rows:
+                    #Full Name,Email,Phone No.,Book Title,Book Author,Book Genre,Book Year,Queue No.
+                    if row[0] == user[0] and row[1] == user[1] and row[2] == user[2] and row[3] == book.title and row[4] == book.author and row[5] == book.genre and str(row[6]) == str(book.year):
+                        row_to_remove = row
+                        break
+
+                if row_to_remove is None:
+                    tk.messagebox.showinfo(
+                        title="404",
+                        message=f"The Waiting list Request by {user[0]} for book {book.title} was not found"
+                    )
+
+            # Write the updated rows except the deleted row
+            with open('../ConfigFiles/waiting_list.csv', 'w', newline="") as file:
+                writer = csv.writer(file)
+                for row in rows:
+                    if row != row_to_remove:
+                        writer.writerow(row)
+
+        except FileNotFoundError as fnf_error:
+            tk.messagebox.showinfo(
+                title="404",
+                message="FILE NOT FOUND"
+            )

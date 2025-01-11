@@ -1,5 +1,7 @@
 import csv
 import os
+import tkinter as tk
+from tkinter import messagebox
 from Backend.Book import Book
 from ConfigFiles.LogDecorator import log_activity
 from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
@@ -54,23 +56,15 @@ class BookManager:
                 return True
 
         except BookNotFound404:
-            return False
+            return False  # Indicate exception was handled
 
     @classmethod
     def remove_book_in_csv(cls, book):
         try:
-            # Check if the file exists
-            if not os.path.exists('../ConfigFiles/books.csv'):
-                raise FileNotFoundError("The books.csv file does not exist.")
-
             # Read the CSV file
             with open('../ConfigFiles/books.csv', 'r') as file:
                 reader = csv.reader(file)
                 rows = list(reader)
-
-                # Check if the file is empty
-                if not rows:
-                    raise ValueError("The books.csv file is empty.")
 
                 # Search for the book to remove
                 row_to_remove = None
@@ -81,7 +75,10 @@ class BookManager:
                         break
 
                 if row_to_remove is None:
-                    raise ValueError(f"The book '{book.title}' by {book.author} was not found in the CSV file.")
+                    tk.messagebox.showinfo(
+                        title="404",
+                        message=f"The book '{book.title}' by {book.author} was not found"
+                    )
 
             # Write back the updated rows
             with open('../ConfigFiles/books.csv', 'w', newline="") as file:
@@ -91,22 +88,16 @@ class BookManager:
                         writer.writerow(row)
 
         except FileNotFoundError as fnf_error:
-            print(f"Error: {fnf_error}")
-            raise  # Re-raise the exception for higher-level handling
-
-        except ValueError as val_error:
-            print(f"Error: {val_error}")
-            raise  # Re-raise the exception for higher-level handling
-
-        except Exception as e:
-            print(f"An unexpected error occurred: {e}")
-            raise  # Re-raise the exception for debugging or logging
+            tk.messagebox.showinfo(
+                title="404",
+                message="FILE NOT FOUND"
+            )
 
     @classmethod
     # @log_activity("Extracting Book")
     def extracting_book(self, title, author, genre, year):
         for book in self.books:
-            if book.title == title and book.author == author and book.genre == genre and book.year == year:
+            if book.get_title() == title and book.get_author() == author and book.get_genre() == genre and str(book.get_year()) == str(year):
                 return book
         raise BookNotFound404(title, author, genre, year) # Return None if no book is found
 
@@ -116,7 +107,7 @@ class BookManager:
             reader = csv.reader(file)
             rows = list(reader)
             for row in rows:
-                if row[0] == book.get_title() and row[1] == book.get_author() and row[4] == book.get_genre() and row[5] == book.get_year():
+                if row[0] == book.get_title() and row[1] == book.get_author() and row[4] == book.get_genre() and str(row[5]) == str(book.get_year()):
                     match(filter):
                         case 0:
                             row[3] = book.get_copies()
@@ -151,21 +142,43 @@ class BookManager:
                 BookManager.books.append(b)
 
     @classmethod
-    def load_watch_list(self):
+    def load_watch_list(cls):
         """
         Syncs watch list for each book according to waiting_list.csv
         :return: None
         """
-        with open('../ConfigFiles/waiting_list.csv', 'r') as file:
-            reader = csv.reader(file)
-            rows = list(reader)
-            for row in rows[1:]:
-                try:
-                    b= BookManager.extracting_book(row[3], row[4], row[5], row[6])
-                    user = [row[0],row[1],row[2]]
-                    b.get_watch_list().append(user)
-                except BookNotFound404:
-                    pass
+        try:
+            # בדיקה אם הקובץ קיים
+            with open('../ConfigFiles/waiting_list.csv', 'r') as file:
+                reader = csv.reader(file)
+                rows = list(reader)
+
+                # אם הקובץ ריק או מכיל רק כותרת
+                if len(rows) <= 1:
+                    print("The waiting_list.csv file is empty or contains no entries.")
+                    return
+
+                # לולאה על השורות (למעט השורה הראשונה - כותרת)
+                for row in rows[1:]:
+                    try:
+                        # בדוק אם השורה מכילה את כל העמודות הצפויות
+                        if len(row) < 7:
+                            print(f"Skipping incomplete row: {row}")
+                            continue
+
+                        b = BookManager.extracting_book(row[3], row[4], row[5], row[6])
+                        user = [row[0], row[1], row[2]]
+                        b.get_watch_list().append(user)
+
+                    except BookNotFound404:
+                        # אם הספר לא נמצא, פשוט דלג לשורה הבאה
+                        print(f"Book not found for row: {row}")
+                        continue
+
+        except FileNotFoundError:
+            print("Error: The waiting_list.csv file does not exist.")
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
 
 
     @classmethod

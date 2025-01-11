@@ -1,9 +1,9 @@
 title,author,is_loaned,copies,genre,year,available_copies
-The Catcher in the Rye,J.D. Salinger,No,3,Fiction,1951,1
+The Catcher in the Rye,J.D. Salinger,No,3,Fiction,1951,2
 To Kill a Mockingbird,Harper Lee,No,2,Fiction,1960,1
 1984,George Orwell,No,5,Dystopian,1949,2
 The Great Gatsby,F. Scott Fitzgerald,No,4,Classic,1925,2
-Moby Dick,Herman Melville,Yes,1,Adventure,1851,0
+Moby Dick,Herman Melville,No,4,Adventure,1851,1
 Pride and Prejudice,Jane Austen,No,3,Romance,1813,3
 War and Peace,Leo Tolstoy,No,2,Historical Fiction,1869,2
 Great Expectations,Charles Dickens,No,3,Classic,1861,3
@@ -37,3 +37,4 @@ as,sad,No,13,asd,asd,11
 Coming off the train,Itay Cohen,No,13,Horror,2025,4
 b,b,Yes,4,b,1111,0
 The Nacion Of Kavkaz,Baruh Ifraimov,No,5,Horror,1998,5
+Moby DIck,Herman Melville,No,3,Adventure,1851,3

@@ -1,3 +1,4 @@
+from Backend.Notifier import Notifier
 from Exceptions.ExceptionBookNotFound404 import BookNotFound404
 from Exceptions.ExceptionReturnLimitExceeded import ReturnLimitExceeded
 import tkinter as tk
@@ -20,12 +21,16 @@ class ReturnBook:
                 book = BookManager.extracting_book(selected_title, selected_author, selected_genre, selected_year)
                 try:
                     book.return_action()  # Return the book and sub -1 to book lent counter
+                    # now , when someone returns a book , i would like to check if the book has a waiting list so:
                     BookManager.update_in_csv(book, 1)
                     tk.messagebox.showinfo(
                         "Success",
                         f"Book '{selected_title}' has been returned!"
                     )
                     TreeViewLoader.refresh_treeview(treeview,2)
+
+
+
                 except ReturnLimitExceeded:
                     tk.messagebox.showinfo(
                         "Failed",

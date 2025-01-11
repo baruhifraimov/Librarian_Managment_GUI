@@ -1,57 +1,6 @@
-[2025-01-11 12:43:29,385] INFO: Add Book succeeded.
-[2025-01-11 12:43:35,812] INFO: Add Book succeeded.
-[2025-01-11 12:46:35,053] INFO: Add Book succeeded.
-[2025-01-11 12:51:33,318] ERROR: Add Book failed with error: BlankFieldsError.__init__() missing 1 required positional argument: 'max_limit'
-[2025-01-11 12:53:27,674] INFO: Add Book succeeded.
-[2025-01-11 12:57:48,628] ERROR: Add Book failed with error: 'classmethod' object is not callable
-[2025-01-11 13:00:51,723] ERROR: Add Book failed with error: The fields you are trying to submit are blank!
-[2025-01-11 13:04:55,145] ERROR: book added fail
-[2025-01-11 13:05:14,938] INFO: book removed successfully
-[2025-01-11 13:05:19,390] INFO: book removed successfully
-[2025-01-11 13:05:20,053] INFO: book removed successfully
-[2025-01-11 13:05:20,500] INFO: book removed successfully
-[2025-01-11 13:05:20,789] INFO: book removed successfully
-[2025-01-11 13:05:21,069] INFO: book removed successfully
-[2025-01-11 13:06:00,131] INFO: book added successfully
-[2025-01-11 13:06:32,988] INFO: book removed successfully
-[2025-01-11 13:08:53,160] INFO: book removed successfully
-[2025-01-11 13:21:06,499] INFO: book removed successfully
-[2025-01-11 13:54:18,753] INFO: book removed successfully
-[2025-01-11 13:58:40,416] INFO: book removed successfully
-[2025-01-11 14:10:15,923] INFO: Extracting Book successfully
-[2025-01-11 14:10:15,930] INFO: Extracting Book successfully
-[2025-01-11 14:10:15,930] INFO: Extracting Book successfully
-[2025-01-11 14:10:15,930] INFO: Extracting Book successfully
-[2025-01-11 14:10:15,931] INFO: Extracting Book successfully
-[2025-01-11 14:10:15,931] INFO: Extracting Book successfully
-[2025-01-11 14:10:15,931] INFO: Extracting Book successfully
-[2025-01-11 14:10:15,932] INFO: Extracting Book successfully
-[2025-01-11 14:10:15,932] INFO: Extracting Book successfully
-[2025-01-11 14:10:15,932] INFO: Extracting Book successfully
-[2025-01-11 14:10:15,932] INFO: Extracting Book successfully
-[2025-01-11 14:10:15,932] INFO: Extracting Book successfully
-[2025-01-11 14:10:15,933] INFO: Extracting Book successfully
-[2025-01-11 14:10:15,933] INFO: Extracting Book successfully
-[2025-01-11 14:10:15,933] INFO: Extracting Book successfully
-[2025-01-11 14:10:15,933] INFO: Extracting Book successfully
-[2025-01-11 14:10:15,934] INFO: Extracting Book successfully
-[2025-01-11 14:10:15,934] INFO: Extracting Book successfully
-[2025-01-11 14:12:23,428] INFO: Extracting Book successfully
-[2025-01-11 14:12:23,429] INFO: Extracting Book successfully
-[2025-01-11 14:12:23,429] INFO: Extracting Book successfully
-[2025-01-11 14:12:23,429] INFO: Extracting Book successfully
-[2025-01-11 14:12:23,429] INFO: Extracting Book successfully
-[2025-01-11 14:12:23,430] INFO: Extracting Book successfully
-[2025-01-11 14:12:23,430] INFO: Extracting Book successfully
-[2025-01-11 14:12:23,430] INFO: Extracting Book successfully
-[2025-01-11 14:12:23,431] INFO: Extracting Book successfully
-[2025-01-11 14:12:23,431] INFO: Extracting Book successfully
-[2025-01-11 14:12:23,431] INFO: Extracting Book successfully
-[2025-01-11 14:12:23,431] INFO: Extracting Book successfully
-[2025-01-11 14:12:23,431] INFO: Extracting Book successfully
-[2025-01-11 14:12:23,431] INFO: Extracting Book successfully
-[2025-01-11 14:12:23,431] INFO: Extracting Book successfully
-[2025-01-11 14:12:23,432] INFO: Extracting Book successfully
-[2025-01-11 14:12:23,432] INFO: Extracting Book successfully
-[2025-01-11 14:12:23,432] INFO: Extracting Book successfully
-[2025-01-11 14:12:28,174] ERROR: book removed fail
+[2025-01-11 14:49:55,012] ERROR: book removed failed (handled exception internally)
+[2025-01-11 14:50:26,200] ERROR: book removed failed with unhandled exception: Attempted to remove a book that is being actively watched. This operation is not permitted while the book is on the watched list.
+[2025-01-11 14:50:33,199] ERROR: book removed failed with unhandled exception: Attempted to remove a book that is being actively watched. This operation is not permitted while the book is on the watched list.
+[2025-01-11 14:51:27,561] ERROR: book removed failed with unhandled exception: The books.csv file does not exist.
+[2025-01-11 16:07:20,508] ERROR: book added failed (handled exception internally)
+[2025-01-11 16:12:26,293] ERROR: book added failed (handled exception internally)
