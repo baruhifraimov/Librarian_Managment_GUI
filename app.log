@@ -499,3 +499,60 @@
 [2025-01-12 11:39:41,456] INFO: login successfully
 [2025-01-12 11:39:44,848] INFO: logout successfully
 [2025-01-12 11:43:26,588] INFO: login successfully
+[2025-01-12 13:05:22,979] INFO: login successfully
+[2025-01-12 13:05:31,553] INFO: Displayed all books successfully
+[2025-01-12 13:06:06,269] INFO: Displayed borrowed books successfully
+[2025-01-12 13:06:06,270] INFO: Displayed borrowed books successfully
+[2025-01-12 13:06:09,096] INFO: book borrowed successfully
+[2025-01-12 13:06:09,096] INFO: book returned successfully
+[2025-01-12 13:06:10,164] INFO: Displayed borrowed books successfully
+[2025-01-12 13:06:20,308] INFO: book borrowed successfully
+[2025-01-12 13:06:20,308] INFO: book returned successfully
+[2025-01-12 13:06:21,123] INFO: Displayed borrowed books successfully
+[2025-01-12 13:06:35,187] INFO: book returned successfully
+[2025-01-12 13:06:36,044] INFO: Displayed borrowed books successfully
+[2025-01-12 13:06:37,820] INFO: book returned successfully
+[2025-01-12 13:06:38,569] INFO: Displayed borrowed books successfully
+[2025-01-12 13:06:40,529] INFO: book returned successfully
+[2025-01-12 13:06:41,219] INFO: Displayed borrowed books successfully
+[2025-01-12 13:16:16,045] INFO: login successfully
+[2025-01-12 13:16:25,108] INFO: Displayed all books successfully
+[2025-01-12 13:20:35,802] ERROR: login failed with exception: Login Failed! User does not exist.
+[2025-01-12 13:20:42,620] INFO: login successfully
+[2025-01-12 13:20:49,165] INFO: Displayed borrowed books successfully
+[2025-01-12 13:20:49,165] INFO: Displayed borrowed books successfully
+[2025-01-12 13:20:58,963] INFO: book borrowed successfully
+[2025-01-12 13:20:58,963] INFO: book returned successfully
+[2025-01-12 13:21:00,463] INFO: Displayed borrowed books successfully
+[2025-01-12 13:21:30,570] INFO: book borrowed successfully
+[2025-01-12 13:21:30,571] INFO: book returned successfully
+[2025-01-12 13:21:31,649] INFO: Displayed borrowed books successfully
+[2025-01-12 13:21:38,205] INFO: Displayed all books successfully
+[2025-01-12 13:22:19,396] INFO: Displayed borrowed books successfully
+[2025-01-12 13:22:19,396] INFO: Displayed borrowed books successfully
+[2025-01-12 13:22:25,495] INFO: book borrowed successfully
+[2025-01-12 13:22:25,495] INFO: book returned successfully
+[2025-01-12 13:22:26,858] INFO: Displayed borrowed books successfully
+[2025-01-12 13:22:51,924] INFO: book borrowed successfully
+[2025-01-12 13:22:51,924] INFO: book returned successfully
+[2025-01-12 13:22:53,062] INFO: Displayed borrowed books successfully
+[2025-01-12 13:23:15,754] INFO: Displayed all books successfully
+[2025-01-12 13:23:50,713] INFO: Displayed borrowed books successfully
+[2025-01-12 13:23:50,714] INFO: Displayed borrowed books successfully
+[2025-01-12 13:23:57,967] INFO: Displayed popular books successfully
+[2025-01-12 13:24:09,067] INFO: Displayed borrowed books successfully
+[2025-01-12 13:24:09,067] INFO: Displayed borrowed books successfully
+[2025-01-12 13:24:36,062] INFO: book borrowed successfully
+[2025-01-12 13:24:36,063] INFO: book borrowed successfully
+[2025-01-12 13:24:36,064] INFO: book added successfully
+[2025-01-12 13:25:13,046] INFO: Displayed all books successfully
+[2025-01-12 13:25:42,592] INFO: book borrowed successfully
+[2025-01-12 13:25:42,592] INFO: book added successfully
+[2025-01-12 13:25:55,477] INFO: Displayed popular books successfully
+[2025-01-12 13:25:57,418] INFO: Displayed all books successfully
+[2025-01-12 13:26:12,006] INFO: Displayed all books successfully
+[2025-01-12 13:26:15,802] INFO: Displayed all books successfully
+[2025-01-12 13:26:17,275] INFO: Displayed books by category successfully
+[2025-01-12 13:26:17,871] INFO: Displayed borrowed books successfully
+[2025-01-12 13:26:18,778] INFO: Displayed all books successfully
+[2025-01-12 13:26:19,916] INFO: Displayed available books successfully

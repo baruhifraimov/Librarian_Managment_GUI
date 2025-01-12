@@ -67,13 +67,23 @@ class WaitingListManager:
                     #Full Name,Email,Phone No.,Book Title,Book Author,Book Genre,Book Year,Queue No.
                     if row[0] == user[0] and row[1] == user[1] and row[2] == user[2] and row[3] == book.title and row[4] == book.author and row[5] == book.genre and str(row[6]) == str(book.year):
                         row_to_remove = row
-                        break
+
+
+
 
                 if row_to_remove is None:
                     tk.messagebox.showinfo(
                         title="404",
                         message=f"The Waiting list Request by {user[0]} for book {book.title} was not found"
                     )
+                else:
+                    # update all the elements queue that point to the same book (decrease by one)
+                    for row in rows:
+                        # Book Title,Book Author,Book Genre,Book Year,Queue No.
+                        if row[3] == book.title and row[4] == book.author and row[5] == book.genre and str(
+                                row[6]) == str(book.year):
+                            row[7] = int(row[7]) - 1
+                            # row_to_update = row
 
             # Write the updated rows except the deleted row
             with open('../ConfigFiles/waiting_list.csv', 'w', newline="") as file:

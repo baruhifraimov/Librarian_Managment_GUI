@@ -62,12 +62,14 @@ class Book:
 
     def decrease_watch_list(self):
         if len(self.watch_list) > 0:
-            user = self.watch_list.pop()
+            user = self.watch_list.popleft()
             WaitingListManager.remove_watchlist_csv(user,self)
             Notifier.notify(user)
             self.borrow_action()
         else:
             raise ExceptionBelowZero(self.get_watch_list_size())
+
+
     @log_activity("book returned")
     def return_action(self):
         if self.lent_count > 0:
