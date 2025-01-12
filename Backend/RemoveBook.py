@@ -1,4 +1,5 @@
 from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
+from Exceptions.ExceptionBookNotFound404 import BookNotFound404
 from Exceptions.ExceptionWatchedBookRemovalError import WatchedBookRemovalError
 import tkinter as tk
 from tkinter import messagebox
@@ -29,4 +30,9 @@ class RemoveBook:
             tk.messagebox.showinfo(
                 "Watched Book Removal Error",
                 "The selected book is currently being watched and cannot be removed."
+            )
+        except BookNotFound404:
+            tk.messagebox.showinfo(
+                "Book Not Found",
+                "The book that You are trying to remove cannot be found."
             )

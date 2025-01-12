@@ -464,3 +464,38 @@
 [2025-01-11 23:59:21,598] INFO: login successfully
 [2025-01-12 00:01:37,009] INFO: login successfully
 [2025-01-12 00:01:37,373] INFO: exit successfully
+[2025-01-12 11:03:38,841] INFO: login successfully
+[2025-01-12 11:03:45,836] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-12 11:03:55,735] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-12 11:03:57,924] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-12 11:04:01,290] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-12 11:04:06,213] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-12 11:04:16,002] ERROR: book removed failed with exception: The fields you are trying to submit are blank!
+[2025-01-12 11:04:25,270] ERROR: book removed failed with exception: No Book with the details: (Title:asdaAuthor:asdaGenre:adsasYear:1234)Exists
+[2025-01-12 11:09:48,489] INFO: login successfully
+[2025-01-12 11:09:59,844] ERROR: book removed failed with exception: local variable 'book_to_remove' referenced before assignment
+[2025-01-12 11:13:07,867] INFO: login successfully
+[2025-01-12 11:13:18,445] INFO: book removed successfully
+[2025-01-12 11:15:17,180] INFO: login successfully
+[2025-01-12 11:15:28,745] INFO: book removed successfully
+[2025-01-12 11:22:16,923] INFO: login successfully
+[2025-01-12 11:22:21,078] ERROR: book removed failed with exception: The fields you are trying to submit are blank!
+[2025-01-12 11:22:30,330] ERROR: book removed failed with exception: No Book with the details: (Title:baruhAuthor:likeGenre:dicksYear:1234)Exists
+[2025-01-12 11:28:51,069] INFO: login successfully
+[2025-01-12 11:28:53,365] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-12 11:29:26,160] INFO: login successfully
+[2025-01-12 11:29:43,989] INFO: Displayed all books successfully
+[2025-01-12 11:29:47,270] INFO: Displayed available books successfully
+[2025-01-12 11:29:49,201] INFO: Displayed all books successfully
+[2025-01-12 11:29:50,163] INFO: Displayed borrowed books successfully
+[2025-01-12 11:29:51,131] INFO: Displayed books by category successfully
+[2025-01-12 11:29:54,618] INFO: Displayed all books successfully
+[2025-01-12 11:32:04,516] INFO: Displayed all books successfully
+[2025-01-12 11:33:25,067] INFO: Displayed borrowed books successfully
+[2025-01-12 11:33:25,070] INFO: Displayed borrowed books successfully
+[2025-01-12 11:33:29,030] INFO: book borrowed successfully
+[2025-01-12 11:33:29,030] INFO: book returned successfully
+[2025-01-12 11:33:30,786] INFO: Displayed borrowed books successfully
+[2025-01-12 11:39:41,456] INFO: login successfully
+[2025-01-12 11:39:44,848] INFO: logout successfully
+[2025-01-12 11:43:26,588] INFO: login successfully
