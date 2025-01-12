@@ -65,11 +65,11 @@ class Login:
         try:
             self.login_verifier(username, password)
         except BlankFieldsError:
-            messagebox.showerror("Error", "Username or Password is empty.")
+            messagebox.showwarning("Input Error", "Please fill out all fields!")
         except ValueError as error:
-            messagebox.showerror("Error", "User file does not exist.")
+            messagebox.showerror("User Error", "Login Failed!\nUser does not exist.")
         except FileNotFoundError as error:
-            messagebox.showerror("Error", "Login Failed! User does not exist.")
+            messagebox.showerror("File Error", "user.csv file does not exist.")
 
     @log_activity("login")
     def login_verifier(self, username, password):
@@ -81,19 +81,11 @@ class Login:
 
         if self.search_in_csv(username, password):
             # Login successful
-            self.login_msg = tk.Label(self.frame, text="Login Successful!", font=("Arial", 16), fg="green")
-            self.login_msg.grid(row=0, column=1, columnspan=2, pady=10)
-            self.frame.after(1000, self.remove_label_and_switch)  # Remove label after a delay
+            messagebox.showinfo("Login Successful", f"Welcome back, {username}!")
+            self.frame.after(333, self.switch_to_menu)  # Switch to the next screen
         else:
             # User not found
             raise ValueError("Login Failed! User does not exist.")
-
-    def remove_label_and_switch(self):
-        # Destroy the label
-        self.login_msg.destroy()
-
-        # Call switch_to_menu function
-        self.switch_to_menu()
 
     def switch_to_register(self):
         self.frame.destroy()  # Destroy the current login frame

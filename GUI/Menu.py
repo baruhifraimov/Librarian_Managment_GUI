@@ -8,7 +8,8 @@ from Backend.BookManager import BookManager
 from Backend.TreeViewLoader import TreeViewLoader
 from Backend.ReturnBook import ReturnBook
 from tkinter import messagebox
-
+from ConfigFiles.Logger_config import logger
+from ConfigFiles.LogDecorator import log_activity
 
 
 class Menu:
@@ -58,7 +59,7 @@ class Menu:
         self.lgout_button = tk.Button(self.menu_frame, text="Logout", font=('Arial', 16), width=8,
                                       command=self.logout_button_func)
         self.exit_button = tk.Button(self.menu_frame, text="Exit", font=('Arial', 16), width=8,
-                                     command=self.root.destroy)
+                                     command=self.root.quit)
 
         # Arrange buttons in a visually appealing grid
         self.add_book_button.grid(row=1, column=0, pady=2, padx=2)
@@ -442,6 +443,8 @@ class Menu:
         # Place Treeview
         self.treeview.grid(row=1, column=0, columnspan=4, pady=10, padx=10)
 
+
+    @log_activity("logout")
     def logout_button_func(self):
         try:
             self.menu_frame.destroy()  # Destroy the current menu frame

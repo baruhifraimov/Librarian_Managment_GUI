@@ -10,8 +10,11 @@ def show_register_screen(root):
 def show_login_screen(root):
     Login(root)  # Pass the root window to Login screen
 
-if __name__ == "__main__":
+def main():
     root = tk.Tk()  # Create the Tkinter root window
     root.geometry("500x400")
     show_login_screen(root)  # Initially show the Login screen
     root.mainloop()  # Start the Tkinter main loop
+
+if __name__ == "__main__":
+    main()

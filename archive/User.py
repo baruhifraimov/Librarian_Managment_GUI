@@ -174,4 +174,63 @@
 #     root.mainloop()
 
 
-queue = []
+import tkinter as tk
+from tkinter import messagebox
+
+
+class LoginApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Login Screen")
+        self.root.geometry("800x400")
+        self.root.resizable(True, False)
+
+        # Left Frame
+        self.left_frame = tk.Frame(root, bg="#f0f0f0", width=250, height=400)
+        self.left_frame.pack(side="left", fill="y")
+        tk.Label(self.left_frame, text="Welcome", bg="#f0f0f0", font=("Arial", 20, "bold")).pack(pady=20)
+        tk.Label(self.left_frame, text="This is a demo login system.\nPlease login or register to continue.",
+                 bg="#f0f0f0", font=("Arial", 12), justify="center").pack(pady=10)
+
+        # Right Frame
+        self.right_frame = tk.Frame(root, bg="#ffffff", width=550, height=400)
+        self.right_frame.pack(side="right", fill="both", expand=True)
+
+        # Form elements
+        tk.Label(self.right_frame, text="Login", bg="#ffffff", font=("Arial", 24, "bold")).pack(pady=30)
+
+        tk.Label(self.right_frame, text="Username:", bg="#ffffff", font=("Arial", 14)).pack(pady=5)
+        self.username_entry = tk.Entry(self.right_frame, font=("Arial", 14), width=30)
+        self.username_entry.pack(pady=5)
+
+        tk.Label(self.right_frame, text="Password:", bg="#ffffff", font=("Arial", 14)).pack(pady=5)
+        self.password_entry = tk.Entry(self.right_frame, font=("Arial", 14), show="*", width=30)
+        self.password_entry.pack(pady=5)
+
+        # Buttons
+        self.login_button = tk.Button(self.right_frame, text="Login", font=("Arial", 14), command=self.login)
+        self.login_button.pack(pady=10)
+
+        self.register_button = tk.Button(self.right_frame, text="Register", font=("Arial", 14), bg="#FF3399",
+                                         command=self.switch_to_register)
+        self.register_button.pack(pady=10)
+
+        self.exit_button = tk.Button(self.right_frame, text="Exit", font=("Arial", 14), command=self.root.quit)
+        self.exit_button.pack(pady=10)
+
+    def login(self):
+        username = self.username_entry.get()
+        password = self.password_entry.get()
+        if not username or not password:
+            messagebox.showwarning("Input Error", "Please fill out all fields!")
+        else:
+            messagebox.showinfo("Login", f"Attempting to login user: {username}")
+
+    def register(self):
+        messagebox.showinfo("Register", "Redirecting to Register Screen...")
+
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = LoginApp(root)
+    root.mainloop()

@@ -81,33 +81,41 @@ class TreeViewLoader:
                         cls.load_all_books(treeview)
                     except ValueError:
                         tk.messagebox.showinfo(
-                            "Loaded All Books Fail",
-                            "No books available in the library. Please try again later."
+                            "Loading All Books Fail",
+                        "No books available in the library. Please try again later."
                         )
                 case 1:
                     try:
                         cls.load_available_books(treeview)
                     except ValueError:
-                        "Loading Available Books Fail"
+                        tk.messagebox.showinfo(
+                            "Loading Available Books Fail",
                         "No available books found in the library. Please try again later."
+                        )
                 case 2:
                     try:
                         cls.load_borrowed_books(treeview)
                     except ValueError:
-                        "Loading Borrowed Books Fail"
+                        tk.messagebox.showinfo(
+                            "Loading Borrowed Books Fail",
                         "No borrowed books found in the library. Please try again later."
+                        )
                 case 3:
                     try:
                         cls.load_books_by_category(treeview)
                     except ValueError:
-                        "Loading Books By Category Fail"
-                        "No books found in the library. Please try again later."
+                        tk.messagebox.showinfo(
+                            "Loading Books By Category Fail",
+                            "No books found in the library. Please try again later."
+                        )
                 case 4:
                     try:
                         cls.load_popular_books(treeview)
                     except ValueError:
-                        "Loading Popular Books Fail"
+                        tk.messagebox.showinfo(
+                        "Loading Popular Books Fail",
                         "No available books found in the library. Please try again later."
+                        )
                 case default:
                     messagebox.showwarning("Invalid Filter", "No valid filter selected.")
         except Exception as e:

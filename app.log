@@ -370,3 +370,97 @@
 [2025-01-11 23:25:31,057] INFO: Displayed available books successfully
 [2025-01-11 23:25:32,906] INFO: Displayed borrowed books successfully
 [2025-01-11 23:25:33,637] INFO: Displayed books by category successfully
+[2025-01-11 22:51:24,732] INFO: login successfully
+[2025-01-11 22:51:33,557] INFO: Displayed all books successfully
+[2025-01-11 22:51:35,750] INFO: Displayed borrowed books successfully
+[2025-01-11 22:51:35,750] INFO: Displayed borrowed books successfully
+[2025-01-11 22:52:17,323] INFO: login successfully
+[2025-01-11 22:52:19,687] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 22:52:22,565] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 22:52:29,196] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 22:52:29,197] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 22:52:31,788] ERROR: Displayed popular books failed with exception: Error loading popular books: No popular books found.
+[2025-01-11 22:52:36,264] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 22:52:38,410] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 22:52:40,087] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 22:52:42,456] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 22:52:43,046] ERROR: Displayed books by category failed with exception: Error loading books by category: No books found by category.
+[2025-01-11 22:52:43,808] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 22:52:44,337] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 22:52:46,437] ERROR: Displayed available books failed with exception: Error loading available books: No available books found.
+[2025-01-11 22:52:47,169] ERROR: Displayed available books failed with exception: Error loading available books: No available books found.
+[2025-01-11 22:52:47,651] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 22:52:50,576] ERROR: Displayed available books failed with exception: Error loading available books: No available books found.
+[2025-01-11 22:52:51,113] ERROR: Displayed available books failed with exception: Error loading available books: No available books found.
+[2025-01-11 22:52:51,536] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 22:52:54,295] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 22:52:58,462] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 23:10:00,432] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-11 23:10:03,407] ERROR: login failed with exception: Login Failed! User does not exist.
+[2025-01-11 23:10:05,838] INFO: login successfully
+[2025-01-11 23:10:08,466] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 23:10:11,073] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 23:10:18,232] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:10:18,233] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:10:19,645] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:10:19,646] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:10:20,281] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 23:10:23,440] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:10:23,440] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:12:36,456] INFO: login successfully
+[2025-01-11 23:12:39,764] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 23:12:41,785] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:12:41,785] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:12:43,060] ERROR: Displayed popular books failed with exception: Error loading popular books: No popular books found.
+[2025-01-11 23:12:45,298] ERROR: Displayed popular books failed with exception: Error loading popular books: No popular books found.
+[2025-01-11 23:12:47,741] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 23:12:49,968] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 23:12:51,646] ERROR: Displayed available books failed with exception: Error loading available books: No available books found.
+[2025-01-11 23:12:53,251] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:12:54,351] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:12:54,706] ERROR: Displayed books by category failed with exception: Error loading books by category: No books found by category.
+[2025-01-11 23:14:03,787] INFO: login successfully
+[2025-01-11 23:14:05,961] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 23:14:07,990] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:14:08,837] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:14:11,057] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:14:11,962] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:14:21,062] ERROR: Displayed popular books failed with exception: Error loading popular books: No popular books found.
+[2025-01-11 23:14:24,752] ERROR: Displayed popular books failed with exception: Error loading popular books: No popular books found.
+[2025-01-11 23:14:27,376] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:14:29,802] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:14:53,888] ERROR: Displayed popular books failed with exception: Error loading popular books: No popular books found.
+[2025-01-11 23:15:26,149] ERROR: Displayed popular books failed with exception: Error loading popular books: No popular books found.
+[2025-01-11 23:15:28,701] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:15:32,891] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:15:34,905] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 23:15:38,648] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 23:15:40,734] ERROR: Displayed available books failed with exception: Error loading available books: No available books found.
+[2025-01-11 23:15:42,318] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 23:15:46,036] ERROR: Displayed available books failed with exception: Error loading available books: No available books found.
+[2025-01-11 23:15:48,952] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
+[2025-01-11 23:15:59,621] ERROR: Displayed books by category failed with exception: Error loading books by category: No books found by category.
+[2025-01-11 23:16:04,102] ERROR: Displayed borrowed books failed with exception: Error loading borrowed books: No borrowed books found.
+[2025-01-11 23:19:32,700] INFO: login successfully
+[2025-01-11 23:43:44,444] ERROR: login failed with exception: cannot use geometry manager grid inside .!frame2 which already has slaves managed by pack
+[2025-01-11 23:47:05,414] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-11 23:47:09,299] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-11 23:47:20,790] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-11 23:49:44,561] INFO: login successfully
+[2025-01-11 23:50:46,511] INFO: login successfully
+[2025-01-11 23:50:56,188] INFO: login successfully
+[2025-01-11 23:51:24,164] INFO: login successfully
+[2025-01-11 23:51:37,147] ERROR: login failed with exception: Login Failed! User does not exist.
+[2025-01-11 23:51:41,210] ERROR: login failed with exception: Login Failed! User does not exist.
+[2025-01-11 23:51:55,740] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-11 23:51:59,094] ERROR: login failed with exception: Login Failed! User does not exist.
+[2025-01-11 23:52:33,013] INFO: login successfully
+[2025-01-11 23:53:03,751] INFO: login successfully
+[2025-01-11 23:54:28,455] INFO: register successfully
+[2025-01-11 23:54:34,500] INFO: login successfully
+[2025-01-11 23:54:46,549] INFO: login successfully
+[2025-01-11 23:57:48,813] INFO: login successfully
+[2025-01-11 23:57:51,297] INFO: logout successfully
+[2025-01-11 23:59:21,598] INFO: login successfully
+[2025-01-12 00:01:37,009] INFO: login successfully
+[2025-01-12 00:01:37,373] INFO: exit successfully
