@@ -1,1 +1,2 @@
 Full Name,Email,Phone No.,Book Title,Book Author,Book Genre,Book Year,Queue No.
+John Doe,john.doe@example.com,1234567890,<MagicMock name='mock.title' id='4360045648'>,<MagicMock name='mock.author' id='4360050512'>,<MagicMock name='mock.genre' id='4360055504'>,<MagicMock name='mock.year' id='4336580816'>,<MagicMock name='mock.get_watch_list_size()' id='4360087696'>

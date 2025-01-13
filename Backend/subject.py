@@ -2,10 +2,14 @@ from Backend.observer import Observer
 from ConfigFiles.log_decorator import log_activity
 from Exceptions.NoObserversError import NoObserversError
 
-
+# Subject class that will be observed by the observers (Librarians)
+# The subject will notify the observers about the book availability to the user
+# The subject will contain a list of observers
+# The subject will notify all observers in the list
+# The subject will add and remove observers from the list
+# The subject will notify the observers with the book availability information
+# The subject will raise an exception if there are no observers to notify
 class Subject:
-
-
     def __init__(self):
         self._observers = []
 
@@ -15,7 +19,8 @@ class Subject:
         Add an observer to the list.
         :param observer: The observer to add.
         """
-        self._observers.append(observer)
+        if observer not in self._observers:
+            self._observers.append(observer)
 
     def remove_observer(self, observer):
         """

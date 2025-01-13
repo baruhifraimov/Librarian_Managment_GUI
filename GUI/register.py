@@ -39,6 +39,11 @@ class Register:
 
     @staticmethod
     def search_user_in_csv(username):
+        """
+        Search for a user in the csv file. Return True if the user exists, False otherwise.
+        :param username:  The username to search for in the csv file
+        :return: True if the user exists, False otherwise
+        """
         if os.path.exists("../csv_files/librarians_users.csv"): # check if the file exists
             with open('../csv_files/librarians_users.csv', 'r') as file:
                 reader = csv.reader(file)
@@ -77,6 +82,13 @@ class Register:
 
     @log_activity("register")
     def register_verifier(self,username,password):
+        """
+        Verify the user registration credentials. If the username or password is empty, raise a BlankFieldsError.
+        If the user is already in the csv file, raise a UserAlreadyInListError.
+        If the registration is successful, add the user to the csv file and show a success message.
+        :param username: str
+        :param password: str
+        """
         # Check if username is blank
         if username == "":
             raise BlankFieldsError("Invalid Username: Username is blank.")
@@ -93,7 +105,7 @@ class Register:
 
         #create a user object using user factory.
 
-        user =  LibrarianFactory.create_user(username, encrypted_password, )
+        user = LibrarianFactory.create_librarian(username, encrypted_password)
 
         # Add user info to csv and show success message
         try:

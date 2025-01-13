@@ -17,6 +17,16 @@ class BookManager:
     @classmethod
     @log_activity("book added")
     def add_book(self, title, author, genre, year, copies):
+        """
+        Adds a book to the list of books and exports it to the books.csv
+        file if it doesn't already exist in the list of books or the file itself
+        :param title: The title of the book
+        :param author: The author of the book
+        :param genre: The genre of the book
+        :param year: The year the book was published
+        :param copies: The number of copies of the book
+        :return: None
+        """
 
         # Check if copies is a valid number, if not set to 1
         if copies == '' or not copies.isdigit():
@@ -41,6 +51,16 @@ class BookManager:
     @classmethod
     @log_activity("book removed")
     def remove_book(self, title, author, genre, year):
+        """
+        Removes a book from the list of books and exports the updated list to the books.csv file
+        if it exists in the list of books and the file itself and if it's not
+        borrowed by any user or in the watch list of any user or if the fields are blank
+        :param title:  The title of the book
+        :param author:  The author of the book
+        :param genre:  The genre of the book
+        :param year:  The year the book was published
+        :return:  True if the book was removed successfully
+        """
         if title == "" or author == "" or genre == "" or year == "":
             raise BlankFieldsError
         book_to_remove = self.extracting_book(title, author, genre, year)
@@ -59,6 +79,12 @@ class BookManager:
 
     @classmethod
     def remove_book_in_csv(cls, book):
+        """
+        Removes a book from the books.csv file if it exists in the file
+        and if it's not borrowed by any user or in the watch list of any user
+        :param book: The book to remove
+        :return: None
+        """
         try:
             # Read the CSV file
             with open('../csv_files/books.csv', 'r') as file:
@@ -95,6 +121,14 @@ class BookManager:
     @classmethod
     # @log_activity("Extracting Book")
     def extracting_book(self, title, author, genre, year):
+        """
+        Extracts a book from the list of books based on the title, author, genre, and year
+        :param title:  The title of the book
+        :param author:  The author of the book
+        :param genre:  The genre of the book
+        :param year:  The year the book was published
+        :return:  The book if found, otherwise raises a BookNotFound404Error exception
+        """
         for book in self.books:
             if book.get_title() == title and book.get_author() == author and book.get_genre() == genre and str(book.get_year()) == str(year):
                 return book
@@ -136,7 +170,6 @@ class BookManager:
             reader = csv.reader(file)
             rows = list(reader)
             for row in rows[1:]:
-                # TODO add the feature that he knows the lent count for each book
                 BookFactory.create_book(row[0], row[1], row[4], row[5], row[3], row[2],int(row[3])-int(row[6]))
 
 
@@ -147,20 +180,20 @@ class BookManager:
         :return: None
         """
         try:
-            # בדיקה אם הקובץ קיים
+            # check if the file exists
             with open('../csv_files/waiting_list.csv', 'r') as file:
                 reader = csv.reader(file)
                 rows = list(reader)
 
-                # אם הקובץ ריק או מכיל רק כותרת
+                # if the file is empty or has just 1 line.
                 if len(rows) <= 1:
                     print("The waiting_list.csv file is empty or contains no entries.")
                     return
 
-                # לולאה על השורות (למעט השורה הראשונה - כותרת)
+                #loop over the lines except the first one
                 for row in rows[1:]:
                     try:
-                        # בדוק אם השורה מכילה את כל העמודות הצפויות
+                        #check if the row contains all excpected rows
                         if len(row) < 7:
                             print(f"Skipping incomplete row: {row}")
                             continue

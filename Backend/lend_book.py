@@ -69,6 +69,15 @@ class LendBook:
 
     @classmethod
     def show_waiting_list_form(self, book, root):
+        """
+        Show a popup window to add the borrower to the waiting list if the book is not available.
+        The popup window will ask for the borrower's name, email, and phone number.
+        The borrower will be added to the waiting list.
+        If the user is already in the list, an error message is displayed.
+        :param book:  The book to add the user to the waiting list
+        :param root:  The root frame of the application to create the popup window
+        :return:  None
+        """
         # Create a new popup window
         popup = tk.Toplevel(root)
         popup.title("Add to Waiting List")

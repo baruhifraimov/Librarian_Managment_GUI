@@ -5,7 +5,6 @@ from Backend.librarian_manager import LibrarianManager
 from GUI.register import Register
 from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
 
-
 class TestRegisterVerifier(unittest.TestCase):
 
     def setUp(self):
@@ -15,17 +14,6 @@ class TestRegisterVerifier(unittest.TestCase):
             self.register_instance = Register(self.root)
             # Mock user loading to avoid dependency on actual files
             LibrarianManager.load_users = MagicMock()
-
-    @patch("tkinter.messagebox.showinfo", lambda *args, **kwargs: None)  # Ignore the messagebox
-    @patch('Backend.encryption.Encryption.encrypt_password', return_value="encrypted_password")
-    @patch('GUI.register.Register.search_user_in_csv', return_value=False)
-    @patch('Backend.user_manager.LibrarianManager.add_user_csv')
-    @patch('GUI.register.Register.switch_to_login')  # Mock switch_to_login to avoid the 'login' import issue
-    def test_register_verifier_file_not_found(self, mock_add_user_csv, mock_search_user, mock_encrypt_password,
-                                       mock_switch_to_login):
-
-
-        mock_add_user_csv.side_effect = FileNotFoundError("The directory for the file '../csv_files/librarians_users.csv' does not exist.")
 
     def test_register_verifier_blank_username(self):
         """
@@ -56,10 +44,10 @@ class TestRegisterVerifier(unittest.TestCase):
         self.assertEqual(str(context.exception), "Invalid Password: Password is blank.")
 
     @patch("tkinter.messagebox.showinfo", lambda *args, **kwargs: None)  # Ignore the messagebox
-    @patch("Backend.user_factory.LibrarianFactory.create_user")
+    @patch("Backend.librarian_factory.LibrarianFactory.create_librarian")
     @patch("Backend.encryption.Encryption.encrypt_password", return_value="encrypted_password")
     @patch("GUI.register.Register.search_user_in_csv", return_value=False)
-    @patch("Backend.user_manager.LibrarianManager.add_user_csv")
+    @patch("Backend.librarian_manager.LibrarianManager.add_user_csv")
     @patch("GUI.register.Register.switch_to_login")  # Mock switch_to_login to avoid the 'login' import issue
     def test_register_verifier_success(self, mock_switch_to_login, mock_add_user_csv, mock_search_user,
                                        mock_encrypt_password, mock_create_user):
@@ -70,7 +58,6 @@ class TestRegisterVerifier(unittest.TestCase):
         :param mock_search_user:  Mock the search_user_in_csv method
         :param mock_encrypt_password: Mock the encrypt_password method
         :param mock_create_user: Mock the create_user method
-        :return:  None
         """
         # Arrange
         username = "admin"

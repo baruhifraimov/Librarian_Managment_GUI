@@ -5,7 +5,7 @@ from Backend.observer import Observer
 from ConfigFiles.log_decorator import log_activity
 import tkinter as tk
 from tkinter import messagebox
-from Backend import librarian_manager
+from Backend.librarian_manager import librarians
 
 class Librarian(Observer):
 
@@ -15,10 +15,16 @@ class Librarian(Observer):
         self.is_connected = str(is_connected)
         # contain only 5 messages max
         self.message_list = deque(maxlen=5)
-        librarian_manager.librarians.append(self)
+        librarians.append(self)
 
     @log_activity("notification sent")
     def update(self, user, book):
+        """
+        Update the librarian with a notification message about the book availability to the user
+        :param user:  The user that we want to notify the librarian about
+        :param book: The book that we want to update the librarian about
+        :return:  None
+        """
         notification_message = (
             f'NOTIFICATION SENT TO LIBRARIAN: {self.username}'
             f' | Notify Librarian:{user[0]} | The book: {book.get_title()} is available now.'

@@ -10,6 +10,15 @@ class RemoveBook:
 
     @classmethod
     def book_remover(self, title, author, genre, year, book_frame):
+        """
+        Remove a book from the library and update the csv file accordingly if the book exists.
+        :param title:  The title of the book to be removed
+        :param author:  The author of the book to be removed
+        :param genre:  The genre of the book to be removed
+        :param year:  The year of the book to be removed
+        :param book_frame:  The frame where the book is being removed
+        :return:  None
+        """
         try:
             if BookManager.remove_book(title, author, genre, year):
                 rmv_scss = tk.Label(book_frame, text="Removed Succesfuly!", font=("Arial", 16), fg="green")

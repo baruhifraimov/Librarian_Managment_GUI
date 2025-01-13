@@ -20,14 +20,12 @@ class TestLogin(unittest.TestCase):
     def test_login_success(self):
         """
         Test if the login is successful with the correct credentials
-        :return: None
         """
         self.assertTrue(Login.login_verifier(self.login_instance,"1","1"))
 
     def test_login_verifier_blank(self):
         """
         Test if the login raising BlankFieldsError with blank credentials
-        :return: None
         """
         login_instance = Login(self.root)
         self.assertRaises(BlankFieldsError, Login.login_verifier,self,"","")
@@ -35,7 +33,6 @@ class TestLogin(unittest.TestCase):
     def tst_login_verifier_blank_password(self):
         """
         Test if the login raising BlankFieldsError with blank password credentials
-        :return:  None
         """
         login_instance = Login(self.root)
         self.assertRaises(BlankFieldsError, Login.login_verifier,self,"username","")
@@ -43,7 +40,6 @@ class TestLogin(unittest.TestCase):
     def tst_login_verifier_blank_username(self):
         """
         Test if the login raising BlankFieldsError with blank username credentials
-        :return:  None
         """
         login_instance = Login(self.root)
         self.assertRaises(BlankFieldsError, Login.login_verifier,self,"","password")
@@ -52,7 +48,6 @@ class TestLogin(unittest.TestCase):
     def test_login_verifier_path_not_found(self):
         """
         Test if the login raising FileNotFoundError with non existing file
-        :return:  None
         """
         # Mock the behavior of os.path.exists
         original_exists = os.path.exists
@@ -66,7 +61,6 @@ class TestLogin(unittest.TestCase):
     def test_login_verifier_user_not_found(self):
         """
         Test if the login raising UserNotFoundError with non existing user in the file
-        :return:  None
         """
         # Mock the behavior of os.path.exists
         self.assertRaises(UserNotFoundError, Login.login_verifier, self, "amosi", "amosi")

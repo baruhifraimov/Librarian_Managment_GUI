@@ -10,6 +10,10 @@ class TestLogOut(unittest.TestCase):
 
     @patch.object(LibrarianManager, "set_user_status_csv")  # Mock set_user_status_csv
     def test_log_out_user(self, mock_set_user_status_csv):
+        """
+        Test that the log_out_user method calls the deactivate_user method on the user object and calls set_user_status_csv
+        :param mock_set_user_status_csv:  Mocked set_user_status_csv method from LibrarianManager
+        """
         # Call the logout method
         LibrarianManager.log_out_user(self.user)
 

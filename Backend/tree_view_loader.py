@@ -10,6 +10,11 @@ class TreeViewLoader:
     @classmethod
     @log_activity("displayed all books")
     def load_all_books(cls, treeview):
+        """
+        Load all books into the treeview widget. If no books are available, raise a ValueError.
+        :param treeview:  The treeview widget to load the books into.
+        :return:  None
+        """
         if not BookManager.books:
             raise ValueError("Error loading books: No books available in the library.")
         for book in BookManager.books:
@@ -20,6 +25,11 @@ class TreeViewLoader:
     @classmethod
     @log_activity("displayed available books")
     def load_available_books(cls, treeview):
+        """
+        Load available books into the treeview widget. If no available books are found, raise a ValueError.
+        :param treeview:  The treeview widget to load the books into.
+        :return:  None
+        """
         iterator = iter(AvBooksItr(BookManager.books))
         found = False
         for book in iterator:
@@ -33,6 +43,11 @@ class TreeViewLoader:
     @classmethod
     @log_activity("displayed borrowed books")
     def load_borrowed_books(cls, treeview):
+        """
+        Load borrowed books into the treeview widget. If no borrowed books are found, raise a ValueError.
+        :param treeview:  The treeview widget to load the books into.
+        :return:  None
+        """
         iterator = iter(LendBookItr(BookManager.books))
         found = False
         for book in iterator:
@@ -46,6 +61,11 @@ class TreeViewLoader:
     @classmethod
     @log_activity("displayed books by category")
     def load_books_by_category(cls, treeview):
+        """
+        Load books by category into the treeview widget. If no books are found by category, raise a ValueError.
+        :param treeview:  The treeview widget to load the books into.
+        :return:  None
+        """
         srt_cat_books = sorted(BookManager.books, key=lambda book: book.get_genre())
         if not srt_cat_books:
             raise ValueError("Error loading books by category: No books found by category.")
@@ -57,6 +77,11 @@ class TreeViewLoader:
     @classmethod
     @log_activity("displayed popular books")
     def load_popular_books(cls, treeview):
+        """
+        Load popular books into the treeview widget. If no popular books are found, raise a ValueError.
+        :param treeview:  The treeview widget to load the books into.
+        :return:  None
+        """
         popular_books = [book for book in BookManager.books if int(book.get_lent_count()) > 0]
         if not popular_books:
             raise ValueError("Error loading popular books: No popular books found.")
@@ -69,6 +94,12 @@ class TreeViewLoader:
 
     @classmethod
     def load_books_into_treeview(cls, treeview, filter=0):
+        """
+        Load books into the treeview widget based on the filter. If no books are found, display an error message.
+        :param treeview:  The treeview widget to load the books into.
+        :param filter:  0: All Books, 1: Available Books, 2: Borrowed Books, 3: Books By Category, 4: Popular Books
+        :return:  None
+        """
         try:
             # Clear existing rows
             for row in treeview.get_children():
@@ -124,9 +155,21 @@ class TreeViewLoader:
             treeview.insert("", tk.END, values=("Error loading books", "", "", "", "", "", ""))
 
     def on_treeview_select(event, treeview, parent):
+        """
+        Get the selected item from the treeview and update the selected_item attribute in the parent class.
+        :param treeview:  The treeview widget
+        :param parent:  The parent class
+        :return:  None
+        """
         selected = treeview.focus()  # Get the focused item
         parent.selected_item = treeview.item(selected)  # Update selected_item directly in the parent class
 
     @classmethod
     def refresh_treeview(cls, treeview, filter=0):
+        """
+        Refresh the treeview widget based on the filter.
+        :param treeview:  The treeview widget to refresh
+        :param filter:  0: All Books, 1: Available Books, 2: Borrowed Books, 3: Books By Category, 4: Popular Books
+        :return:  None
+        """
         cls.load_books_into_treeview(treeview, filter)

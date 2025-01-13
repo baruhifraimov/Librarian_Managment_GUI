@@ -95,6 +95,10 @@ class Book(Subject):
 
     @log_activity("book returned")
     def return_action(self):
+        """
+        Return the book and decrease the lent count by 1 and remove the user from the watch list if the book is returned successfully
+        :return:
+        """
         if self.lent_count > 0:
             self.lent_count -=1
             self.is_lent = "No"
@@ -105,6 +109,10 @@ class Book(Subject):
 
     @log_activity("book borrowed")
     def borrow_action(self):
+        """
+        Borrow the book and add +1 to book lent count
+        :return:  None
+        """
         if self.copies > self.lent_count:
             self.lent_count += 1
             if self.lent_count == self.copies:

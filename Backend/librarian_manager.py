@@ -1,9 +1,6 @@
 import csv
 import os
-from unittest import case
 
-from Backend.encryption import Encryption
-from Backend.librarian import Librarian
 from ConfigFiles.log_decorator import log_activity
 from Exceptions.ExceptionUserNotFound import UserNotFoundError
 
@@ -14,10 +11,14 @@ class LibrarianManager:
 
     @staticmethod
     def get_librarians():
+        """
+        Method to get the list of librarians
+        :return:  list of librarians
+        """
         return librarians
 
     @classmethod
-    def search_in_user_csv(self, username, password) -> Librarian:
+    def search_in_user_csv(self, username, password):
         """
         Method to search in the librarians csv file
         :param username: user username
@@ -59,6 +60,11 @@ class LibrarianManager:
 
     @staticmethod
     def update_user_csv(rows):
+        """
+        Update the librarians_users.csv file with the new rows
+        :param rows:  list of rows
+        :return:  None
+        """
         with open('../csv_files/librarians_users.csv', 'w') as file:
             writer = csv.writer(file)
             writer.writerows(rows)
@@ -74,26 +80,41 @@ class LibrarianManager:
             rows = list(reader)
             for row in rows[1:]:
                 from Backend.librarian_factory import LibrarianFactory
-                LibrarianFactory.create_user(row[0], row[1], str(row[2]))
+                LibrarianFactory.create_librarian(row[0], row[1], str(row[2]))
 
     @classmethod
     def log_out_user(self,user):
+        """
+        Log out the user
+        :param user:  user object
+        :return:  None
+        """
         user.deactivate_user()
         self.set_user_status_csv(user.username,1)
 
     @classmethod
     @log_activity("login")
     def extracting_user(self, username):
+        """
+        Extract the user from the librarians list by username
+        :param username:  username
+        :return:  Librarian object or Exception (UserNotFoundError)
+        """
         for user in librarians:
-            if str(user.get_username().lower()) == str(username.lower()):
+            if str(user.get_username()).lower() == str(username).lower():
                 return user
         raise UserNotFoundError(f"{username}") # Return None if no Librarian found
 
     @classmethod
     def extracting_online_user(self):
-        for user in librarians:
-            if user.get_is_connected() == "True":
-                return user
+        """
+        Extract the online user from the librarians list
+        :return: Librarian object
+        """
+        for librarian in librarians:
+            if librarian.get_is_connected() == "True":
+                return librarian
+
     @classmethod
     def add_user_csv(self, user):
         """
@@ -118,7 +139,7 @@ class LibrarianManager:
 
                 # Write the new user's data
                 writer.writerow([user.get_username(),user.get_password(),user.get_is_connected()])
-
+                return True
         except Exception as e:
             # Raise a runtime error for unexpected issues
             raise RuntimeError(f"Failed to export user data to file: {e}")

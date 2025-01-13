@@ -9,6 +9,13 @@ from Backend.tree_view_loader import TreeViewLoader
 class ReturnBook:
     @classmethod
     def book_returner(self, selected_item,treeview):
+        """
+        Return a book to the library and update the csv file accordingly if the book exists. If the book is not found,
+         an error message is displayed. If the book cannot be returned, an error message is displayed.
+        :param selected_item:  The title of the book to be returned
+        :param treeview:  The frame where the book is being returned
+        :return:  None
+        """
         if selected_item:
             selected_values = selected_item['values']
             selected_title = str(selected_values[0])

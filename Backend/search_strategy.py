@@ -5,6 +5,9 @@ from ConfigFiles.log_decorator import search_log_activity
 
 class SearchStrategy:
     class SearchStrategy(ABC):
+        """
+        Abstract class for search strategies to implement.
+        """
         @abstractmethod
         def search(self, books, query) -> BookManager:
             pass
@@ -14,6 +17,12 @@ class StrategySearchByTitle(SearchStrategy):
     @classmethod
     @search_log_activity("name")
     def search(cls, query):
+        """
+        Search for books by title. Returns a list of books that match the query.
+         If no books are found, raises a ValueError.
+        :param query:  The query to search for.
+        :return:  A list of books that match the query.
+        """
         try:
             result = [book for book in BookManager.books if query.lower() in book.get_title().lower()]
             if not result:  # No books found
@@ -26,6 +35,12 @@ class StrategySearchByAuthor(SearchStrategy):
     @classmethod
     @search_log_activity("author")
     def search(cls, query):
+        """
+        Search for books by author. Returns a list of books that match the query.
+        If no books are found, raises a ValueError.
+        :param query:  The query to search for.
+        :return:  A list of books that match the query.
+        """
         try:
             result = [book for book in BookManager.books if query.lower() in book.get_author().lower()]
             if not result:  # No books found
@@ -38,6 +53,11 @@ class StrategySearchByGenre(SearchStrategy):
     @classmethod
     @search_log_activity("genre")
     def search(cls, query):
+        """
+        Search for books by genre. Returns a list of books that match the query.
+        :param query:  The query to search for.
+        :return:  A list of books that match the query.
+        """
         try:
             result = [book for book in BookManager.books if query.lower() in book.get_genre().lower()]
             if not result:  # No books found
@@ -50,6 +70,11 @@ class StrategySearchByYear(SearchStrategy):
     @classmethod
     @search_log_activity("year")
     def search(cls, query):
+        """
+        Search for books by year. Returns a list of books that match the query.
+        :param query:  The query to search for.
+        :return:  A list of books that match the query.
+        """
         try:
             result = [book for book in BookManager.books if query.lower() in book.get_year().lower()]
             if not result:  # No books found

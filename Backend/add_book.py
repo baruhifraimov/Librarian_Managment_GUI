@@ -6,10 +6,20 @@ from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
 
 class AddBook:
     """
-    Add Book widget function, allows you to use the button as a function and not just for beuty
+    Add Book widget function, allows you to use the button as a function and not just for beauty
     """
     @classmethod
     def book_adder(self, title, author, genre, year, copies, book_frame):
+        """
+        Add a book to the library. If one or more fields are blank, raise a BlankFieldsError.
+        :param title:  The title of the book.
+        :param author:  The author of the book.
+        :param genre:  The genre of the book.
+        :param year:  The year of the book.
+        :param copies:  The number of copies of the book.
+        :param book_frame:  The frame to display the success/failure message in.
+        :return:  None
+        """
         try:
             BookManager.add_book(title, author, genre, year, copies)
             add_scss = tk.Label(book_frame, text="Book added successfully!", font=("Arial", 16), fg="green")

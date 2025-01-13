@@ -68,6 +68,15 @@ class Login:
 
     @log_activity("login")
     def login_verifier(self, username, password):
+        """
+        Verify the user login credentials. If the username or password is empty, raise a BlankFieldsError.
+        If the user is not found, raise a UserNotFoundError.
+        If the file is not found, raise a FileNotFoundError.
+        If the login is successful, activate the user and switch to the menu screen.
+        :param username: str
+        :param password: str
+        :return: bool
+        """
         if username == "" or password == "":
             raise BlankFieldsError()
         if not os.path.exists("../csv_files/librarians_users.csv"):

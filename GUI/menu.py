@@ -45,7 +45,7 @@ class Menu:
 
         # Headline
         self.headline_label = tk.Label(self.menu_frame, text=f"Welcome {user.get_username()}", font=("Arial", 32))
-        self.headline_label.grid(row=1, column=0, columnspan=4, pady=20)
+        self.headline_label.grid(row=0, column=0, columnspan=4, pady=20)
 
         # Menu buttons
         self.add_book_button = tk.Button(self.menu_frame, text="Add Book", font=('Arial', 16), width=8,
@@ -68,15 +68,15 @@ class Menu:
                                      command=self.exit_func)
 
         # Arrange buttons in a visually appealing grid
-        self.add_book_button.grid(row=2, column=0, pady=2, padx=2)
-        self.remove_book_button.grid(row=2, column=1, pady=2, padx=2)
-        self.search_book_button.grid(row=2, column=2, pady=2, padx=2)
-        self.view_book_button.grid(row=2, column=3, pady=2, padx=2)
-        self.lend_book_button.grid(row=3, column=0, pady=2, padx=2)
-        self.return_book_button.grid(row=3, column=1, pady=2, padx=2)
-        self.popular_books_button.grid(row=3, column=2, pady=2, padx=2)
-        self.logout_button.grid(row=3, column=3, pady=2, padx=2)
-        self.exit_button.grid(row=4, column=0, columnspan=4, pady=2)
+        self.add_book_button.grid(row=1, column=0, pady=2, padx=2)
+        self.remove_book_button.grid(row=1, column=1, pady=2, padx=2)
+        self.search_book_button.grid(row=1, column=2, pady=2, padx=2)
+        self.view_book_button.grid(row=1, column=3, pady=2, padx=2)
+        self.lend_book_button.grid(row=2, column=0, pady=2, padx=2)
+        self.return_book_button.grid(row=2, column=1, pady=2, padx=2)
+        self.popular_books_button.grid(row=2, column=2, pady=2, padx=2)
+        self.logout_button.grid(row=2, column=3, pady=2, padx=2)
+        self.exit_button.grid(row=3, column=0, columnspan=4, pady=2)
 
         self.menu_frame.pack()
 
@@ -85,6 +85,10 @@ class Menu:
 
     @log_activity('display notification to user')
     def display_user_notifications(self, user):
+        """
+        Display user notifications in a messagebox.
+        :param user: The user to display the notifications for.
+        """
         while user.get_user_messages_size() > 0:
             message = user.pop_user_message()
             tk.messagebox.showinfo(f"Notifications[{user.get_user_messages_size() + 1}]", message=message)
@@ -92,9 +96,15 @@ class Menu:
             tk.messagebox.showinfo("No Notifications", "You have no notifications.")
 
     def exit_func(self):
+        """
+        Close the application.
+        """
         screens.on_close(self.root)
 
     def add_book_widget(self):
+        """
+        Display the add book widget.
+        """
         self.book_frame.destroy()
         self.book_frame = tk.Frame(self.menu_frame)
         self.text_box = tk.Label(self.book_frame, text="ADD A BOOK", font=('David', 28), width=15, pady=10)
@@ -130,6 +140,9 @@ class Menu:
         self.add_button.grid(row=10, column=1, pady=20)
 
     def remove_book_widget(self):
+        """
+        Display the remove book widget.
+        """
         self.book_frame.destroy()
         self.book_frame = tk.Frame(self.menu_frame)
         self.text_box = tk.Label(self.book_frame, text="REMOVE A BOOK:", font=('David', 28), width=15, pady=10)
@@ -161,6 +174,9 @@ class Menu:
         self.remove_button.grid(row=9, column=1, pady=20)
 
     def search_book_widget(self):
+        """
+        Display the search book widget.
+        """
         # Clear and set up the frame
         self.book_frame.destroy()
         self.book_frame = tk.Frame(self.menu_frame)
@@ -241,6 +257,9 @@ class Menu:
         self.selected_item = None  # Initialize selected item
 
     def view_book_widget(self):
+        """
+        Display the view book widget.
+        """
         # Clear and set up the frame
         self.book_frame.destroy()
         self.book_frame = tk.Frame(self.menu_frame)
@@ -304,6 +323,9 @@ class Menu:
         self.by_category.grid(row=2, column=3, pady=10, padx=5)
 
     def loan_book_widget(self):
+        """
+        Display the lend book widget.
+        """
         # Clear and set up the frame
         self.book_frame.destroy()
         self.book_frame = tk.Frame(self.menu_frame)
@@ -361,6 +383,9 @@ class Menu:
         self.lend_button.grid(row=2, column=1, columnspan=2, pady=10)
 
     def return_book_widget(self):
+        """
+        Display the return book widget.
+        """
         self.book_frame.destroy()
         self.book_frame = tk.Frame(self.menu_frame)
         self.book_frame.grid(row=4, column=0, columnspan=3, pady=20, padx=20)
@@ -420,6 +445,9 @@ class Menu:
         self.selected_item = None  # Initialize selected item
 
     def popular_books_widget(self):
+        """
+        Display the most popular books in the library.
+        """
         # Clear and set up the frame
         self.book_frame.destroy()
         self.book_frame = tk.Frame(self.menu_frame)
@@ -466,6 +494,10 @@ class Menu:
 
     @log_activity("logout")
     def logout_button_func(self,user):
+        """
+        Log out the user and return to the login screen.
+        :param user: librarian
+        """
         try:
             self.menu_frame.destroy()  # Destroy the current menu frame
             #logout - change the user is_connected to False.

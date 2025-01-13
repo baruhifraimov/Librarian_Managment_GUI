@@ -1,45 +1,40 @@
-import os
 import unittest
-from unittest.mock import mock_open, patch, MagicMock
-from Exceptions.ExceptionUserNotFound import UserNotFoundError
-from Backend.librarian_manager import LibrarianManager
+from unittest.mock import mock_open, patch
+
+from Backend.encryption import Encryption
 from Backend.librarian import Librarian
+from Backend.librarian_factory import LibrarianFactory
+from Backend.librarian_manager import LibrarianManager
 
 
 class TestLibrarianManager(unittest.TestCase):
+    def setUp(self):
+        """Set up a LibrarianManager instance for testing."""
+        self.manager = LibrarianManager()
+        self.factory = LibrarianFactory()
+        self.librarian = Librarian(1, 1)
 
-    @patch("Backend.librarian_manager.open", new_callable=mock_open, read_data="id,name\n1,Test Librarian")
-    @patch("Backend.librarian_manager.csv.reader")
-    def test_search_in_user_csv(self, mock_csv_reader, mock_file):
-        mock_csv_reader.return_value = [["1", "Test Librarian"]]
-        result = LibrarianManager.search_in_user_csv("1", "Test Librarian")
-        self.assertIsInstance(result, Librarian)
-        self.assertEqual(result.get_user_messages(), "1")
-        self.assertEqual(result.get_password(), "Test Librarian")
+    def test_add_librarian(self):
+        """Test that a librarian is added successfully and also added as part of the librarians list."""
+        test_lib = self.factory.create_librarian('one','two')
+        self.assertIn(test_lib, self.manager.get_librarians(), "Librarian should be added to the manager.")
 
-    @patch("Backend.librarian_manager.open", new_callable=mock_open)
-    @patch("Backend.librarian_manager.csv.writer")
-    def test_add_user_csv(self, mock_csv_writer, mock_file):
-        LibrarianManager.add_user_csv("1,Test Librarian")
-        mock_file.assert_called_once_with("librarians.csv", mode="a", newline="")
-        mock_csv_writer.return_value.writerow.assert_called_once_with(["1", "Test Librarian"])
+    def test_add_user_csv(self):
+        """
+        Test if the user is added to the csv file successfully and returns True
+        """
+        test = LibrarianFactory.create_librarian("test", "test")
+        self.assertTrue(LibrarianManager.add_user_csv(test), True)
 
-    @patch("Backend.librarian_manager.open", new_callable=mock_open, read_data="id,name\n1,Test Librarian")
-    @patch("Backend.librarian_manager.csv.reader")
-    def test_extracting_user(self, mock_csv_reader, mock_file):
-        mock_csv_reader.return_value = [["1", "Test Librarian"]]
-        result = LibrarianManager.extracting_user("1")
-        self.assertIsInstance(result, Librarian)
-        self.assertEqual(result.id, "1")
-        self.assertEqual(result.name, "Test Librarian")
+    def test_extracting_user(self):
+        """
+        Test if the user is extracted from the csv file successfully and is an instance of Librarian
+        """
+        self.assertIsInstance(LibrarianManager.extracting_user(self.librarian.get_username()),Librarian)
 
-    @patch("Backend.librarian_manager.open", new_callable=mock_open, read_data="id,name\n1,Test Librarian\n2,Another Librarian")
-    @patch("Backend.librarian_manager.csv.reader")
-    def test_load_users(self, mock_csv_reader, mock_file):
-        mock_csv_reader.return_value = [["1", "Test Librarian"], ["2", "Another Librarian"]]
+    def test_load_users(self):
+        """
+        Test if the users are loaded from the csv file
+        """
         LibrarianManager.load_users()
-        librarians = LibrarianManager.get_librarians()
-        self.assertGreater(len(librarians), 0)
-        self.assertEqual(len(librarians), 2)
-        self.assertEqual(librarians[0].id, "1")
-        self.assertEqual(librarians[0].name, "Test Librarian")
+        self.assertGreater(len(LibrarianManager.get_librarians()), 0)

@@ -11,6 +11,12 @@ class WaitingListManager:
 
     @classmethod
     def update_waiting_list_csv(self, book,user : list):
+        """
+        Update the waiting list csv file with the user details and the book details.
+        :param book:  The book to add the user to the waiting list for
+        :param user:  The user to add to the waiting list
+        :return: None
+        """
         if os.path.exists("../csv_files/waiting_list.csv"):  # Check if the file exists
             with open("../csv_files/waiting_list.csv", 'a+', newline="") as file:
                 writer = csv.writer(file)
@@ -29,6 +35,16 @@ class WaitingListManager:
 
     @classmethod
     def add_to_waiting_list(self,popup,book,name,phone,email):
+        """
+        Add a user to the waiting list for a specific book and update the queue accordingly in the csv file.
+        If the user is already in the list, an error message is displayed.
+        :param popup:  The popup window to close after the user is added to the waiting list
+        :param book:  The book to add the user to the waiting list for
+        :param name:  The name of the user to add
+        :param phone:  The phone number of the user to add
+        :param email:  The email of the user to add
+        :return:  None
+        """
         user = []
         # user[0] - full name
         # user[1] - email
@@ -46,7 +62,7 @@ class WaitingListManager:
         except BlankFieldsError:
             tk.messagebox.showerror("Error", "Please fill in all fields.")
         except ValueError as e:
-            if e == "Name must not contain digits":
+            if e.__str__() == "Name must not contain digits":
                 tk.messagebox.showerror("Error", "Name must be a string.")
             else:
                 tk.messagebox.showerror("Error", "Phone must be a number.")
@@ -59,6 +75,13 @@ class WaitingListManager:
 
     @classmethod
     def remove_waiting_list_csv(cls,user,book):
+        """
+        Remove a user from the waiting list for a specific book and update the queue accordingly in the csv file.
+        If the user is not found, an error message is displayed.
+        :param user:  The user to be removed
+        :param book:  The book to remove the user from
+        :return:  None
+        """
         try:
             # Read the CSV file
             with open('../csv_files/waiting_list.csv', 'r') as file:
