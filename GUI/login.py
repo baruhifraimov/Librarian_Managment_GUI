@@ -4,11 +4,11 @@ from tkinter import messagebox
 import csv
 
 from Backend.encryption import Encryption
-from Backend.librarian import User
-from Backend.user_manager import UserManager
+from Backend.librarian import Librarian
+from Backend.librarian_manager import LibrarianManager
 from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
 from Exceptions.ExceptionUserNotFound import UserNotFoundError
-from menu import Menu  # Import the Login class here
+from GUI.menu import Menu  # Import the Login class here
 from ConfigFiles.log_decorator import log_activity
 
 
@@ -49,8 +49,8 @@ class Login:
         """
         Handle user login with messagebox feedback and exception raising:
         - Username or password are empty.
-        - User file cannot be found.
-        - User cannot be found in the file.
+        - Librarian file cannot be found.
+        - Librarian cannot be found in the file.
         """
         username = self.username_box.get().lower()
         username = ''.join(username.split())  # Remove white spaces
@@ -59,26 +59,27 @@ class Login:
             self.login_verifier(username, password)
         except BlankFieldsError:
             messagebox.showwarning("Input Error", "Please fill out all fields!")
-        except ValueError as error:
-            messagebox.showerror("User Error", "Login Failed!\nUser does not exist.")
-        except FileNotFoundError as error:
+        except ValueError:
+            messagebox.showerror("Librarian Error", "Login Failed!\nLibrarian does not exist.")
+        except FileNotFoundError:
             messagebox.showerror("File Error", "user.csv file does not exist.")
-        except UserNotFoundError as error:
-            messagebox.showerror("User 404", "user is not registered in the database.")
+        except UserNotFoundError:
+            messagebox.showerror("Librarian 404", "user is not registered in the System.")
 
     @log_activity("login")
     def login_verifier(self, username, password):
         if username == "" or password == "":
             raise BlankFieldsError()
-
         if not os.path.exists("../csv_files/librarians_users.csv"):
-            raise FileNotFoundError("User file does not exist.")
+            raise FileNotFoundError("Librarian file does not exist.")
         try:
-            user = UserManager.search_in_user_csv(username, password)
+            password = Encryption.encrypt_password(password)
+            user = LibrarianManager.search_in_user_csv(username, password)
             # Login successful
             user.activate_user()
             messagebox.showinfo("Login Successful", f"Welcome back, {username}!")
-            self.frame.after(333, self.switch_to_menu) # Switch to the next screen
+            self.frame.after(333, self.switch_to_menu)# Switch to the next screen
+            return True
         except UserNotFoundError:
             raise UserNotFoundError(f"{username}")
 
@@ -88,7 +89,7 @@ class Login:
         Register(self.root)  # Pass the root window to Register screen
 
     def switch_to_menu(self):
-        logged_user = UserManager.extracting_user(self.username_box.get())
+        logged_user = LibrarianManager.extracting_user(self.username_box.get())
         self.frame.destroy()  # Destroy the current register frame
         Menu(self.root, logged_user)  # Pass the root window to Login screen
 

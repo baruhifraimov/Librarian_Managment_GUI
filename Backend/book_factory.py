@@ -1,5 +1,5 @@
 from Backend.book import Book
-from Backend.user_manager import UserManager
+from Backend.librarian_manager import LibrarianManager
 
 
 class BookFactory:
@@ -8,7 +8,7 @@ class BookFactory:
         b = Book(title, author, genre, year, copies, is_lent, lent_count)
         from Backend.book_manager import BookManager
         BookManager.books.append(b)
-        librarians = UserManager.get_users()
+        librarians = LibrarianManager.get_librarians()
         for librarian in librarians:
             b.add_observer(librarian)
         return b

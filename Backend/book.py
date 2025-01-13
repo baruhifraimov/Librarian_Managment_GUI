@@ -22,30 +22,29 @@ class Book(Subject):
         self.author = author
         self.year = year
         self.genre = genre
-        if not copies=="":
-            self.copies = int(copies)
-        else:
-            self.copies=1
-
+        self.watch_list = deque()
         # if available change to "No" else change to "Yes"
         self.is_lent = is_lent
 
         # number of borrowed book, lent_count <= copies
         self.lent_count = lent_count
 
+        # if copies is not given, default is 1
+        if not copies=="":
+            self.copies = int(copies)
+        else:
+            self.copies=1
         #When syncing, make sure to fix kid mistakes
         if int(self.lent_count) == int(self.copies):
             self.is_lent = "Yes"
         else:
             self.is_lent = "No"
 
-        self.watch_list = deque()
 
     def update_copies(self,num):
         self.copies += num
         self.is_lent = "No"
 
-        # TODO need to notify that the book available
         # Clear watchlist with the size of copies (num)
         while self.get_watch_list_size()>0 and num>0:
             self.decrease_watch_list()
@@ -71,6 +70,8 @@ class Book(Subject):
                 raise ValueError("Name must not contain digits")
             if user in self.watch_list:
                 raise UserAlreadyInListError
+            if not any(char.isdigit() for char in user[2]):
+                raise ValueError("Phone only contain digits")
             else:
                 self.watch_list.append(user)
         else:

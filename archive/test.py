@@ -6,7 +6,7 @@
 # # #
 # # #
 # # #
-# # # class User:
+# # # class Librarian:
 # # #
 # # #     # def __init__(self,user_name,password):
 # # #     #     self.user_name = user_name
@@ -68,9 +68,9 @@
 # # #
 # # #
 # # # if __name__ == '__main__':
-# # #     d = User("dor",12345)
-# # #     b = User("baruh", "baruhlikesgirls")
-# # #     n = User("nadav", "iLikeUri")
+# # #     d = Librarian("dor",12345)
+# # #     b = Librarian("baruh", "baruhlikesgirls")
+# # #     n = Librarian("nadav", "iLikeUri")
 # # #     b.export_to_file()
 # # #     d.export_to_file()
 # # #     n.export_to_file()
@@ -106,7 +106,7 @@
 # class UserInfoForm:
 #     def __init__(self, root, on_submit_callback):
 #         self.root = root
-#         self.root.title("User Information Form")
+#         self.root.title("Librarian Information Form")
 #         self.root.geometry("400x300")
 #         self.on_submit_callback = on_submit_callback  # Callback function to forward data
 #         self.create_widgets()

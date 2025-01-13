@@ -9,7 +9,7 @@ from Backend.tree_view_loader import TreeViewLoader
 from Backend.return_book import ReturnBook
 from tkinter import messagebox
 
-from Backend.user_manager import UserManager
+from Backend.librarian_manager import LibrarianManager
 from ConfigFiles.logger_config import logger
 from ConfigFiles.log_decorator import log_activity
 from GUI import screens
@@ -30,6 +30,8 @@ class Menu:
         self.menu_frame = tk.Frame(self.root)  # Create a frame inside the root window
         self.menu_frame.pack(fill="both", expand=True)
 
+
+
         # Book frame (used for Treeview and other contents)
         self.book_frame = tk.Frame(self.root)
         self.book_frame.pack(fill="both", expand=True, padx=10, pady=10)
@@ -40,9 +42,10 @@ class Menu:
         self.menu_frame.grid_columnconfigure(2, weight=1)
         self.menu_frame.grid_columnconfigure(3, weight=1)
 
+
         # Headline
         self.headline_label = tk.Label(self.menu_frame, text=f"Welcome {user.get_username()}", font=("Arial", 32))
-        self.headline_label.grid(row=0, column=0, columnspan=4, pady=20)
+        self.headline_label.grid(row=1, column=0, columnspan=4, pady=20)
 
         # Menu buttons
         self.add_book_button = tk.Button(self.menu_frame, text="Add Book", font=('Arial', 16), width=8,
@@ -65,17 +68,28 @@ class Menu:
                                      command=self.exit_func)
 
         # Arrange buttons in a visually appealing grid
-        self.add_book_button.grid(row=1, column=0, pady=2, padx=2)
-        self.remove_book_button.grid(row=1, column=1, pady=2, padx=2)
-        self.search_book_button.grid(row=1, column=2, pady=2, padx=2)
-        self.view_book_button.grid(row=1, column=3, pady=2, padx=2)
-        self.lend_book_button.grid(row=2, column=0, pady=2, padx=2)
-        self.return_book_button.grid(row=2, column=1, pady=2, padx=2)
-        self.popular_books_button.grid(row=2, column=2, pady=2, padx=2)
-        self.logout_button.grid(row=2, column=3, pady=2, padx=2)
-        self.exit_button.grid(row=3, column=0, columnspan=4, pady=2)
+        self.add_book_button.grid(row=2, column=0, pady=2, padx=2)
+        self.remove_book_button.grid(row=2, column=1, pady=2, padx=2)
+        self.search_book_button.grid(row=2, column=2, pady=2, padx=2)
+        self.view_book_button.grid(row=2, column=3, pady=2, padx=2)
+        self.lend_book_button.grid(row=3, column=0, pady=2, padx=2)
+        self.return_book_button.grid(row=3, column=1, pady=2, padx=2)
+        self.popular_books_button.grid(row=3, column=2, pady=2, padx=2)
+        self.logout_button.grid(row=3, column=3, pady=2, padx=2)
+        self.exit_button.grid(row=4, column=0, columnspan=4, pady=2)
 
         self.menu_frame.pack()
+
+        # Display user notifications
+        self.display_user_notifications(user)
+
+    @log_activity('display notification to user')
+    def display_user_notifications(self, user):
+        while user.get_user_messages_size() > 0:
+            message = user.pop_user_message()
+            tk.messagebox.showinfo(f"Notifications[{user.get_user_messages_size() + 1}]", message=message)
+        else:
+            tk.messagebox.showinfo("No Notifications", "You have no notifications.")
 
     def exit_func(self):
         screens.on_close(self.root)
@@ -455,7 +469,7 @@ class Menu:
         try:
             self.menu_frame.destroy()  # Destroy the current menu frame
             #logout - change the user is_connected to False.
-            UserManager.log_out_user(user)
+            LibrarianManager.log_out_user(user)
             from login import Login  # Import the Login class
             Login(self.root)  # Pass the root window to the Login screen
         except ImportError:

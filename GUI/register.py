@@ -4,11 +4,12 @@ from tkinter import messagebox
 import csv
 
 from Backend.encryption import Encryption
-from Backend.user_factory import UserFactory
+from Backend.librarian_factory import LibrarianFactory
+from Backend.librarian_manager import LibrarianManager
 from ConfigFiles.log_decorator import log_activity
 from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
 from Exceptions.ExceptionUserAlreadyInList import UserAlreadyInListError
-from Backend.librarian import User
+from Backend.librarian import Librarian
 
 class Register:
     def __init__(self, root):
@@ -36,7 +37,8 @@ class Register:
 
         self.frame.pack()
 
-    def search_user_in_csv(self, username,password):
+    @staticmethod
+    def search_user_in_csv(username):
         if os.path.exists("../csv_files/librarians_users.csv"): # check if the file exists
             with open('../csv_files/librarians_users.csv', 'r') as file:
                 reader = csv.reader(file)
@@ -58,11 +60,9 @@ class Register:
         username = ''.join(username.split())  # Remove white spaces
         password = self.password_box.get()
 
-        # Encrypt the password
-        encrypted_password = Encryption.encrypt_password(password)
 
         try:
-            self.register_verifier(username, password,encrypted_password)
+            self.register_verifier(username, password)
         except BlankFieldsError as error:
             if str(error) == "Invalid Username: Username is blank.":
                 messagebox.showerror("Invalid Username", "Please enter your username again.")
@@ -70,9 +70,13 @@ class Register:
                 messagebox.showerror("Invalid Password", "Please enter your password again.")
         except UserAlreadyInListError as error:
             messagebox.showerror("Register Failed", "Username already exists!")
+        except FileNotFoundError:
+            messagebox.showerror("File Error", "librarians.csv file does not exist.")
+        except Exception as e:
+            messagebox.showerror("Register Error", f"Failed to register user: {e}")
 
     @log_activity("register")
-    def register_verifier(self,username,password,encrypted_password):
+    def register_verifier(self,username,password):
         # Check if username is blank
         if username == "":
             raise BlankFieldsError("Invalid Username: Username is blank.")
@@ -81,45 +85,26 @@ class Register:
         if password == "":
             raise BlankFieldsError("Invalid Password: Password is blank.")
 
+        # Encrypt the password
+        encrypted_password = Encryption.encrypt_password(password)
         # Check if the user already exists in the csv file
-        if self.search_user_in_csv(username, encrypted_password):
+        if self.search_user_in_csv(username):
             raise UserAlreadyInListError(f"Register Failed: Username '{username}' already exists.")
 
         #create a user object using user factory.
-        user =  UserFactory.create_user(username, encrypted_password)
+
+        user =  LibrarianFactory.create_user(username, encrypted_password, )
 
         # Add user info to csv and show success message
-        self.add_user_csv(user)
-        messagebox.showinfo("Register Success", "Registered successfully!")
-        self.switch_to_login()  # Switch to Login screen
-
-    def add_user_csv(self, user):
-        """
-        Append the username and password to the librarians_users.csv file.
-        Create the file and add headers if it does not exist or is empty.
-        :param user: user object that includes username and password.
-        """
         try:
-            file_path = "../csv_files/librarians_users.csv"
-
-            # Ensure the parent directory exists
-            if not os.path.exists(os.path.dirname(file_path)):
-                raise FileNotFoundError(f"The directory for the file '{file_path}' does not exist.")
-
-            # Open the file in append mode
-            with open(file_path, 'a+', newline="", encoding="utf-8") as file:
-                writer = csv.writer(file)
-
-                # Write headers if the file is empty
-                if os.stat(file_path).st_size == 0:  # Check if the file is empty
-                    writer.writerow(["Username", "Password","Is_Connected"])
-
-                # Write the new user's data
-                writer.writerow([user.get_username(),user.get_password(),user.get_is_connected()])
-
+            LibrarianManager.add_user_csv(user)
+            messagebox.showinfo("Register Success", "Registered successfully!")
+            self.switch_to_login()  # Switch to Login screen
+        except FileNotFoundError:
+            raise FileNotFoundError
         except Exception as e:
-            # Raise a runtime error for unexpected issues
-            raise RuntimeError(f"Failed to export user data to file: {e}")
+             raise e
+
 
     def switch_to_login(self):
         self.frame.destroy()  # Destroy the current register frame

@@ -45,8 +45,11 @@ class WaitingListManager:
             popup.destroy()
         except BlankFieldsError:
             tk.messagebox.showerror("Error", "Please fill in all fields.")
-        except ValueError:
-            tk.messagebox.showerror("Error", "Name must be a string.")
+        except ValueError as e:
+            if e == "Name must not contain digits":
+                tk.messagebox.showerror("Error", "Name must be a string.")
+            else:
+                tk.messagebox.showerror("Error", "Phone must be a number.")
         except UserAlreadyInListError:
             tk.messagebox.showinfo(
                 "USER IS ALREADY WATCHING",

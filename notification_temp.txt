@@ -1,48 +1,88 @@
-2025-01-13 01:36:51 - NOTIFICATION SENT TO LIBRARIAN: fadi | Notify User:Albert | The book: The Catcher in the Rye is available now. | You can notify him by Email: einstain@uta.ac.us Or by Phone: 111111veeinshamafehad
-2025-01-13 01:36:51 - NOTIFICATION SENT TO LIBRARIAN: 1 | Notify User:Albert | The book: The Catcher in the Rye is available now. | You can notify him by Email: einstain@uta.ac.us Or by Phone: 111111veeinshamafehad
-2025-01-13 01:36:51 - NOTIFICATION SENT TO LIBRARIAN: assad | Notify User:Albert | The book: The Catcher in the Rye is available now. | You can notify him by Email: einstain@uta.ac.us Or by Phone: 111111veeinshamafehad
-2025-01-13 01:36:51 - NOTIFICATION SENT TO LIBRARIAN: fadinuj | Notify User:Albert | The book: The Catcher in the Rye is available now. | You can notify him by Email: einstain@uta.ac.us Or by Phone: 111111veeinshamafehad
-2025-01-13 01:36:51 - NOTIFICATION SENT TO LIBRARIAN: nadav | Notify User:Albert | The book: The Catcher in the Rye is available now. | You can notify him by Email: einstain@uta.ac.us Or by Phone: 111111veeinshamafehad
-2025-01-13 01:36:51 - NOTIFICATION SENT TO LIBRARIAN: dori | Notify User:Albert | The book: The Catcher in the Rye is available now. | You can notify him by Email: einstain@uta.ac.us Or by Phone: 111111veeinshamafehad
-2025-01-13 01:36:51 - NOTIFICATION SENT TO LIBRARIAN: ddddd | Notify User:Albert | The book: The Catcher in the Rye is available now. | You can notify him by Email: einstain@uta.ac.us Or by Phone: 111111veeinshamafehad
-2025-01-13 01:36:51 - NOTIFICATION SENT TO LIBRARIAN: baruh | Notify User:Albert | The book: The Catcher in the Rye is available now. | You can notify him by Email: einstain@uta.ac.us Or by Phone: 111111veeinshamafehad
-2025-01-13 10:19:31 - NOTIFICATION SENT TO LIBRARIAN: fadi | Notify User:12 | The book: The Catcher in the Rye is available now. | You can notify him by Email: 12 Or by Phone: 12
-2025-01-13 10:19:31 - NOTIFICATION SENT TO LIBRARIAN: 1 | Notify User:12 | The book: The Catcher in the Rye is available now. | You can notify him by Email: 12 Or by Phone: 12
-2025-01-13 10:19:31 - NOTIFICATION SENT TO LIBRARIAN: assad | Notify User:12 | The book: The Catcher in the Rye is available now. | You can notify him by Email: 12 Or by Phone: 12
-2025-01-13 10:19:31 - NOTIFICATION SENT TO LIBRARIAN: fadinuj | Notify User:12 | The book: The Catcher in the Rye is available now. | You can notify him by Email: 12 Or by Phone: 12
-2025-01-13 10:19:31 - NOTIFICATION SENT TO LIBRARIAN: nadav | Notify User:12 | The book: The Catcher in the Rye is available now. | You can notify him by Email: 12 Or by Phone: 12
-2025-01-13 10:19:31 - NOTIFICATION SENT TO LIBRARIAN: dori | Notify User:12 | The book: The Catcher in the Rye is available now. | You can notify him by Email: 12 Or by Phone: 12
-2025-01-13 10:19:31 - NOTIFICATION SENT TO LIBRARIAN: ddddd | Notify User:12 | The book: The Catcher in the Rye is available now. | You can notify him by Email: 12 Or by Phone: 12
-2025-01-13 10:19:31 - NOTIFICATION SENT TO LIBRARIAN: baruh | Notify User:12 | The book: The Catcher in the Rye is available now. | You can notify him by Email: 12 Or by Phone: 12
-2025-01-13 10:19:38 - NOTIFICATION SENT TO LIBRARIAN: fadi | Notify User: | The book: The Catcher in the Rye is available now. | You can notify him by Email:  Or by Phone: 
-2025-01-13 10:19:38 - NOTIFICATION SENT TO LIBRARIAN: 1 | Notify User: | The book: The Catcher in the Rye is available now. | You can notify him by Email:  Or by Phone: 
-2025-01-13 10:19:38 - NOTIFICATION SENT TO LIBRARIAN: assad | Notify User: | The book: The Catcher in the Rye is available now. | You can notify him by Email:  Or by Phone: 
-2025-01-13 10:19:38 - NOTIFICATION SENT TO LIBRARIAN: fadinuj | Notify User: | The book: The Catcher in the Rye is available now. | You can notify him by Email:  Or by Phone: 
-2025-01-13 10:19:38 - NOTIFICATION SENT TO LIBRARIAN: nadav | Notify User: | The book: The Catcher in the Rye is available now. | You can notify him by Email:  Or by Phone: 
-2025-01-13 10:19:38 - NOTIFICATION SENT TO LIBRARIAN: dori | Notify User: | The book: The Catcher in the Rye is available now. | You can notify him by Email:  Or by Phone: 
-2025-01-13 10:19:38 - NOTIFICATION SENT TO LIBRARIAN: ddddd | Notify User: | The book: The Catcher in the Rye is available now. | You can notify him by Email:  Or by Phone: 
-2025-01-13 10:19:38 - NOTIFICATION SENT TO LIBRARIAN: baruh | Notify User: | The book: The Catcher in the Rye is available now. | You can notify him by Email:  Or by Phone: 
-2025-01-13 10:21:54 - NOTIFICATION SENT TO LIBRARIAN: fadi | Notify User:Rodrigo | The book: The Catcher in the Rye is available now. | You can notify him by Email: rodl@gmail.com Or by Phone: 0542399912
-2025-01-13 10:21:54 - NOTIFICATION SENT TO LIBRARIAN: 1 | Notify User:Rodrigo | The book: The Catcher in the Rye is available now. | You can notify him by Email: rodl@gmail.com Or by Phone: 0542399912
-2025-01-13 10:21:54 - NOTIFICATION SENT TO LIBRARIAN: assad | Notify User:Rodrigo | The book: The Catcher in the Rye is available now. | You can notify him by Email: rodl@gmail.com Or by Phone: 0542399912
-2025-01-13 10:21:54 - NOTIFICATION SENT TO LIBRARIAN: fadinuj | Notify User:Rodrigo | The book: The Catcher in the Rye is available now. | You can notify him by Email: rodl@gmail.com Or by Phone: 0542399912
-2025-01-13 10:21:54 - NOTIFICATION SENT TO LIBRARIAN: nadav | Notify User:Rodrigo | The book: The Catcher in the Rye is available now. | You can notify him by Email: rodl@gmail.com Or by Phone: 0542399912
-2025-01-13 10:21:54 - NOTIFICATION SENT TO LIBRARIAN: dori | Notify User:Rodrigo | The book: The Catcher in the Rye is available now. | You can notify him by Email: rodl@gmail.com Or by Phone: 0542399912
-2025-01-13 10:21:54 - NOTIFICATION SENT TO LIBRARIAN: ddddd | Notify User:Rodrigo | The book: The Catcher in the Rye is available now. | You can notify him by Email: rodl@gmail.com Or by Phone: 0542399912
-2025-01-13 10:21:54 - NOTIFICATION SENT TO LIBRARIAN: baruh | Notify User:Rodrigo | The book: The Catcher in the Rye is available now. | You can notify him by Email: rodl@gmail.com Or by Phone: 0542399912
-2025-01-13 10:25:50 - NOTIFICATION SENT TO LIBRARIAN: fadi | Notify User:Mor | The book: The Catcher in the Rye is available now. | You can notify him by Email: doron@gmail.,com Or by Phone: gimalsadad
-2025-01-13 10:25:52 - NOTIFICATION SENT TO LIBRARIAN: 1 | Notify User:Mor | The book: The Catcher in the Rye is available now. | You can notify him by Email: doron@gmail.,com Or by Phone: gimalsadad
-2025-01-13 10:25:53 - NOTIFICATION SENT TO LIBRARIAN: assad | Notify User:Mor | The book: The Catcher in the Rye is available now. | You can notify him by Email: doron@gmail.,com Or by Phone: gimalsadad
-2025-01-13 10:25:54 - NOTIFICATION SENT TO LIBRARIAN: fadinuj | Notify User:Mor | The book: The Catcher in the Rye is available now. | You can notify him by Email: doron@gmail.,com Or by Phone: gimalsadad
-2025-01-13 10:25:55 - NOTIFICATION SENT TO LIBRARIAN: nadav | Notify User:Mor | The book: The Catcher in the Rye is available now. | You can notify him by Email: doron@gmail.,com Or by Phone: gimalsadad
-2025-01-13 10:25:55 - NOTIFICATION SENT TO LIBRARIAN: dori | Notify User:Mor | The book: The Catcher in the Rye is available now. | You can notify him by Email: doron@gmail.,com Or by Phone: gimalsadad
-2025-01-13 10:25:56 - NOTIFICATION SENT TO LIBRARIAN: ddddd | Notify User:Mor | The book: The Catcher in the Rye is available now. | You can notify him by Email: doron@gmail.,com Or by Phone: gimalsadad
-2025-01-13 10:25:57 - NOTIFICATION SENT TO LIBRARIAN: baruh | Notify User:Mor | The book: The Catcher in the Rye is available now. | You can notify him by Email: doron@gmail.,com Or by Phone: gimalsadad
-2025-01-13 10:28:40 - NOTIFICATION SENT TO LIBRARIAN: fadi | Notify User:sadasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdsa Or by Phone: asdas
-2025-01-13 10:28:40 - NOTIFICATION SENT TO LIBRARIAN: 1 | Notify User:sadasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdsa Or by Phone: asdas
-2025-01-13 10:28:44 - NOTIFICATION SENT TO LIBRARIAN: assad | Notify User:sadasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdsa Or by Phone: asdas
-2025-01-13 10:28:44 - NOTIFICATION SENT TO LIBRARIAN: fadinuj | Notify User:sadasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdsa Or by Phone: asdas
-2025-01-13 10:28:44 - NOTIFICATION SENT TO LIBRARIAN: nadav | Notify User:sadasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdsa Or by Phone: asdas
-2025-01-13 10:28:44 - NOTIFICATION SENT TO LIBRARIAN: dori | Notify User:sadasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdsa Or by Phone: asdas
-2025-01-13 10:28:44 - NOTIFICATION SENT TO LIBRARIAN: ddddd | Notify User:sadasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdsa Or by Phone: asdas
-2025-01-13 10:28:44 - NOTIFICATION SENT TO LIBRARIAN: baruh | Notify User:sadasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdsa Or by Phone: asdas
+2025-01-13 01:36:51 - NOTIFICATION SENT TO LIBRARIAN: fadi | Notify Librarian:Albert | The book: The Catcher in the Rye is available now. | You can notify him by Email: einstain@uta.ac.us Or by Phone: 111111veeinshamafehad
+2025-01-13 01:36:51 - NOTIFICATION SENT TO LIBRARIAN: 1 | Notify Librarian:Albert | The book: The Catcher in the Rye is available now. | You can notify him by Email: einstain@uta.ac.us Or by Phone: 111111veeinshamafehad
+2025-01-13 01:36:51 - NOTIFICATION SENT TO LIBRARIAN: assad | Notify Librarian:Albert | The book: The Catcher in the Rye is available now. | You can notify him by Email: einstain@uta.ac.us Or by Phone: 111111veeinshamafehad
+2025-01-13 01:36:51 - NOTIFICATION SENT TO LIBRARIAN: fadinuj | Notify Librarian:Albert | The book: The Catcher in the Rye is available now. | You can notify him by Email: einstain@uta.ac.us Or by Phone: 111111veeinshamafehad
+2025-01-13 01:36:51 - NOTIFICATION SENT TO LIBRARIAN: nadav | Notify Librarian:Albert | The book: The Catcher in the Rye is available now. | You can notify him by Email: einstain@uta.ac.us Or by Phone: 111111veeinshamafehad
+2025-01-13 01:36:51 - NOTIFICATION SENT TO LIBRARIAN: dori | Notify Librarian:Albert | The book: The Catcher in the Rye is available now. | You can notify him by Email: einstain@uta.ac.us Or by Phone: 111111veeinshamafehad
+2025-01-13 01:36:51 - NOTIFICATION SENT TO LIBRARIAN: ddddd | Notify Librarian:Albert | The book: The Catcher in the Rye is available now. | You can notify him by Email: einstain@uta.ac.us Or by Phone: 111111veeinshamafehad
+2025-01-13 01:36:51 - NOTIFICATION SENT TO LIBRARIAN: baruh | Notify Librarian:Albert | The book: The Catcher in the Rye is available now. | You can notify him by Email: einstain@uta.ac.us Or by Phone: 111111veeinshamafehad
+2025-01-13 10:19:31 - NOTIFICATION SENT TO LIBRARIAN: fadi | Notify Librarian:12 | The book: The Catcher in the Rye is available now. | You can notify him by Email: 12 Or by Phone: 12
+2025-01-13 10:19:31 - NOTIFICATION SENT TO LIBRARIAN: 1 | Notify Librarian:12 | The book: The Catcher in the Rye is available now. | You can notify him by Email: 12 Or by Phone: 12
+2025-01-13 10:19:31 - NOTIFICATION SENT TO LIBRARIAN: assad | Notify Librarian:12 | The book: The Catcher in the Rye is available now. | You can notify him by Email: 12 Or by Phone: 12
+2025-01-13 10:19:31 - NOTIFICATION SENT TO LIBRARIAN: fadinuj | Notify Librarian:12 | The book: The Catcher in the Rye is available now. | You can notify him by Email: 12 Or by Phone: 12
+2025-01-13 10:19:31 - NOTIFICATION SENT TO LIBRARIAN: nadav | Notify Librarian:12 | The book: The Catcher in the Rye is available now. | You can notify him by Email: 12 Or by Phone: 12
+2025-01-13 10:19:31 - NOTIFICATION SENT TO LIBRARIAN: dori | Notify Librarian:12 | The book: The Catcher in the Rye is available now. | You can notify him by Email: 12 Or by Phone: 12
+2025-01-13 10:19:31 - NOTIFICATION SENT TO LIBRARIAN: ddddd | Notify Librarian:12 | The book: The Catcher in the Rye is available now. | You can notify him by Email: 12 Or by Phone: 12
+2025-01-13 10:19:31 - NOTIFICATION SENT TO LIBRARIAN: baruh | Notify Librarian:12 | The book: The Catcher in the Rye is available now. | You can notify him by Email: 12 Or by Phone: 12
+2025-01-13 10:19:38 - NOTIFICATION SENT TO LIBRARIAN: fadi | Notify Librarian: | The book: The Catcher in the Rye is available now. | You can notify him by Email:  Or by Phone:
+2025-01-13 10:19:38 - NOTIFICATION SENT TO LIBRARIAN: 1 | Notify Librarian: | The book: The Catcher in the Rye is available now. | You can notify him by Email:  Or by Phone:
+2025-01-13 10:19:38 - NOTIFICATION SENT TO LIBRARIAN: assad | Notify Librarian: | The book: The Catcher in the Rye is available now. | You can notify him by Email:  Or by Phone:
+2025-01-13 10:19:38 - NOTIFICATION SENT TO LIBRARIAN: fadinuj | Notify Librarian: | The book: The Catcher in the Rye is available now. | You can notify him by Email:  Or by Phone:
+2025-01-13 10:19:38 - NOTIFICATION SENT TO LIBRARIAN: nadav | Notify Librarian: | The book: The Catcher in the Rye is available now. | You can notify him by Email:  Or by Phone:
+2025-01-13 10:19:38 - NOTIFICATION SENT TO LIBRARIAN: dori | Notify Librarian: | The book: The Catcher in the Rye is available now. | You can notify him by Email:  Or by Phone:
+2025-01-13 10:19:38 - NOTIFICATION SENT TO LIBRARIAN: ddddd | Notify Librarian: | The book: The Catcher in the Rye is available now. | You can notify him by Email:  Or by Phone:
+2025-01-13 10:19:38 - NOTIFICATION SENT TO LIBRARIAN: baruh | Notify Librarian: | The book: The Catcher in the Rye is available now. | You can notify him by Email:  Or by Phone:
+2025-01-13 10:21:54 - NOTIFICATION SENT TO LIBRARIAN: fadi | Notify Librarian:Rodrigo | The book: The Catcher in the Rye is available now. | You can notify him by Email: rodl@gmail.com Or by Phone: 0542399912
+2025-01-13 10:21:54 - NOTIFICATION SENT TO LIBRARIAN: 1 | Notify Librarian:Rodrigo | The book: The Catcher in the Rye is available now. | You can notify him by Email: rodl@gmail.com Or by Phone: 0542399912
+2025-01-13 10:21:54 - NOTIFICATION SENT TO LIBRARIAN: assad | Notify Librarian:Rodrigo | The book: The Catcher in the Rye is available now. | You can notify him by Email: rodl@gmail.com Or by Phone: 0542399912
+2025-01-13 10:21:54 - NOTIFICATION SENT TO LIBRARIAN: fadinuj | Notify Librarian:Rodrigo | The book: The Catcher in the Rye is available now. | You can notify him by Email: rodl@gmail.com Or by Phone: 0542399912
+2025-01-13 10:21:54 - NOTIFICATION SENT TO LIBRARIAN: nadav | Notify Librarian:Rodrigo | The book: The Catcher in the Rye is available now. | You can notify him by Email: rodl@gmail.com Or by Phone: 0542399912
+2025-01-13 10:21:54 - NOTIFICATION SENT TO LIBRARIAN: dori | Notify Librarian:Rodrigo | The book: The Catcher in the Rye is available now. | You can notify him by Email: rodl@gmail.com Or by Phone: 0542399912
+2025-01-13 10:21:54 - NOTIFICATION SENT TO LIBRARIAN: ddddd | Notify Librarian:Rodrigo | The book: The Catcher in the Rye is available now. | You can notify him by Email: rodl@gmail.com Or by Phone: 0542399912
+2025-01-13 10:21:54 - NOTIFICATION SENT TO LIBRARIAN: baruh | Notify Librarian:Rodrigo | The book: The Catcher in the Rye is available now. | You can notify him by Email: rodl@gmail.com Or by Phone: 0542399912
+2025-01-13 10:25:50 - NOTIFICATION SENT TO LIBRARIAN: fadi | Notify Librarian:Mor | The book: The Catcher in the Rye is available now. | You can notify him by Email: doron@gmail.,com Or by Phone: gimalsadad
+2025-01-13 10:25:52 - NOTIFICATION SENT TO LIBRARIAN: 1 | Notify Librarian:Mor | The book: The Catcher in the Rye is available now. | You can notify him by Email: doron@gmail.,com Or by Phone: gimalsadad
+2025-01-13 10:25:53 - NOTIFICATION SENT TO LIBRARIAN: assad | Notify Librarian:Mor | The book: The Catcher in the Rye is available now. | You can notify him by Email: doron@gmail.,com Or by Phone: gimalsadad
+2025-01-13 10:25:54 - NOTIFICATION SENT TO LIBRARIAN: fadinuj | Notify Librarian:Mor | The book: The Catcher in the Rye is available now. | You can notify him by Email: doron@gmail.,com Or by Phone: gimalsadad
+2025-01-13 10:25:55 - NOTIFICATION SENT TO LIBRARIAN: nadav | Notify Librarian:Mor | The book: The Catcher in the Rye is available now. | You can notify him by Email: doron@gmail.,com Or by Phone: gimalsadad
+2025-01-13 10:25:55 - NOTIFICATION SENT TO LIBRARIAN: dori | Notify Librarian:Mor | The book: The Catcher in the Rye is available now. | You can notify him by Email: doron@gmail.,com Or by Phone: gimalsadad
+2025-01-13 10:25:56 - NOTIFICATION SENT TO LIBRARIAN: ddddd | Notify Librarian:Mor | The book: The Catcher in the Rye is available now. | You can notify him by Email: doron@gmail.,com Or by Phone: gimalsadad
+2025-01-13 10:25:57 - NOTIFICATION SENT TO LIBRARIAN: baruh | Notify Librarian:Mor | The book: The Catcher in the Rye is available now. | You can notify him by Email: doron@gmail.,com Or by Phone: gimalsadad
+2025-01-13 10:28:40 - NOTIFICATION SENT TO LIBRARIAN: fadi | Notify Librarian:sadasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdsa Or by Phone: asdas
+2025-01-13 10:28:40 - NOTIFICATION SENT TO LIBRARIAN: 1 | Notify Librarian:sadasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdsa Or by Phone: asdas
+2025-01-13 10:28:44 - NOTIFICATION SENT TO LIBRARIAN: assad | Notify Librarian:sadasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdsa Or by Phone: asdas
+2025-01-13 10:28:44 - NOTIFICATION SENT TO LIBRARIAN: fadinuj | Notify Librarian:sadasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdsa Or by Phone: asdas
+2025-01-13 10:28:44 - NOTIFICATION SENT TO LIBRARIAN: nadav | Notify Librarian:sadasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdsa Or by Phone: asdas
+2025-01-13 10:28:44 - NOTIFICATION SENT TO LIBRARIAN: dori | Notify Librarian:sadasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdsa Or by Phone: asdas
+2025-01-13 10:28:44 - NOTIFICATION SENT TO LIBRARIAN: ddddd | Notify Librarian:sadasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdsa Or by Phone: asdas
+2025-01-13 10:28:44 - NOTIFICATION SENT TO LIBRARIAN: baruh | Notify Librarian:sadasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdsa Or by Phone: asdas
+2025-01-13 11:17:50 - NOTIFICATION SENT TO LIBRARIAN: fadi | Notify Librarian:onemoretime | The book: The Catcher in the Rye is available now. | You can notify him by Email: aksdj Or by Phone: alksjd
+2025-01-13 11:17:50 - NOTIFICATION SENT TO LIBRARIAN: 1 | Notify Librarian:onemoretime | The book: The Catcher in the Rye is available now. | You can notify him by Email: aksdj Or by Phone: alksjd
+2025-01-13 11:17:52 - NOTIFICATION SENT TO LIBRARIAN: assad | Notify Librarian:onemoretime | The book: The Catcher in the Rye is available now. | You can notify him by Email: aksdj Or by Phone: alksjd
+2025-01-13 11:17:52 - NOTIFICATION SENT TO LIBRARIAN: fadinuj | Notify Librarian:onemoretime | The book: The Catcher in the Rye is available now. | You can notify him by Email: aksdj Or by Phone: alksjd
+2025-01-13 11:17:52 - NOTIFICATION SENT TO LIBRARIAN: nadav | Notify Librarian:onemoretime | The book: The Catcher in the Rye is available now. | You can notify him by Email: aksdj Or by Phone: alksjd
+2025-01-13 11:17:52 - NOTIFICATION SENT TO LIBRARIAN: dori | Notify Librarian:onemoretime | The book: The Catcher in the Rye is available now. | You can notify him by Email: aksdj Or by Phone: alksjd
+2025-01-13 11:17:52 - NOTIFICATION SENT TO LIBRARIAN: ddddd | Notify Librarian:onemoretime | The book: The Catcher in the Rye is available now. | You can notify him by Email: aksdj Or by Phone: alksjd
+2025-01-13 11:17:52 - NOTIFICATION SENT TO LIBRARIAN: baruh | Notify Librarian:onemoretime | The book: The Catcher in the Rye is available now. | You can notify him by Email: aksdj Or by Phone: alksjd
+2025-01-13 11:17:56 - NOTIFICATION SENT TO LIBRARIAN: fadi | Notify Librarian:asdasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asd Or by Phone: sad
+2025-01-13 11:17:56 - NOTIFICATION SENT TO LIBRARIAN: 1 | Notify Librarian:asdasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asd Or by Phone: sad
+2025-01-13 11:17:59 - NOTIFICATION SENT TO LIBRARIAN: assad | Notify Librarian:asdasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asd Or by Phone: sad
+2025-01-13 11:17:59 - NOTIFICATION SENT TO LIBRARIAN: fadinuj | Notify Librarian:asdasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asd Or by Phone: sad
+2025-01-13 11:17:59 - NOTIFICATION SENT TO LIBRARIAN: nadav | Notify Librarian:asdasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asd Or by Phone: sad
+2025-01-13 11:17:59 - NOTIFICATION SENT TO LIBRARIAN: dori | Notify Librarian:asdasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asd Or by Phone: sad
+2025-01-13 11:17:59 - NOTIFICATION SENT TO LIBRARIAN: ddddd | Notify Librarian:asdasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asd Or by Phone: sad
+2025-01-13 11:17:59 - NOTIFICATION SENT TO LIBRARIAN: baruh | Notify Librarian:asdasd | The book: The Catcher in the Rye is available now. | You can notify him by Email: asd Or by Phone: sad
+2025-01-13 11:27:55 - NOTIFICATION SENT TO LIBRARIAN: fadi | Notify Librarian:Dor Cohen | The book: The Catcher in the Rye is available now. | You can notify him by Email: ;laskd;laskd;l Or by Phone: aldskjalkd
+2025-01-13 11:27:55 - NOTIFICATION SENT TO LIBRARIAN: 1 | Notify Librarian:Dor Cohen | The book: The Catcher in the Rye is available now. | You can notify him by Email: ;laskd;laskd;l Or by Phone: aldskjalkd
+2025-01-13 11:28:02 - NOTIFICATION SENT TO LIBRARIAN: assad | Notify Librarian:Dor Cohen | The book: The Catcher in the Rye is available now. | You can notify him by Email: ;laskd;laskd;l Or by Phone: aldskjalkd
+2025-01-13 11:28:02 - NOTIFICATION SENT TO LIBRARIAN: fadinuj | Notify Librarian:Dor Cohen | The book: The Catcher in the Rye is available now. | You can notify him by Email: ;laskd;laskd;l Or by Phone: aldskjalkd
+2025-01-13 11:28:02 - NOTIFICATION SENT TO LIBRARIAN: nadav | Notify Librarian:Dor Cohen | The book: The Catcher in the Rye is available now. | You can notify him by Email: ;laskd;laskd;l Or by Phone: aldskjalkd
+2025-01-13 11:28:02 - NOTIFICATION SENT TO LIBRARIAN: dori | Notify Librarian:Dor Cohen | The book: The Catcher in the Rye is available now. | You can notify him by Email: ;laskd;laskd;l Or by Phone: aldskjalkd
+2025-01-13 11:28:02 - NOTIFICATION SENT TO LIBRARIAN: ddddd | Notify Librarian:Dor Cohen | The book: The Catcher in the Rye is available now. | You can notify him by Email: ;laskd;laskd;l Or by Phone: aldskjalkd
+2025-01-13 11:28:02 - NOTIFICATION SENT TO LIBRARIAN: baruh | Notify Librarian:Dor Cohen | The book: The Catcher in the Rye is available now. | You can notify him by Email: ;laskd;laskd;l Or by Phone: aldskjalkd
+2025-01-13 11:31:24 - NOTIFICATION SENT TO LIBRARIAN: fadi | Notify Librarian:Baruh | The book: The Catcher in the Rye is available now. | You can notify him by Email: 1293123 Or by Phone: ljhsadfljhs
+2025-01-13 11:31:24 - NOTIFICATION SENT TO LIBRARIAN: 1 | Notify Librarian:Baruh | The book: The Catcher in the Rye is available now. | You can notify him by Email: 1293123 Or by Phone: ljhsadfljhs
+2025-01-13 11:31:26 - NOTIFICATION SENT TO LIBRARIAN: assad | Notify Librarian:Baruh | The book: The Catcher in the Rye is available now. | You can notify him by Email: 1293123 Or by Phone: ljhsadfljhs
+2025-01-13 11:31:26 - NOTIFICATION SENT TO LIBRARIAN: fadinuj | Notify Librarian:Baruh | The book: The Catcher in the Rye is available now. | You can notify him by Email: 1293123 Or by Phone: ljhsadfljhs
+2025-01-13 11:31:26 - NOTIFICATION SENT TO LIBRARIAN: nadav | Notify Librarian:Baruh | The book: The Catcher in the Rye is available now. | You can notify him by Email: 1293123 Or by Phone: ljhsadfljhs
+2025-01-13 11:31:26 - NOTIFICATION SENT TO LIBRARIAN: dori | Notify Librarian:Baruh | The book: The Catcher in the Rye is available now. | You can notify him by Email: 1293123 Or by Phone: ljhsadfljhs
+2025-01-13 11:31:26 - NOTIFICATION SENT TO LIBRARIAN: ddddd | Notify Librarian:Baruh | The book: The Catcher in the Rye is available now. | You can notify him by Email: 1293123 Or by Phone: ljhsadfljhs
+2025-01-13 11:31:26 - NOTIFICATION SENT TO LIBRARIAN: baruh | Notify Librarian:Baruh | The book: The Catcher in the Rye is available now. | You can notify him by Email: 1293123 Or by Phone: ljhsadfljhs
+2025-01-13 11:34:14 - NOTIFICATION SENT TO LIBRARIAN: fadi | Notify Librarian:asdas | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdasd Or by Phone: asdas
+2025-01-13 11:34:14 - NOTIFICATION SENT TO LIBRARIAN: 1 | Notify Librarian:asdas | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdasd Or by Phone: asdas
+2025-01-13 11:34:16 - NOTIFICATION SENT TO LIBRARIAN: assad | Notify Librarian:asdas | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdasd Or by Phone: asdas
+2025-01-13 11:34:16 - NOTIFICATION SENT TO LIBRARIAN: fadinuj | Notify Librarian:asdas | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdasd Or by Phone: asdas
+2025-01-13 11:34:16 - NOTIFICATION SENT TO LIBRARIAN: nadav | Notify Librarian:asdas | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdasd Or by Phone: asdas
+2025-01-13 11:34:16 - NOTIFICATION SENT TO LIBRARIAN: dori | Notify Librarian:asdas | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdasd Or by Phone: asdas
+2025-01-13 11:34:16 - NOTIFICATION SENT TO LIBRARIAN: ddddd | Notify Librarian:asdas | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdasd Or by Phone: asdas
+2025-01-13 11:34:16 - NOTIFICATION SENT TO LIBRARIAN: baruh | Notify Librarian:asdas | The book: The Catcher in the Rye is available now. | You can notify him by Email: asdasd Or by Phone: asdas

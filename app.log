@@ -18,16 +18,16 @@
 [2025-01-11 20:16:40,218] INFO: Lending a book successfully
 [2025-01-11 20:18:24,124] INFO: Displayed all books successfully
 [2025-01-11 20:18:26,294] INFO: Displayed all books successfully
-[2025-01-11 20:18:31,942] INFO: Book 'To Kill a Mockingbird' is unavailable. User redirected to the waiting list.
+[2025-01-11 20:18:31,942] INFO: Book 'To Kill a Mockingbird' is unavailable. Librarian redirected to the waiting list.
 [2025-01-11 20:18:31,951] ERROR: Lending a book fail
 [2025-01-11 20:19:27,021] INFO: Displayed all books successfully
 [2025-01-11 20:19:29,292] INFO: Displayed all books successfully
-[2025-01-11 20:19:32,137] INFO: Book 'To Kill a Mockingbird' is unavailable. User redirected to the waiting list.
+[2025-01-11 20:19:32,137] INFO: Book 'To Kill a Mockingbird' is unavailable. Librarian redirected to the waiting list.
 [2025-01-11 20:19:32,162] INFO: Lending a book successfully
 [2025-01-11 20:19:42,963] INFO: Adding a user to the waiting list successfully
 [2025-01-11 20:21:49,380] INFO: Displayed all books successfully
 [2025-01-11 20:21:50,830] INFO: Displayed all books successfully
-[2025-01-11 20:21:55,918] INFO: Book 'The Catcher in the Rye' is unavailable. User redirected to the waiting list.
+[2025-01-11 20:21:55,918] INFO: Book 'The Catcher in the Rye' is unavailable. Librarian redirected to the waiting list.
 [2025-01-11 20:21:55,941] INFO: Lending a book successfully
 [2025-01-11 20:22:19,120] ERROR: Adding a user to the waiting list fail
 [2025-01-11 20:24:37,020] INFO: Displayed all books successfully
@@ -41,10 +41,10 @@
 [2025-01-11 20:28:56,259] INFO: Displayed all books successfully
 [2025-01-11 20:28:57,879] ERROR: Lending a book fail
 [2025-01-11 20:32:10,894] INFO: Displayed all books successfully
-[2025-01-11 20:32:13,924] INFO: Book 'To Kill a Mockingbird' is unavailable. User redirected to the waiting list.
+[2025-01-11 20:32:13,924] INFO: Book 'To Kill a Mockingbird' is unavailable. Librarian redirected to the waiting list.
 [2025-01-11 20:32:13,950] INFO: Lending a book successfully
 [2025-01-11 20:34:39,403] INFO: Displayed all books successfully
-[2025-01-11 20:34:42,469] INFO: Book 'The Catcher in the Rye' is unavailable. User redirected to the waiting list.
+[2025-01-11 20:34:42,469] INFO: Book 'The Catcher in the Rye' is unavailable. Librarian redirected to the waiting list.
 [2025-01-11 20:34:42,485] INFO: Lending a book successfully
 [2025-01-11 20:36:44,128] INFO: Displayed all books successfully
 [2025-01-11 20:36:47,838] INFO: Book 'The Catcher in the Rye' is unavailable. Redirecting user to waiting list.
@@ -54,7 +54,7 @@
 [2025-01-11 20:39:07,691] INFO: Displayed all books successfully
 [2025-01-11 20:39:12,831] INFO: Displayed all books successfully
 [2025-01-11 20:39:16,792] INFO: Book 'The Catcher in the Rye' is unavailable. Redirecting user to waiting list.
-[2025-01-11 20:39:16,818] ERROR: Book 'The Catcher in the Rye' is unavailable. User redirected to the waiting list.
+[2025-01-11 20:39:16,818] ERROR: Book 'The Catcher in the Rye' is unavailable. Librarian redirected to the waiting list.
 [2025-01-11 20:39:16,818] INFO: Lending a book successfully
 [2025-01-11 20:53:59,567] INFO: Displayed borrowed books successfully
 [2025-01-11 20:53:59,571] INFO: Displayed borrowed books successfully
@@ -70,7 +70,7 @@
 [2025-01-11 20:55:49,474] INFO: Displayed borrowed books successfully
 [2025-01-11 20:58:22,948] INFO: Displayed all books successfully
 [2025-01-11 20:58:30,090] INFO: Book 'The Catcher in the Rye' is unavailable. Redirecting user to waiting list.
-[2025-01-11 20:58:30,121] ERROR: Book 'The Catcher in the Rye' is unavailable. User redirected to the waiting list.
+[2025-01-11 20:58:30,121] ERROR: Book 'The Catcher in the Rye' is unavailable. Librarian redirected to the waiting list.
 [2025-01-11 20:58:42,451] INFO: book borrowed successfully
 [2025-01-11 20:58:42,457] INFO: Displayed all books successfully
 [2025-01-11 21:04:08,393] INFO: Displayed all books successfully
@@ -94,12 +94,12 @@
 [2025-01-11 21:35:54,169] INFO: login successfully
 [2025-01-11 21:36:00,375] INFO: login successfully
 [2025-01-11 21:40:07,940] ERROR: login fail
-[2025-01-11 21:41:49,241] ERROR: login failed with exception: Login Failed! User does not exist.
-[2025-01-11 21:42:40,872] ERROR: login failed with exception: Login Failed! User does not exist.
+[2025-01-11 21:41:49,241] ERROR: login failed with exception: Login Failed! Librarian does not exist.
+[2025-01-11 21:42:40,872] ERROR: login failed with exception: Login Failed! Librarian does not exist.
 [2025-01-11 21:42:47,600] ERROR: login failed with exception: Username or Password is empty.
 [2025-01-11 21:44:38,980] ERROR: login failed with exception: Username or Password is empty.
-[2025-01-11 21:44:43,909] ERROR: login failed with exception: Login Failed! User does not exist.
-[2025-01-11 21:45:31,211] ERROR: login failed with exception: Login Failed! User does not exist.
+[2025-01-11 21:44:43,909] ERROR: login failed with exception: Login Failed! Librarian does not exist.
+[2025-01-11 21:45:31,211] ERROR: login failed with exception: Login Failed! Librarian does not exist.
 [2025-01-11 21:45:34,637] INFO: login successfully
 [2025-01-11 21:45:37,000] INFO: Displayed all books successfully
 [2025-01-11 21:45:53,481] INFO: book borrowed successfully
@@ -342,8 +342,8 @@
 [2025-01-11 22:50:41,181] ERROR: login failed with exception: The fields you are trying to submit are blank!
 [2025-01-11 22:50:52,683] INFO: login successfully
 [2025-01-11 22:51:03,100] ERROR: login failed with exception: The fields you are trying to submit are blank!
-[2025-01-11 22:51:13,611] ERROR: login failed with exception: Login Failed! User does not exist.
-[2025-01-11 22:51:20,422] ERROR: login failed with exception: Login Failed! User does not exist.
+[2025-01-11 22:51:13,611] ERROR: login failed with exception: Login Failed! Librarian does not exist.
+[2025-01-11 22:51:20,422] ERROR: login failed with exception: Login Failed! Librarian does not exist.
 [2025-01-11 22:51:24,931] INFO: login successfully
 [2025-01-11 23:01:29,899] ERROR: register failed with exception: Invalid Username: Username is blank.
 [2025-01-11 23:01:35,293] ERROR: register failed with exception: Register Failed: Username '1' already exists.
@@ -396,7 +396,7 @@
 [2025-01-11 22:52:54,295] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
 [2025-01-11 22:52:58,462] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
 [2025-01-11 23:10:00,432] ERROR: login failed with exception: The fields you are trying to submit are blank!
-[2025-01-11 23:10:03,407] ERROR: login failed with exception: Login Failed! User does not exist.
+[2025-01-11 23:10:03,407] ERROR: login failed with exception: Login Failed! Librarian does not exist.
 [2025-01-11 23:10:05,838] INFO: login successfully
 [2025-01-11 23:10:08,466] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
 [2025-01-11 23:10:11,073] ERROR: Displayed all books failed with exception: Error loading books: No books available in the library.
@@ -450,10 +450,10 @@
 [2025-01-11 23:50:46,511] INFO: login successfully
 [2025-01-11 23:50:56,188] INFO: login successfully
 [2025-01-11 23:51:24,164] INFO: login successfully
-[2025-01-11 23:51:37,147] ERROR: login failed with exception: Login Failed! User does not exist.
-[2025-01-11 23:51:41,210] ERROR: login failed with exception: Login Failed! User does not exist.
+[2025-01-11 23:51:37,147] ERROR: login failed with exception: Login Failed! Librarian does not exist.
+[2025-01-11 23:51:41,210] ERROR: login failed with exception: Login Failed! Librarian does not exist.
 [2025-01-11 23:51:55,740] ERROR: login failed with exception: The fields you are trying to submit are blank!
-[2025-01-11 23:51:59,094] ERROR: login failed with exception: Login Failed! User does not exist.
+[2025-01-11 23:51:59,094] ERROR: login failed with exception: Login Failed! Librarian does not exist.
 [2025-01-11 23:52:33,013] INFO: login successfully
 [2025-01-11 23:53:03,751] INFO: login successfully
 [2025-01-11 23:54:28,455] INFO: register successfully
@@ -517,7 +517,7 @@
 [2025-01-12 13:06:41,219] INFO: Displayed borrowed books successfully
 [2025-01-12 13:16:16,045] INFO: login successfully
 [2025-01-12 13:16:25,108] INFO: Displayed all books successfully
-[2025-01-12 13:20:35,802] ERROR: login failed with exception: Login Failed! User does not exist.
+[2025-01-12 13:20:35,802] ERROR: login failed with exception: Login Failed! Librarian does not exist.
 [2025-01-12 13:20:42,620] INFO: login successfully
 [2025-01-12 13:20:49,165] INFO: Displayed borrowed books successfully
 [2025-01-12 13:20:49,165] INFO: Displayed borrowed books successfully
@@ -594,9 +594,9 @@
 [2025-01-12 19:13:14,101] INFO: login successfully
 [2025-01-12 19:17:08,918] INFO: login successfully
 [2025-01-12 20:00:09,588] ERROR: login failed with exception: UserNotFoundError.__init__() missing 1 required positional argument: 'user_name'
-[2025-01-12 20:01:01,097] ERROR: login failed with exception: User:User not found. not found.
-[2025-01-12 20:04:35,442] ERROR: login failed with exception: User:dfgdf not found.
-[2025-01-12 20:04:45,622] ERROR: login failed with exception: User:dfgdf not found.
+[2025-01-12 20:01:01,097] ERROR: login failed with exception: Librarian:Librarian not found. not found.
+[2025-01-12 20:04:35,442] ERROR: login failed with exception: Librarian:dfgdf not found.
+[2025-01-12 20:04:45,622] ERROR: login failed with exception: Librarian:dfgdf not found.
 [2025-01-12 20:04:59,211] INFO: login successfully
 [2025-01-12 20:06:43,439] INFO: login successfully
 [2025-01-12 20:06:46,431] INFO: Displayed all books successfully
@@ -618,16 +618,16 @@
 [2025-01-12 20:07:45,363] ERROR: book returned failed with exception: name 'Notifier' is not defined
 [2025-01-12 20:07:58,253] INFO: book returned successfully
 [2025-01-12 20:08:00,598] INFO: Displayed borrowed books successfully
-[2025-01-12 20:08:25,493] ERROR: login failed with exception: User:asdasd not found.
+[2025-01-12 20:08:25,493] ERROR: login failed with exception: Librarian:asdasd not found.
 [2025-01-12 20:08:35,156] INFO: login successfully
 [2025-01-12 20:08:53,801] INFO: logout successfully
 [2025-01-12 20:26:15,503] ERROR: login failed with exception: The fields you are trying to submit are blank!
 [2025-01-12 20:26:22,209] INFO: login successfully
 [2025-01-12 20:33:26,986] INFO: login successfully
 [2025-01-12 20:34:55,002] INFO: login successfully
-[2025-01-12 20:34:55,336] ERROR: login failed with exception: User:1 not found.
+[2025-01-12 20:34:55,336] ERROR: login failed with exception: Librarian:1 not found.
 [2025-01-12 20:35:33,832] INFO: login successfully
-[2025-01-12 20:35:34,165] ERROR: login failed with exception: User:1 not found.
+[2025-01-12 20:35:34,165] ERROR: login failed with exception: Librarian:1 not found.
 [2025-01-12 20:36:35,090] INFO: login successfully
 [2025-01-12 20:38:13,096] INFO: login successfully
 [2025-01-12 20:38:13,430] INFO: login successfully
@@ -704,9 +704,9 @@
 [2025-01-12 21:18:19,964] INFO: login successfully
 [2025-01-12 21:18:20,298] INFO: login successfully
 [2025-01-12 21:18:30,184] INFO: logout successfully
-[2025-01-12 21:18:51,346] ERROR: login failed with exception: User:dori not found.
-[2025-01-12 21:19:00,893] ERROR: login failed with exception: User:dori not found.
-[2025-01-12 21:19:06,084] ERROR: login failed with exception: User:baruh not found.
+[2025-01-12 21:18:51,346] ERROR: login failed with exception: Librarian:dori not found.
+[2025-01-12 21:19:00,893] ERROR: login failed with exception: Librarian:dori not found.
+[2025-01-12 21:19:06,084] ERROR: login failed with exception: Librarian:baruh not found.
 [2025-01-12 21:19:13,873] INFO: login successfully
 [2025-01-12 21:19:15,272] INFO: login successfully
 [2025-01-12 21:19:15,606] INFO: login successfully
@@ -769,7 +769,7 @@
 [2025-01-12 23:47:59,546] INFO: Displayed borrowed books successfully
 [2025-01-12 23:48:03,809] INFO: book returned successfully
 [2025-01-12 23:48:04,946] INFO: Displayed borrowed books successfully
-[2025-01-13 00:01:51,909] ERROR: login failed with exception: User:11 not found.
+[2025-01-13 00:01:51,909] ERROR: login failed with exception: Librarian:11 not found.
 [2025-01-13 00:01:56,020] INFO: login successfully
 [2025-01-13 00:01:56,951] INFO: login successfully
 [2025-01-13 00:01:57,286] INFO: login successfully
@@ -939,7 +939,7 @@
 [2025-01-13 01:47:33,178] INFO: login successfully
 [2025-01-13 01:47:35,263] INFO: displayed all books successfully
 [2025-01-13 01:47:38,391] INFO: user added to watch list successfully
-[2025-01-13 01:47:42,862] ERROR: user added to watch list failed with exception: User already in list.
+[2025-01-13 01:47:42,862] ERROR: user added to watch list failed with exception: Librarian already in list.
 [2025-01-13 01:48:56,579] INFO: login successfully
 [2025-01-13 01:48:58,287] INFO: login successfully
 [2025-01-13 01:48:58,621] INFO: login successfully
@@ -1055,3 +1055,427 @@
 [2025-01-13 10:28:44,182] INFO: user removed from watch list successfully
 [2025-01-13 10:28:44,182] INFO: book returned successfully
 [2025-01-13 10:28:45,319] INFO: displayed borrowed books successfully
+[2025-01-13 11:14:09,466] INFO: login successfully
+[2025-01-13 11:14:10,470] INFO: login successfully
+[2025-01-13 11:14:10,804] INFO: login successfully
+[2025-01-13 11:15:40,140] INFO: login successfully
+[2025-01-13 11:15:41,235] INFO: login successfully
+[2025-01-13 11:15:41,569] INFO: login successfully
+[2025-01-13 11:16:24,938] INFO: login successfully
+[2025-01-13 11:16:25,804] INFO: login successfully
+[2025-01-13 11:16:26,138] INFO: login successfully
+[2025-01-13 11:16:56,885] INFO: login successfully
+[2025-01-13 11:16:58,054] INFO: login successfully
+[2025-01-13 11:16:58,388] INFO: login successfully
+[2025-01-13 11:17:14,288] INFO: login successfully
+[2025-01-13 11:17:15,491] INFO: login successfully
+[2025-01-13 11:17:15,825] INFO: login successfully
+[2025-01-13 11:17:22,853] INFO: displayed borrowed books successfully
+[2025-01-13 11:17:22,854] INFO: displayed borrowed books successfully
+[2025-01-13 11:17:23,734] INFO: displayed all books successfully
+[2025-01-13 11:17:31,633] INFO: user added to watch list successfully
+[2025-01-13 11:17:35,799] ERROR: user added to watch list failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 11:17:40,515] ERROR: user added to watch list failed with exception: Name must not contain digits
+[2025-01-13 11:17:45,845] INFO: user added to watch list successfully
+[2025-01-13 11:17:48,920] INFO: displayed borrowed books successfully
+[2025-01-13 11:17:48,920] INFO: displayed borrowed books successfully
+[2025-01-13 11:17:50,735] INFO: notification sent successfully
+[2025-01-13 11:17:52,387] INFO: notification sent successfully
+[2025-01-13 11:17:52,388] INFO: notification sent successfully
+[2025-01-13 11:17:52,388] INFO: notification sent successfully
+[2025-01-13 11:17:52,389] INFO: notification sent successfully
+[2025-01-13 11:17:52,389] INFO: notification sent successfully
+[2025-01-13 11:17:52,389] INFO: notification sent successfully
+[2025-01-13 11:17:53,537] INFO: notification sent successfully
+[2025-01-13 11:17:53,538] INFO: notification sent successfully
+[2025-01-13 11:17:53,539] INFO: book borrowed successfully
+[2025-01-13 11:17:53,539] INFO: user removed from watch list successfully
+[2025-01-13 11:17:53,539] INFO: book returned successfully
+[2025-01-13 11:17:54,634] INFO: displayed borrowed books successfully
+[2025-01-13 11:17:56,899] INFO: notification sent successfully
+[2025-01-13 11:17:59,344] INFO: notification sent successfully
+[2025-01-13 11:17:59,345] INFO: notification sent successfully
+[2025-01-13 11:17:59,345] INFO: notification sent successfully
+[2025-01-13 11:17:59,345] INFO: notification sent successfully
+[2025-01-13 11:17:59,346] INFO: notification sent successfully
+[2025-01-13 11:17:59,346] INFO: notification sent successfully
+[2025-01-13 11:18:00,388] INFO: notification sent successfully
+[2025-01-13 11:18:00,388] INFO: notification sent successfully
+[2025-01-13 11:18:00,389] INFO: book borrowed successfully
+[2025-01-13 11:18:00,389] INFO: user removed from watch list successfully
+[2025-01-13 11:18:00,389] INFO: book returned successfully
+[2025-01-13 11:18:01,609] INFO: displayed borrowed books successfully
+[2025-01-13 11:18:06,933] INFO: book returned successfully
+[2025-01-13 11:18:08,210] INFO: displayed borrowed books successfully
+[2025-01-13 11:18:13,721] INFO: logout successfully
+[2025-01-13 11:18:18,695] INFO: login successfully
+[2025-01-13 11:18:19,385] INFO: login successfully
+[2025-01-13 11:18:19,719] INFO: login successfully
+[2025-01-13 11:26:53,740] INFO: login successfully
+[2025-01-13 11:26:54,749] INFO: login successfully
+[2025-01-13 11:26:55,083] INFO: login successfully
+[2025-01-13 11:27:00,639] INFO: display notification to user successfully
+[2025-01-13 11:27:03,625] INFO: displayed borrowed books successfully
+[2025-01-13 11:27:03,626] INFO: displayed borrowed books successfully
+[2025-01-13 11:27:08,695] INFO: book returned successfully
+[2025-01-13 11:27:10,046] INFO: displayed borrowed books successfully
+[2025-01-13 11:27:11,529] INFO: displayed all books successfully
+[2025-01-13 11:27:13,610] INFO: book borrowed successfully
+[2025-01-13 11:27:14,531] INFO: displayed all books successfully
+[2025-01-13 11:27:25,912] ERROR: user added to watch list failed with exception: Name must not contain digits
+[2025-01-13 11:27:43,102] INFO: user added to watch list successfully
+[2025-01-13 11:27:53,846] INFO: displayed borrowed books successfully
+[2025-01-13 11:27:53,847] INFO: displayed borrowed books successfully
+[2025-01-13 11:27:55,933] INFO: notification sent successfully
+[2025-01-13 11:28:02,150] INFO: notification sent successfully
+[2025-01-13 11:28:02,151] INFO: notification sent successfully
+[2025-01-13 11:28:02,151] INFO: notification sent successfully
+[2025-01-13 11:28:02,152] INFO: notification sent successfully
+[2025-01-13 11:28:02,152] INFO: notification sent successfully
+[2025-01-13 11:28:02,152] INFO: notification sent successfully
+[2025-01-13 11:28:02,152] INFO: notification sent successfully
+[2025-01-13 11:28:02,152] INFO: notification sent successfully
+[2025-01-13 11:28:02,153] INFO: book borrowed successfully
+[2025-01-13 11:28:02,153] INFO: user removed from watch list successfully
+[2025-01-13 11:28:02,153] INFO: book returned successfully
+[2025-01-13 11:28:03,728] INFO: displayed borrowed books successfully
+[2025-01-13 11:28:10,685] INFO: logout successfully
+[2025-01-13 11:28:16,300] ERROR: login failed with exception: Librarian:baruh not found.
+[2025-01-13 11:28:21,763] INFO: login successfully
+[2025-01-13 11:28:22,600] INFO: login successfully
+[2025-01-13 11:28:22,934] INFO: login successfully
+[2025-01-13 11:28:33,626] INFO: display notification to user successfully
+[2025-01-13 11:30:17,761] INFO: login successfully
+[2025-01-13 11:30:18,994] INFO: login successfully
+[2025-01-13 11:30:19,328] INFO: login successfully
+[2025-01-13 11:30:21,076] INFO: display notification to user successfully
+[2025-01-13 11:30:25,872] INFO: displayed borrowed books successfully
+[2025-01-13 11:30:25,872] INFO: displayed borrowed books successfully
+[2025-01-13 11:30:28,113] INFO: displayed all books successfully
+[2025-01-13 11:30:28,712] INFO: displayed borrowed books successfully
+[2025-01-13 11:30:28,713] INFO: displayed borrowed books successfully
+[2025-01-13 11:30:32,069] INFO: book returned successfully
+[2025-01-13 11:30:33,611] INFO: displayed borrowed books successfully
+[2025-01-13 11:30:34,891] INFO: displayed all books successfully
+[2025-01-13 11:30:55,261] INFO: book borrowed successfully
+[2025-01-13 11:30:56,763] INFO: displayed all books successfully
+[2025-01-13 11:31:12,211] INFO: user added to watch list successfully
+[2025-01-13 11:31:17,281] INFO: displayed borrowed books successfully
+[2025-01-13 11:31:17,282] INFO: displayed borrowed books successfully
+[2025-01-13 11:31:24,176] INFO: notification sent successfully
+[2025-01-13 11:31:26,027] INFO: notification sent successfully
+[2025-01-13 11:31:26,029] INFO: notification sent successfully
+[2025-01-13 11:31:26,029] INFO: notification sent successfully
+[2025-01-13 11:31:26,029] INFO: notification sent successfully
+[2025-01-13 11:31:26,029] INFO: notification sent successfully
+[2025-01-13 11:31:26,030] INFO: notification sent successfully
+[2025-01-13 11:31:52,040] INFO: notification sent successfully
+[2025-01-13 11:31:52,041] INFO: notification sent successfully
+[2025-01-13 11:31:52,044] INFO: book borrowed successfully
+[2025-01-13 11:31:52,044] INFO: user removed from watch list successfully
+[2025-01-13 11:31:52,044] INFO: book returned successfully
+[2025-01-13 11:31:53,193] INFO: displayed borrowed books successfully
+[2025-01-13 11:32:12,413] INFO: logout successfully
+[2025-01-13 11:32:33,755] INFO: login successfully
+[2025-01-13 11:32:34,596] INFO: login successfully
+[2025-01-13 11:32:34,930] INFO: login successfully
+[2025-01-13 11:33:49,772] INFO: login successfully
+[2025-01-13 11:33:50,710] INFO: login successfully
+[2025-01-13 11:33:51,044] INFO: login successfully
+[2025-01-13 11:33:52,068] INFO: display notification to user successfully
+[2025-01-13 11:33:54,708] INFO: displayed borrowed books successfully
+[2025-01-13 11:33:54,709] INFO: displayed borrowed books successfully
+[2025-01-13 11:33:57,456] INFO: book returned successfully
+[2025-01-13 11:33:59,028] INFO: displayed borrowed books successfully
+[2025-01-13 11:33:59,874] INFO: displayed all books successfully
+[2025-01-13 11:34:02,954] INFO: book borrowed successfully
+[2025-01-13 11:34:03,889] INFO: displayed all books successfully
+[2025-01-13 11:34:08,672] INFO: user added to watch list successfully
+[2025-01-13 11:34:11,147] INFO: displayed borrowed books successfully
+[2025-01-13 11:34:11,148] INFO: displayed borrowed books successfully
+[2025-01-13 11:34:14,155] INFO: notification sent successfully
+[2025-01-13 11:34:16,073] INFO: notification sent successfully
+[2025-01-13 11:34:16,074] INFO: notification sent successfully
+[2025-01-13 11:34:16,074] INFO: notification sent successfully
+[2025-01-13 11:34:16,075] INFO: notification sent successfully
+[2025-01-13 11:34:16,075] INFO: notification sent successfully
+[2025-01-13 11:34:16,075] INFO: notification sent successfully
+[2025-01-13 11:34:20,561] INFO: notification sent successfully
+[2025-01-13 11:34:20,563] INFO: notification sent successfully
+[2025-01-13 11:34:20,564] INFO: book borrowed successfully
+[2025-01-13 11:34:20,564] INFO: user removed from watch list successfully
+[2025-01-13 11:34:20,564] INFO: book returned successfully
+[2025-01-13 11:34:21,710] INFO: displayed borrowed books successfully
+[2025-01-13 11:34:27,146] INFO: logout successfully
+[2025-01-13 11:34:30,889] INFO: login successfully
+[2025-01-13 11:34:31,667] INFO: login successfully
+[2025-01-13 11:34:32,001] INFO: login successfully
+[2025-01-13 11:34:37,191] INFO: display notification to user successfully
+[2025-01-13 11:34:38,599] INFO: logout successfully
+[2025-01-13 11:34:44,589] INFO: login successfully
+[2025-01-13 11:34:45,360] INFO: login successfully
+[2025-01-13 11:34:45,694] INFO: login successfully
+[2025-01-13 11:34:47,972] INFO: display notification to user successfully
+[2025-01-13 11:34:49,292] INFO: logout successfully
+[2025-01-13 11:34:52,054] INFO: login successfully
+[2025-01-13 11:34:52,982] INFO: login successfully
+[2025-01-13 11:34:53,317] INFO: login successfully
+[2025-01-13 11:34:56,027] INFO: display notification to user successfully
+[2025-01-13 11:44:04,811] ERROR: login failed with exception: Librarian:11 not found.
+[2025-01-13 11:44:09,521] INFO: login successfully
+[2025-01-13 11:44:10,581] INFO: login successfully
+[2025-01-13 11:44:10,916] INFO: login successfully
+[2025-01-13 11:44:12,183] INFO: display notification to user successfully
+[2025-01-13 12:08:16,755] ERROR: login failed with exception: Login.login_verifier() missing 1 required positional argument: 'password'
+[2025-01-13 12:08:59,114] ERROR: login failed with exception: Login.login_verifier() missing 1 required positional argument: 'password'
+[2025-01-13 12:13:03,963] ERROR: login failed with exception: Login.login_verifier() missing 1 required positional argument: 'password'
+[2025-01-13 12:13:17,892] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 12:14:37,822] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 12:14:37,823] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 12:14:49,443] INFO: login successfully
+[2025-01-13 12:14:49,447] ERROR: login failed with exception: Librarian:testuser not found.
+[2025-01-13 12:15:18,962] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 12:15:18,962] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 12:15:18,965] ERROR: login failed with exception: Librarian file does not exist.
+[2025-01-13 12:15:18,969] ERROR: login failed with exception: Librarian file does not exist.
+[2025-01-13 12:15:18,974] ERROR: login failed with exception: Librarian file does not exist.
+[2025-01-13 12:16:36,151] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 12:22:07,022] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 12:22:15,873] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 12:24:44,650] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 12:30:19,516] ERROR: login failed with exception: Librarian file does not exist.
+[2025-01-13 12:31:19,163] ERROR: login failed with exception: Librarian:amosi not found.
+[2025-01-13 12:34:51,264] ERROR: login failed with exception: Librarian:1 not found.
+[2025-01-13 12:34:51,264] ERROR: login failed with exception: Librarian:1 not found.
+[2025-01-13 12:37:31,805] ERROR: login failed with exception: Librarian:1 not found.
+[2025-01-13 12:37:31,806] ERROR: login failed with exception: Librarian:1 not found.
+[2025-01-13 12:39:47,047] ERROR: login failed with exception: Librarian:1 not found.
+[2025-01-13 12:39:47,047] ERROR: login failed with exception: Librarian:1 not found.
+[2025-01-13 12:42:18,443] ERROR: login failed with exception: Librarian:1 not found.
+[2025-01-13 12:43:10,675] ERROR: login failed with exception: Librarian:1 not found.
+[2025-01-13 12:47:08,958] ERROR: login failed with exception: Librarian:1 not found.
+[2025-01-13 12:47:08,959] ERROR: login failed with exception: Librarian:1 not found.
+[2025-01-13 12:49:16,359] ERROR: login failed with exception: Librarian:1 not found.
+[2025-01-13 12:49:16,360] ERROR: login failed with exception: Librarian:1 not found.
+[2025-01-13 12:49:49,539] INFO: login successfully
+[2025-01-13 12:49:50,501] INFO: login successfully
+[2025-01-13 12:49:50,834] INFO: login successfully
+[2025-01-13 12:49:52,529] INFO: display notification to user successfully
+[2025-01-13 12:50:08,823] ERROR: login failed with exception: Librarian:1 not found.
+[2025-01-13 12:50:08,823] ERROR: login failed with exception: Librarian:1 not found.
+[2025-01-13 12:50:08,829] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 12:50:08,832] ERROR: login failed with exception: Librarian file does not exist.
+[2025-01-13 12:50:08,835] ERROR: login failed with exception: Librarian:amosi not found.
+[2025-01-13 12:50:58,345] ERROR: login failed with exception: Librarian:1 not found.
+[2025-01-13 12:51:20,790] ERROR: login failed with exception: Librarian:1 not found.
+[2025-01-13 12:51:20,791] ERROR: login failed with exception: Librarian:1 not found.
+[2025-01-13 12:53:17,022] ERROR: login failed with exception: Librarian:1 not found.
+[2025-01-13 12:56:30,512] INFO: login successfully
+[2025-01-13 12:56:37,234] INFO: login successfully
+[2025-01-13 12:56:45,133] INFO: login successfully
+[2025-01-13 12:56:51,072] INFO: login successfully
+[2025-01-13 12:56:51,078] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 12:56:51,083] ERROR: login failed with exception: Librarian file does not exist.
+[2025-01-13 12:56:51,087] ERROR: login failed with exception: Librarian:amosi not found.
+[2025-01-13 12:57:00,945] INFO: login successfully
+[2025-01-13 12:57:05,331] INFO: login successfully
+[2025-01-13 12:57:05,336] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 12:57:05,341] ERROR: login failed with exception: Librarian file does not exist.
+[2025-01-13 12:57:05,345] ERROR: login failed with exception: Librarian:amosi not found.
+[2025-01-13 12:59:38,959] INFO: login successfully
+[2025-01-13 12:59:38,960] INFO: login successfully
+[2025-01-13 12:59:43,429] INFO: login successfully
+[2025-01-13 12:59:43,429] INFO: login successfully
+[2025-01-13 12:59:43,433] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 12:59:43,436] ERROR: login failed with exception: Librarian file does not exist.
+[2025-01-13 12:59:43,439] ERROR: login failed with exception: Librarian:amosi not found.
+[2025-01-13 13:13:33,497] ERROR: register failed with exception: Register.register_verifier() missing 4 required positional arguments: 'self', 'username', 'password', and 'encrypted_password'
+[2025-01-13 13:14:34,145] ERROR: register failed with exception: Register.register_verifier() missing 3 required positional arguments: 'self', 'username', and 'password'
+[2025-01-13 13:15:13,751] ERROR: register failed with exception: Register.register_verifier() missing 3 required positional arguments: 'self', 'username', and 'password'
+[2025-01-13 13:15:47,594] ERROR: register failed with exception: 'TestRegister' object has no attribute 'search_user_in_csv'
+[2025-01-13 13:17:10,300] ERROR: register failed with exception: 'TestRegister' object has no attribute 'search_user_in_csv'
+[2025-01-13 13:18:00,436] ERROR: register failed with exception: 'TestRegister' object has no attribute 'search_user_in_csv'
+[2025-01-13 13:19:20,502] ERROR: register failed with exception: name 'search_user_in_csv' is not defined
+[2025-01-13 13:19:42,848] ERROR: register failed with exception: 'TestRegister' object has no attribute 'search_user_in_csv'
+[2025-01-13 13:22:20,715] ERROR: register failed with exception: LibrarianFactory.create_user() missing 1 required positional argument: 'is_connected'
+[2025-01-13 13:23:04,540] ERROR: register failed with exception: Failed to export user data to file: The directory for the file '../csv_files/librarians_users.csv' does not exist.
+[2025-01-13 13:26:47,746] ERROR: register failed with exception: Failed to export user data to file: The directory for the file '../csv_files/librarians_users.csv' does not exist.
+[2025-01-13 13:27:47,837] INFO: register successfully
+[2025-01-13 13:28:53,810] INFO: register successfully
+[2025-01-13 13:30:18,445] ERROR: register failed with exception: Failed to export user data to file: The directory for the file '../csv_files/librarians_users.csv' does not exist.
+[2025-01-13 13:34:36,867] ERROR: register failed with exception: Failed to export user data to file: The directory for the file '../csv_files/librarians_users.csv' does not exist.
+[2025-01-13 13:40:03,250] ERROR: register failed with exception: Invalid Username: Username is blank.
+[2025-01-13 13:40:06,687] ERROR: register failed with exception: Invalid Password: Password is blank.
+[2025-01-13 13:40:14,158] ERROR: register failed with exception: Invalid Username: Username is blank.
+[2025-01-13 13:40:24,012] INFO: register successfully
+[2025-01-13 13:40:29,636] INFO: login successfully
+[2025-01-13 13:40:30,589] INFO: login successfully
+[2025-01-13 13:40:30,923] INFO: login successfully
+[2025-01-13 13:40:32,127] INFO: display notification to user successfully
+[2025-01-13 13:43:06,179] ERROR: register failed with exception: Failed to export user data to file: The directory for the file '../csv_files/librarians_users.csv' does not exist.
+[2025-01-13 13:53:42,262] ERROR: register failed with exception: Invalid Username: Username is blank.
+[2025-01-13 13:53:56,267] ERROR: register failed with exception: Invalid Password: Password is blank.
+[2025-01-13 13:57:43,016] ERROR: register failed with exception: No module named 'login'
+[2025-01-13 13:59:18,666] ERROR: register failed with exception: No module named 'login'
+[2025-01-13 14:01:02,489] ERROR: register failed with exception: No module named 'login'
+[2025-01-13 14:04:03,881] INFO: register successfully
+[2025-01-13 14:04:39,497] INFO: register successfully
+[2025-01-13 14:08:54,638] ERROR: register failed with exception: No module named 'login'
+[2025-01-13 14:14:50,868] INFO: register successfully
+[2025-01-13 14:15:31,918] INFO: register successfully
+[2025-01-13 14:15:55,119] INFO: register successfully
+[2025-01-13 14:17:47,725] INFO: register successfully
+[2025-01-13 15:21:14,010] INFO: register successfully
+[2025-01-13 15:22:29,679] ERROR: register failed with exception: Invalid Username: Username is blank.
+[2025-01-13 15:22:33,118] ERROR: register failed with exception: Invalid Password: Password is blank.
+[2025-01-13 15:22:33,121] ERROR: register failed with exception: Invalid Username: Username is blank.
+[2025-01-13 15:22:33,130] INFO: register successfully
+[2025-01-13 15:33:26,051] INFO: register successfully
+[2025-01-13 15:50:46,473] INFO: login successfully
+[2025-01-13 15:50:47,234] INFO: login successfully
+[2025-01-13 15:50:47,567] INFO: login successfully
+[2025-01-13 15:50:48,790] INFO: display notification to user successfully
+[2025-01-13 15:51:03,506] INFO: logout successfully
+[2025-01-13 15:51:12,880] ERROR: login failed with exception: Librarian:admin not found.
+[2025-01-13 15:51:18,873] INFO: login successfully
+[2025-01-13 15:51:20,135] INFO: login successfully
+[2025-01-13 15:51:20,469] INFO: login successfully
+[2025-01-13 15:51:21,421] INFO: display notification to user successfully
+[2025-01-13 15:57:36,575] ERROR: user added to watch list failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 15:57:36,575] INFO: user added to watch list successfully
+[2025-01-13 15:57:36,575] INFO: user added to watch list successfully
+[2025-01-13 15:57:36,575] ERROR: user added to watch list failed with exception: Librarian already in list.
+[2025-01-13 15:57:36,575] ERROR: book borrowed failed with exception: No Available Copies for lending this book , already 5 copies has been lent.
+[2025-01-13 15:57:36,575] INFO: book borrowed successfully
+[2025-01-13 15:57:36,575] ERROR: user removed from watch list failed with exception: You cannot go below zero.
+[2025-01-13 15:57:36,576] INFO: user added to watch list successfully
+[2025-01-13 15:57:36,576] ERROR: notification sent failed with exception: There are no librarians in the library!
+[2025-01-13 15:57:40,622] INFO: book borrowed successfully
+[2025-01-13 15:57:40,622] INFO: user removed from watch list successfully
+[2025-01-13 15:57:40,623] ERROR: book returned failed with exception: No books to return.
+[2025-01-13 15:57:40,623] INFO: book borrowed successfully
+[2025-01-13 15:57:40,623] INFO: book returned successfully
+[2025-01-13 15:58:27,257] ERROR: user added to watch list failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 15:58:27,258] INFO: user added to watch list successfully
+[2025-01-13 15:58:27,258] INFO: user added to watch list successfully
+[2025-01-13 15:58:27,258] ERROR: user added to watch list failed with exception: Librarian already in list.
+[2025-01-13 15:58:27,258] ERROR: book borrowed failed with exception: No Available Copies for lending this book , already 5 copies has been lent.
+[2025-01-13 15:58:27,258] INFO: book borrowed successfully
+[2025-01-13 15:58:27,258] ERROR: user removed from watch list failed with exception: You cannot go below zero.
+[2025-01-13 15:58:27,258] INFO: user added to watch list successfully
+[2025-01-13 15:58:27,258] ERROR: notification sent failed with exception: There are no librarians in the library!
+[2025-01-13 15:58:35,458] INFO: book borrowed successfully
+[2025-01-13 15:58:35,459] INFO: user removed from watch list successfully
+[2025-01-13 15:58:35,459] ERROR: book returned failed with exception: No books to return.
+[2025-01-13 15:58:35,459] INFO: book borrowed successfully
+[2025-01-13 15:58:35,459] INFO: book returned successfully
+[2025-01-13 15:58:42,702] ERROR: user added to watch list failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 15:58:42,702] INFO: user added to watch list successfully
+[2025-01-13 15:58:42,702] INFO: user added to watch list successfully
+[2025-01-13 15:58:42,702] ERROR: user added to watch list failed with exception: Librarian already in list.
+[2025-01-13 15:58:42,702] ERROR: book borrowed failed with exception: No Available Copies for lending this book , already 5 copies has been lent.
+[2025-01-13 15:58:42,703] INFO: book borrowed successfully
+[2025-01-13 15:58:42,703] ERROR: user removed from watch list failed with exception: You cannot go below zero.
+[2025-01-13 15:58:42,703] INFO: user added to watch list successfully
+[2025-01-13 15:58:42,703] ERROR: notification sent failed with exception: There are no librarians in the library!
+[2025-01-13 15:58:49,654] INFO: book borrowed successfully
+[2025-01-13 15:58:49,654] INFO: user removed from watch list successfully
+[2025-01-13 15:58:49,654] ERROR: book returned failed with exception: No books to return.
+[2025-01-13 15:58:49,655] INFO: book borrowed successfully
+[2025-01-13 15:58:49,655] INFO: book returned successfully
+[2025-01-13 15:59:19,913] ERROR: user added to watch list failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 15:59:19,913] INFO: user added to watch list successfully
+[2025-01-13 15:59:19,913] INFO: user added to watch list successfully
+[2025-01-13 15:59:19,913] ERROR: user added to watch list failed with exception: Librarian already in list.
+[2025-01-13 15:59:19,913] ERROR: book borrowed failed with exception: No Available Copies for lending this book , already 5 copies has been lent.
+[2025-01-13 15:59:19,914] INFO: book borrowed successfully
+[2025-01-13 15:59:19,914] ERROR: user removed from watch list failed with exception: You cannot go below zero.
+[2025-01-13 15:59:19,914] INFO: user added to watch list successfully
+[2025-01-13 15:59:19,914] ERROR: notification sent failed with exception: There are no librarians in the library!
+[2025-01-13 16:00:24,475] INFO: book borrowed successfully
+[2025-01-13 16:00:24,477] INFO: user removed from watch list successfully
+[2025-01-13 16:00:24,477] ERROR: book returned failed with exception: No books to return.
+[2025-01-13 16:00:24,478] INFO: book borrowed successfully
+[2025-01-13 16:00:24,478] INFO: book returned successfully
+[2025-01-13 16:00:55,462] ERROR: user added to watch list failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 16:00:55,462] INFO: user added to watch list successfully
+[2025-01-13 16:00:55,462] INFO: user added to watch list successfully
+[2025-01-13 16:00:55,462] ERROR: user added to watch list failed with exception: Librarian already in list.
+[2025-01-13 16:00:55,463] ERROR: book borrowed failed with exception: No Available Copies for lending this book , already 5 copies has been lent.
+[2025-01-13 16:00:55,463] INFO: book borrowed successfully
+[2025-01-13 16:00:55,463] ERROR: user removed from watch list failed with exception: You cannot go below zero.
+[2025-01-13 16:00:55,463] INFO: user added to watch list successfully
+[2025-01-13 16:00:55,463] ERROR: notification sent failed with exception: There are no librarians in the library!
+[2025-01-13 16:00:58,383] INFO: book borrowed successfully
+[2025-01-13 16:00:58,383] INFO: user removed from watch list successfully
+[2025-01-13 16:00:58,384] ERROR: book returned failed with exception: No books to return.
+[2025-01-13 16:00:58,384] INFO: book borrowed successfully
+[2025-01-13 16:00:58,384] INFO: book returned successfully
+[2025-01-13 16:01:05,278] ERROR: user added to watch list failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 16:01:05,279] INFO: user added to watch list successfully
+[2025-01-13 16:01:05,279] INFO: user added to watch list successfully
+[2025-01-13 16:01:05,279] ERROR: user added to watch list failed with exception: Librarian already in list.
+[2025-01-13 16:01:05,279] ERROR: book borrowed failed with exception: No Available Copies for lending this book , already 5 copies has been lent.
+[2025-01-13 16:01:05,279] INFO: book borrowed successfully
+[2025-01-13 16:01:05,279] ERROR: user removed from watch list failed with exception: You cannot go below zero.
+[2025-01-13 16:01:05,279] INFO: user added to watch list successfully
+[2025-01-13 16:01:05,280] ERROR: notification sent failed with exception: There are no librarians in the library!
+[2025-01-13 16:02:56,786] ERROR: user added to watch list failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 16:02:56,786] INFO: user added to watch list successfully
+[2025-01-13 16:02:56,786] INFO: user added to watch list successfully
+[2025-01-13 16:02:56,786] ERROR: user added to watch list failed with exception: User already in list.
+[2025-01-13 16:02:56,786] ERROR: book borrowed failed with exception: No Available Copies for lending this book , already 5 copies has been lent.
+[2025-01-13 16:02:56,786] INFO: book borrowed successfully
+[2025-01-13 16:02:56,786] ERROR: user removed from watch list failed with exception: You cannot go below zero.
+[2025-01-13 16:02:56,787] INFO: user added to watch list successfully
+[2025-01-13 16:02:56,787] ERROR: notification sent failed with exception: There are no librarians in the library!
+[2025-01-13 16:03:02,742] INFO: book borrowed successfully
+[2025-01-13 16:03:02,742] INFO: user removed from watch list successfully
+[2025-01-13 16:03:02,743] ERROR: book returned failed with exception: No books to return.
+[2025-01-13 16:03:02,743] INFO: book borrowed successfully
+[2025-01-13 16:03:02,743] INFO: book returned successfully
+[2025-01-13 16:03:18,830] INFO: user added to watch list successfully
+[2025-01-13 16:03:21,835] INFO: user added to watch list successfully
+[2025-01-13 16:03:21,835] ERROR: user added to watch list failed with exception: User already in list.
+[2025-01-13 16:03:26,065] ERROR: user added to watch list failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 16:03:29,030] INFO: user added to watch list successfully
+[2025-01-13 16:03:29,030] ERROR: notification sent failed with exception: There are no librarians in the library!
+[2025-01-13 16:03:34,246] INFO: book borrowed successfully
+[2025-01-13 16:03:34,247] INFO: user removed from watch list successfully
+[2025-01-13 16:05:36,960] INFO: user added to watch list successfully
+[2025-01-13 16:05:46,937] ERROR: notification sent failed with exception: There are no librarians in the library!
+[2025-01-13 16:07:58,140] INFO: user added to watch list successfully
+[2025-01-13 16:08:13,109] ERROR: notification sent failed with exception: There are no librarians in the library!
+[2025-01-13 16:11:08,803] INFO: user added to watch list successfully
+[2025-01-13 16:13:43,130] INFO: user added to watch list successfully
+[2025-01-13 16:15:18,986] INFO: user added to watch list successfully
+[2025-01-13 16:15:43,384] ERROR: user added to watch list failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 16:15:43,385] INFO: user added to watch list successfully
+[2025-01-13 16:15:43,385] INFO: user added to watch list successfully
+[2025-01-13 16:15:43,385] ERROR: user added to watch list failed with exception: User already in list.
+[2025-01-13 16:15:43,385] ERROR: book borrowed failed with exception: No Available Copies for lending this book , already 5 copies has been lent.
+[2025-01-13 16:15:43,385] INFO: book borrowed successfully
+[2025-01-13 16:15:43,385] ERROR: user removed from watch list failed with exception: You cannot go below zero.
+[2025-01-13 16:15:43,386] INFO: user added to watch list successfully
+[2025-01-13 16:15:43,386] ERROR: notification sent failed with exception: There are no Observers for this book!
+[2025-01-13 16:15:49,150] INFO: book borrowed successfully
+[2025-01-13 16:15:49,150] INFO: user removed from watch list successfully
+[2025-01-13 16:15:49,151] ERROR: book returned failed with exception: No books to return.
+[2025-01-13 16:15:49,151] INFO: book borrowed successfully
+[2025-01-13 16:15:49,151] INFO: book returned successfully
+[2025-01-13 16:18:09,660] INFO: user added to watch list successfully
+[2025-01-13 16:18:54,488] ERROR: login failed with exception: Librarian:librarian1 not found.
+[2025-01-13 16:19:04,185] INFO: user added to watch list successfully
+[2025-01-13 16:21:09,896] INFO: user added to watch list successfully
+[2025-01-13 16:21:09,897] ERROR: notification sent failed with exception: There are no Observers for this book!
+[2025-01-13 16:21:22,157] INFO: book borrowed successfully
+[2025-01-13 16:21:22,157] INFO: user removed from watch list successfully
+[2025-01-13 16:21:42,072] INFO: user added to watch list successfully
+[2025-01-13 16:21:42,073] ERROR: notification sent failed with exception: There are no Observers for this book!
+[2025-01-13 16:21:44,662] INFO: book borrowed successfully
+[2025-01-13 16:21:44,662] INFO: user removed from watch list successfully
+[2025-01-13 16:21:56,372] INFO: user added to watch list successfully
+[2025-01-13 16:21:56,373] ERROR: notification sent failed with exception: There are no Observers for this book!
+[2025-01-13 16:21:56,373] INFO: book borrowed successfully
+[2025-01-13 16:21:56,373] INFO: user removed from watch list successfully
+[2025-01-13 16:24:18,233] ERROR: login failed with exception: The fields you are trying to submit are blank!
