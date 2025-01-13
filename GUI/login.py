@@ -3,10 +3,13 @@ import tkinter as tk
 from tkinter import messagebox
 import csv
 
-from Backend.Encryption import Encryption
+from Backend.encryption import Encryption
+from Backend.librarian import User
+from Backend.user_manager import UserManager
 from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
-from Menu import Menu  # Import the Login class here
-from ConfigFiles.LogDecorator import log_activity
+from Exceptions.ExceptionUserNotFound import UserNotFoundError
+from menu import Menu  # Import the Login class here
+from ConfigFiles.log_decorator import log_activity
 
 
 class Login:
@@ -42,16 +45,6 @@ class Login:
 
         self.frame.pack()
 
-    def search_in_csv(self, username, password):
-        password = Encryption.encrypt_password(password)
-        with open('../ConfigFiles/users.csv', 'r') as file:
-            reader = csv.reader(file)
-            rows = list(reader)
-            for row in rows:
-                if row[0] == username and row[1] == password:
-                    return True
-            return False
-
     def login(self):
         """
         Handle user login with messagebox feedback and exception raising:
@@ -70,29 +63,34 @@ class Login:
             messagebox.showerror("User Error", "Login Failed!\nUser does not exist.")
         except FileNotFoundError as error:
             messagebox.showerror("File Error", "user.csv file does not exist.")
+        except UserNotFoundError as error:
+            messagebox.showerror("User 404", "user is not registered in the database.")
 
     @log_activity("login")
     def login_verifier(self, username, password):
         if username == "" or password == "":
             raise BlankFieldsError()
 
-        if not os.path.exists("../ConfigFiles/users.csv"):
+        if not os.path.exists("../csv_files/librarians_users.csv"):
             raise FileNotFoundError("User file does not exist.")
-
-        if self.search_in_csv(username, password):
+        try:
+            user = UserManager.search_in_user_csv(username, password)
             # Login successful
+            user.activate_user()
             messagebox.showinfo("Login Successful", f"Welcome back, {username}!")
-            self.frame.after(333, self.switch_to_menu)  # Switch to the next screen
-        else:
-            # User not found
-            raise ValueError("Login Failed! User does not exist.")
+            self.frame.after(333, self.switch_to_menu) # Switch to the next screen
+        except UserNotFoundError:
+            raise UserNotFoundError(f"{username}")
 
     def switch_to_register(self):
         self.frame.destroy()  # Destroy the current login frame
-        from Register import Register  # Import the Register class here
+        from register import Register  # Import the Register class here
         Register(self.root)  # Pass the root window to Register screen
 
     def switch_to_menu(self):
-        logged_user = str(self.username_box.get())
+        logged_user = UserManager.extracting_user(self.username_box.get())
         self.frame.destroy()  # Destroy the current register frame
         Menu(self.root, logged_user)  # Pass the root window to Login screen
+
+   # def get_current_user(self):
+        #return self.cur

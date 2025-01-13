@@ -1,19 +1,22 @@
 import tkinter as tk
 from tkinter import ttk
-from Backend.AddBook import AddBook
-from Backend.LendBook import LendBook
-from Backend.RemoveBook import RemoveBook
-from Backend.SearchBook import SearchBook
-from Backend.BookManager import BookManager
-from Backend.TreeViewLoader import TreeViewLoader
-from Backend.ReturnBook import ReturnBook
+from Backend.add_book import AddBook
+from Backend.lend_book import LendBook
+from Backend.remove_book import RemoveBook
+from Backend.search_book import SearchBook
+from Backend.book_manager import BookManager
+from Backend.tree_view_loader import TreeViewLoader
+from Backend.return_book import ReturnBook
 from tkinter import messagebox
-from ConfigFiles.Logger_config import logger
-from ConfigFiles.LogDecorator import log_activity
+
+from Backend.user_manager import UserManager
+from ConfigFiles.logger_config import logger
+from ConfigFiles.log_decorator import log_activity
+from GUI import screens
 
 
 class Menu:
-    def __init__(self, root, user_name=""):
+    def __init__(self, root, user):
         self.root = root  # Store the root window
         root.geometry("800x600")
 
@@ -38,7 +41,7 @@ class Menu:
         self.menu_frame.grid_columnconfigure(3, weight=1)
 
         # Headline
-        self.headline_label = tk.Label(self.menu_frame, text=f"Welcome {user_name}", font=("Arial", 32))
+        self.headline_label = tk.Label(self.menu_frame, text=f"Welcome {user.get_username()}", font=("Arial", 32))
         self.headline_label.grid(row=0, column=0, columnspan=4, pady=20)
 
         # Menu buttons
@@ -56,10 +59,10 @@ class Menu:
                                             command=self.return_book_widget)
         self.popular_books_button = tk.Button(self.menu_frame, text="Popular Books", font=('Arial', 16), width=8,
                                               command=self.popular_books_widget)
-        self.lgout_button = tk.Button(self.menu_frame, text="Logout", font=('Arial', 16), width=8,
-                                      command=self.logout_button_func)
+        self.logout_button = tk.Button(self.menu_frame, text="Logout", font=('Arial', 16), width=8,
+                                       command=lambda: self.logout_button_func(user))
         self.exit_button = tk.Button(self.menu_frame, text="Exit", font=('Arial', 16), width=8,
-                                     command=self.root.quit)
+                                     command=self.exit_func)
 
         # Arrange buttons in a visually appealing grid
         self.add_book_button.grid(row=1, column=0, pady=2, padx=2)
@@ -69,10 +72,13 @@ class Menu:
         self.lend_book_button.grid(row=2, column=0, pady=2, padx=2)
         self.return_book_button.grid(row=2, column=1, pady=2, padx=2)
         self.popular_books_button.grid(row=2, column=2, pady=2, padx=2)
-        self.lgout_button.grid(row=2, column=3, pady=2, padx=2)
+        self.logout_button.grid(row=2, column=3, pady=2, padx=2)
         self.exit_button.grid(row=3, column=0, columnspan=4, pady=2)
 
         self.menu_frame.pack()
+
+    def exit_func(self):
+        screens.on_close(self.root)
 
     def add_book_widget(self):
         self.book_frame.destroy()
@@ -445,10 +451,12 @@ class Menu:
 
 
     @log_activity("logout")
-    def logout_button_func(self):
+    def logout_button_func(self,user):
         try:
             self.menu_frame.destroy()  # Destroy the current menu frame
-            from Login import Login  # Import the Login class
+            #logout - change the user is_connected to False.
+            UserManager.log_out_user(user)
+            from login import Login  # Import the Login class
             Login(self.root)  # Pass the root window to the Login screen
         except ImportError:
             tk.messagebox.showerror(

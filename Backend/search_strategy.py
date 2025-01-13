@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
-from Backend.BookManager import BookManager
-from ConfigFiles.LogDecorator import search_log_activity
+from Backend.book_manager import BookManager
+from ConfigFiles.log_decorator import search_log_activity
 
 
 class SearchStrategy:

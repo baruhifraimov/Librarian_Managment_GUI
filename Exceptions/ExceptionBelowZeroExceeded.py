@@ -1,4 +1,4 @@
-class ExceptionBelowZero(Exception):
+class BelowZeroError(Exception):
     """Custom exception raised when WatchList limit is exceeded."""
     def __init__(self, max_limit):
         self.max_limit = max_limit

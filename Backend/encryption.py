@@ -1,6 +1,5 @@
 import hashlib
 
-
 class Encryption:
 
     @staticmethod

@@ -3,11 +3,12 @@ import tkinter as tk
 from tkinter import messagebox
 import csv
 
-from Backend.Encryption import Encryption
-from ConfigFiles.LogDecorator import log_activity
+from Backend.encryption import Encryption
+from Backend.user_factory import UserFactory
+from ConfigFiles.log_decorator import log_activity
 from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
 from Exceptions.ExceptionUserAlreadyInList import UserAlreadyInListError
-
+from Backend.librarian import User
 
 class Register:
     def __init__(self, root):
@@ -36,8 +37,8 @@ class Register:
         self.frame.pack()
 
     def search_user_in_csv(self, username,password):
-        if os.path.exists("../ConfigFiles/users.csv"): # check if the file exists
-            with open('../ConfigFiles/users.csv', 'r') as file:
+        if os.path.exists("../csv_files/librarians_users.csv"): # check if the file exists
+            with open('../csv_files/librarians_users.csv', 'r') as file:
                 reader = csv.reader(file)
                 rows = list(reader)
                 for row in rows:
@@ -80,24 +81,26 @@ class Register:
         if password == "":
             raise BlankFieldsError("Invalid Password: Password is blank.")
 
-        # Check if the user already exists
+        # Check if the user already exists in the csv file
         if self.search_user_in_csv(username, encrypted_password):
             raise UserAlreadyInListError(f"Register Failed: Username '{username}' already exists.")
 
-        # Save user info and show success message
-        self.export_to_file(username, encrypted_password)
+        #create a user object using user factory.
+        user =  UserFactory.create_user(username, encrypted_password)
+
+        # Add user info to csv and show success message
+        self.add_user_csv(user)
         messagebox.showinfo("Register Success", "Registered successfully!")
         self.switch_to_login()  # Switch to Login screen
 
-    def export_to_file(self, username, password):
+    def add_user_csv(self, user):
         """
-        Append the username and password to the users.csv file.
+        Append the username and password to the librarians_users.csv file.
         Create the file and add headers if it does not exist or is empty.
-        :param username: The username to save
-        :param password: The password to save
+        :param user: user object that includes username and password.
         """
         try:
-            file_path = "../ConfigFiles/users.csv"
+            file_path = "../csv_files/librarians_users.csv"
 
             # Ensure the parent directory exists
             if not os.path.exists(os.path.dirname(file_path)):
@@ -109,10 +112,10 @@ class Register:
 
                 # Write headers if the file is empty
                 if os.stat(file_path).st_size == 0:  # Check if the file is empty
-                    writer.writerow(["Username", "Password"])
+                    writer.writerow(["Username", "Password","Is_Connected"])
 
                 # Write the new user's data
-                writer.writerow([username, password])
+                writer.writerow([user.get_username(),user.get_password(),user.get_is_connected()])
 
         except Exception as e:
             # Raise a runtime error for unexpected issues
@@ -120,5 +123,5 @@ class Register:
 
     def switch_to_login(self):
         self.frame.destroy()  # Destroy the current register frame
-        from Login import Login  # Import the Login class here
+        from login import Login  # Import the Login class here
         Login(self.root)  # Pass the root window to Login screen

@@ -1,4 +1,4 @@
-from Backend.SearchStrategy import *
+from Backend.search_strategy import *
 
 class SearchBook:
 

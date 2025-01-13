@@ -1,14 +1,14 @@
-from Backend.AvBooksItr import AvBooksItr
-from Backend.BookManager import BookManager
-from Backend.LendBookItr import LendBookItr
+from Backend.avl_books_iter import AvBooksItr
+from Backend.book_manager import BookManager
+from Backend.lend_book_iter import LendBookItr
 import tkinter as tk
 from tkinter import messagebox
-from ConfigFiles.LogDecorator import log_activity
+from ConfigFiles.log_decorator import log_activity
 
 
 class TreeViewLoader:
     @classmethod
-    @log_activity("Displayed all books")
+    @log_activity("displayed all books")
     def load_all_books(cls, treeview):
         if not BookManager.books:
             raise ValueError("Error loading books: No books available in the library.")
@@ -18,7 +18,7 @@ class TreeViewLoader:
                                                 book.get_is_lent(), book.get_Available_books_num()))
 
     @classmethod
-    @log_activity("Displayed available books")
+    @log_activity("displayed available books")
     def load_available_books(cls, treeview):
         iterator = iter(AvBooksItr(BookManager.books))
         found = False
@@ -31,7 +31,7 @@ class TreeViewLoader:
             raise ValueError("Error loading available books: No available books found.")
 
     @classmethod
-    @log_activity("Displayed borrowed books")
+    @log_activity("displayed borrowed books")
     def load_borrowed_books(cls, treeview):
         iterator = iter(LendBookItr(BookManager.books))
         found = False
@@ -44,7 +44,7 @@ class TreeViewLoader:
             raise ValueError("Error loading borrowed books: No borrowed books found.")
 
     @classmethod
-    @log_activity("Displayed books by category")
+    @log_activity("displayed books by category")
     def load_books_by_category(cls, treeview):
         srt_cat_books = sorted(BookManager.books, key=lambda book: book.get_genre())
         if not srt_cat_books:
@@ -55,7 +55,7 @@ class TreeViewLoader:
                                                 book.get_is_lent(), book.get_Available_books_num()))
 
     @classmethod
-    @log_activity("Displayed popular books")
+    @log_activity("displayed popular books")
     def load_popular_books(cls, treeview):
         popular_books = [book for book in BookManager.books if int(book.get_lent_count()) > 0]
         if not popular_books:

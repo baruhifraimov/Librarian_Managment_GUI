@@ -1,4 +1,4 @@
-class BookNotFound404(Exception):
+class BookNotFound404Error(Exception):
     """Custom exception raised when at least a single field is blank."""
     def __init__(self,title, author, genre, year):
         self.message = (f"No Book with the details: (Title:{title}"

@@ -34,7 +34,7 @@
 # # #         return self.check_password(password) and self.user_name == user_name
 # # #
 # # #     def search_in_csv(self,username,password):
-# # #         with open('users.csv','r') as file:
+# # #         with open('librarians_users.csv','r') as file:
 # # #             reader = csv.reader(file)
 # # #             rows = list(reader)
 # # #             for row in rows:
@@ -47,18 +47,18 @@
 # # #         return [self.user_name, self.password]
 # # #
 # # #     def export_to_file(self):
-# # #         if os.path.exists("users.csv"): # check if the file exists
-# # #             # with open("users.csv","r") as file:  # Open in read mode
+# # #         if os.path.exists("librarians_users.csv"): # check if the file exists
+# # #             # with open("librarians_users.csv","r") as file:  # Open in read mode
 # # #             #     first_line = file.readline().strip()  # Read the first row
 # # #             #     lines = file.readlines()  # Read all lines into a list
 # # #
-# # #             with open("users.csv", 'a+', newline="") as file:
+# # #             with open("librarians_users.csv", 'a+', newline="") as file:
 # # #                 writer = csv.writer(file)
-# # #                 if os.stat("users.csv").st_size == 0:  # check if the file is empty
+# # #                 if os.stat("librarians_users.csv").st_size == 0:  # check if the file is empty
 # # #                     writer.writerow(["Username", "Password"])
 # # #                 writer.writerow(self.to_csv_row())
 # # #         else:
-# # #             with open('users.csv','w',newline="") as file:
+# # #             with open('librarians_users.csv','w',newline="") as file:
 # # #                     writer = csv.writer(file)
 # # #                     writer.writerow(["Username", "Password"])
 # # #                     writer.writerow(self.to_csv_row())
@@ -186,37 +186,38 @@ class LoginApp:
         self.root.resizable(True, False)
 
         # Left Frame
-        self.left_frame = tk.Frame(root, bg="#f0f0f0", width=250, height=400)
+        self.left_frame = tk.Frame(root, bg="#3498db", width=250, height=400)
         self.left_frame.pack(side="left", fill="y")
-        tk.Label(self.left_frame, text="Welcome", bg="#f0f0f0", font=("Arial", 20, "bold")).pack(pady=20)
-        tk.Label(self.left_frame, text="This is a demo login system.\nPlease login or register to continue.",
-                 bg="#f0f0f0", font=("Arial", 12), justify="center").pack(pady=10)
+        tk.Label(self.left_frame, text="Welcome", bg="#3498db", font=("Arial", 20, "bold")).pack(pady=20)
+        tk.Label(self.left_frame, text="This is a Librarian GUI login system.\nThis project is part of an OOP course at Ariel University\nMade By: Baruh Ifraimov & Dor Cohen",
+                 bg="#3498db", font=("Arial", 12), justify="center").pack(pady=10)
 
         # Right Frame
-        self.right_frame = tk.Frame(root, bg="#ffffff", width=550, height=400)
+        self.right_frame = tk.Frame(root,bg='#e67e22', width=550, height=400)
         self.right_frame.pack(side="right", fill="both", expand=True)
 
         # Form elements
-        tk.Label(self.right_frame, text="Login", bg="#ffffff", font=("Arial", 24, "bold")).pack(pady=30)
+        tk.Label(self.right_frame,bg='#e67e22', text="Login", font=("Arial", 24, "bold")).pack(pady=30)
 
-        tk.Label(self.right_frame, text="Username:", bg="#ffffff", font=("Arial", 14)).pack(pady=5)
-        self.username_entry = tk.Entry(self.right_frame, font=("Arial", 14), width=30)
+        tk.Label(self.right_frame,bg='#e67e22', text="Username:", font=("Arial", 14)).pack(pady=5)
+        self.username_entry = tk.Entry(self.right_frame,bg='#e67e22', font=("Arial", 14), width=30)
         self.username_entry.pack(pady=5)
 
-        tk.Label(self.right_frame, text="Password:", bg="#ffffff", font=("Arial", 14)).pack(pady=5)
-        self.password_entry = tk.Entry(self.right_frame, font=("Arial", 14), show="*", width=30)
+        tk.Label(self.right_frame,bg='#e67e22', text="Password:",  font=("Arial", 14)).pack(pady=5)
+        self.password_entry = tk.Entry(self.right_frame,bg='#e67e22', font=("Arial", 14), show="*", width=30)
         self.password_entry.pack(pady=5)
 
         # Buttons
-        self.login_button = tk.Button(self.right_frame, text="Login", font=("Arial", 14), command=self.login)
+        self.login_button = tk.Button(self.right_frame,bg="#FF3399", text="Login", font=("Arial", 14), command=self.login)
         self.login_button.pack(pady=10)
 
         self.register_button = tk.Button(self.right_frame, text="Register", font=("Arial", 14), bg="#FF3399",
-                                         command=self.switch_to_register)
+                                         command=self.register)
         self.register_button.pack(pady=10)
 
-        self.exit_button = tk.Button(self.right_frame, text="Exit", font=("Arial", 14), command=self.root.quit)
+        self.exit_button = tk.Button(self.right_frame,bg="#FF3399", text="Exit", font=("Arial", 14), command=self.root.quit)
         self.exit_button.pack(pady=10)
+
 
     def login(self):
         username = self.username_entry.get()

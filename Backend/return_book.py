@@ -1,10 +1,9 @@
-from Backend.Notifier import Notifier
-from Exceptions.ExceptionBookNotFound404 import BookNotFound404
-from Exceptions.ExceptionReturnLimitExceeded import ReturnLimitExceeded
+from Exceptions.ExceptionBookNotFound404 import BookNotFound404Error
+from Exceptions.ExceptionReturnLimitExceeded import ReturnLimitExceededError
 import tkinter as tk
 from tkinter import messagebox
-from Backend.BookManager import BookManager
-from Backend.TreeViewLoader import TreeViewLoader
+from Backend.book_manager import BookManager
+from Backend.tree_view_loader import TreeViewLoader
 
 
 class ReturnBook:
@@ -31,12 +30,12 @@ class ReturnBook:
 
 
 
-                except ReturnLimitExceeded:
+                except ReturnLimitExceededError:
                     tk.messagebox.showinfo(
                         "Failed",
                         f"Selected book: '{selected_title}' cannot be returned!\n"
                     )
-            except BookNotFound404:
+            except BookNotFound404Error:
                 tk.messagebox.showinfo(
                     "Failed",
                     f"Selected book: '{selected_title}'  not found in the book list!"

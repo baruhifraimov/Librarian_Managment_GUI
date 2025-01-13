@@ -2,12 +2,12 @@ import csv
 import os
 import tkinter as tk
 from tkinter import messagebox
-from Backend.Book import Book
-from ConfigFiles.LogDecorator import log_activity
+from ConfigFiles.log_decorator import log_activity
 from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
-from Exceptions.ExceptionBookNotFound404 import BookNotFound404
+from Exceptions.ExceptionBookNotFound404 import BookNotFound404Error
 from Exceptions.ExceptionWatchedBookRemovalError import WatchedBookRemovalError
 from Exceptions.RecordNotFoundError import RecordNotFoundError
+from Backend.book_factory import BookFactory
 
 
 class BookManager:
@@ -33,9 +33,8 @@ class BookManager:
             existing_book = self.extracting_book(title, author, genre, year)
             existing_book.update_copies(int(copies))
             self.update_in_csv(existing_book,0)
-        except BookNotFound404:
-            book = Book(title, author, genre, year, copies)
-            self.books.append(book)
+        except BookNotFound404Error:
+            book = BookFactory.create_book(title, author, genre, year, copies)
             self.export_to_file(book)
 
 
@@ -46,7 +45,7 @@ class BookManager:
             raise BlankFieldsError
         book_to_remove = self.extracting_book(title, author, genre, year)
         if book_to_remove is None:
-                raise BookNotFound404
+                raise BookNotFound404Error
         if book_to_remove.get_watch_list_size() > 0:
                 raise WatchedBookRemovalError
         # check if the book is still borrowed, raise exception
@@ -62,7 +61,7 @@ class BookManager:
     def remove_book_in_csv(cls, book):
         try:
             # Read the CSV file
-            with open('../ConfigFiles/books.csv', 'r') as file:
+            with open('../csv_files/books.csv', 'r') as file:
                 reader = csv.reader(file)
                 rows = list(reader)
 
@@ -81,7 +80,7 @@ class BookManager:
                     )
 
             # Write back the updated rows
-            with open('../ConfigFiles/books.csv', 'w', newline="") as file:
+            with open('../csv_files/books.csv', 'w', newline="") as file:
                 writer = csv.writer(file)
                 for row in rows:
                     if row != row_to_remove:
@@ -99,11 +98,11 @@ class BookManager:
         for book in self.books:
             if book.get_title() == title and book.get_author() == author and book.get_genre() == genre and str(book.get_year()) == str(year):
                 return book
-        raise BookNotFound404(title, author, genre, year) # Return None if no book is found
+        raise BookNotFound404Error(title, author, genre, year) # Return None if no book is found
 
     @classmethod
     def update_in_csv(self, book,filter):
-        with open('../ConfigFiles/books.csv', 'r') as file:
+        with open('../csv_files/books.csv', 'r') as file:
             reader = csv.reader(file)
             rows = list(reader)
             for row in rows:
@@ -123,7 +122,7 @@ class BookManager:
                                     f"No record found for title='{book.get_title()}', author='{book.get_author()}', genre='{book.get_genre()}', year='{book.get_year()}'."
                                 )
 
-            with open('../ConfigFiles/books.csv', 'w', newline="") as file:
+            with open('../csv_files/books.csv', 'w', newline="") as file:
                 writer = csv.writer(file)
                 writer.writerows(rows)
 
@@ -133,13 +132,13 @@ class BookManager:
         Syncs the books.csv file with the program
         :return: None
         """
-        with open('../ConfigFiles/books.csv', 'r') as file:
+        with open('../csv_files/books.csv', 'r') as file:
             reader = csv.reader(file)
             rows = list(reader)
             for row in rows[1:]:
                 # TODO add the feature that he knows the lent count for each book
-                b = Book(row[0], row[1], row[4], row[5], row[3], row[2],int(row[3])-int(row[6]))
-                BookManager.books.append(b)
+                BookFactory.create_book(row[0], row[1], row[4], row[5], row[3], row[2],int(row[3])-int(row[6]))
+
 
     @classmethod
     def load_watch_list(cls):
@@ -149,7 +148,7 @@ class BookManager:
         """
         try:
             # בדיקה אם הקובץ קיים
-            with open('../ConfigFiles/waiting_list.csv', 'r') as file:
+            with open('../csv_files/waiting_list.csv', 'r') as file:
                 reader = csv.reader(file)
                 rows = list(reader)
 
@@ -170,7 +169,7 @@ class BookManager:
                         user = [row[0], row[1], row[2]]
                         b.get_watch_list().append(user)
 
-                    except BookNotFound404:
+                    except BookNotFound404Error:
                         # אם הספר לא נמצא, פשוט דלג לשורה הבאה
                         print(f"Book not found for row: {row}")
                         continue
@@ -188,15 +187,15 @@ class BookManager:
         :param book: The book you want to export
         :return: None
         """
-        if os.path.exists("../ConfigFiles/books.csv"):  # Check if the file exists
-            with open("../ConfigFiles/books.csv", 'a+', newline="") as file:
+        if os.path.exists("../csv_files/books.csv"):  # Check if the file exists
+            with open("../csv_files/books.csv", 'a+', newline="") as file:
                 writer = csv.writer(file)
-                if os.stat("../ConfigFiles/books.csv").st_size == 0:  # Check if the file is empty
+                if os.stat("../csv_files/books.csv").st_size == 0:  # Check if the file is empty
                     writer.writerow(["title", "author", "is_lent", "copies", "genre", "year","Available_copies"])
                 writer.writerow([book.get_title(), book.get_author(), book.get_is_lent(), book.get_copies(), book.get_genre(), book.get_year(), book.get_copies()- book.get_lent_count()])
         else:
             # The file does not exist, create it
-            with open('../ConfigFiles/books.csv', 'w', newline="") as file:
+            with open('../csv_files/books.csv', 'w', newline="") as file:
                 writer = csv.writer(file)
                 writer.writerow(["title", "author", "is_lent", "copies", "genre", "year", "Available_copies"])
                 writer.writerow([book.get_title(), book.get_author(), book.get_is_lend(), book.get_copies(), book.get_genre(), book.get_year(), book.get_copies()- book.get_lent_count()])

@@ -1,9 +1,10 @@
-from Exceptions.ExceptionBorrowingLimitExceeded import BorrowingLimitExceeded
+from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
+from Exceptions.ExceptionBorrowingLimitExceeded import BorrowingLimitExceededError
 import tkinter as tk
 from tkinter import messagebox
-from Backend.BookManager import BookManager
-from Backend.TreeViewLoader import TreeViewLoader
-from Backend.WaitingListManager import WaitingListManager
+from Backend.book_manager import BookManager
+from Backend.tree_view_loader import TreeViewLoader
+from Backend.waiting_list_manager import WaitingListManager
 
 
 class LendBook:
@@ -13,7 +14,7 @@ class LendBook:
         """
         check if there are available books to borrow
         if True , let me borrow the book.
-        if False , The safran has to fill the details of the borrower to add it to the waiting list.
+        if False , The safran has to fill the details with the borrower to add it to the waiting list.
         :param selected_item: item that been selected from the treeView
         :param treeview: tk widget
         :param root: frame root of the application
@@ -21,6 +22,9 @@ class LendBook:
         """
 
         if selected_item is not None:
+            #  selected_title = selected_values[0]
+            #          ~~~~~~~~~~~~~~~^^^
+            #
             selected_values = selected_item['values']
             selected_title = selected_values[0]
             selected_author = selected_values[1]
@@ -43,7 +47,7 @@ class LendBook:
                                 f"Book '{selected_title}' is available! Lending now."
                             )
                             TreeViewLoader.refresh_treeview(treeview)
-                        except BorrowingLimitExceeded:
+                        except BorrowingLimitExceededError:
                             tk.messagebox.showinfo(
                                 "Failed",
                                 f"Selected book: '{selected_title}' cannot be borrowed!\n"

@@ -1,4 +1,4 @@
-from ConfigFiles.Logger_config import logger
+from ConfigFiles.logger_config import logger
 
 def log_activity(action_name):
     """
