@@ -134,17 +134,3 @@ If a librarian logs out and another logs in, the new librarian is presented with
 ### 5. **Dependency Inversion Principle:**
 - High-level modules do not depend on low-level modules but rather on abstractions. For instance, the `Logger` and `Observer` functionalities rely on abstract interfaces, allowing flexibility in implementation.
 
-
----
-
-
-## File Descriptions
-
-- `menu.py`: Entry point for the application.
-- `login.py`, `register.py`: Handle user authentication and registration.
-- `book_manager.py`: Core logic for managing books.
-- `librarian_manager.py`: Manage librarians and their operations.
-- `search_strategy.py`: Implements various book search strategies.
-- `observer.py`: Manages the observer pattern for notifications.
-- `log_decorator.py`, `logger_config.py`: Implements and configures logging.
-- `books.csv`, `librarians_users.csv`, `waiting_list.csv`: Data files used by the application.
