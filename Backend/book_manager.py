@@ -38,6 +38,12 @@ class BookManager:
         if title == "" or author == "" or genre == "" or year == "":
             raise BlankFieldsError
 
+        #check if year is a number
+        for a in year:
+            if not a.isdigit():
+                raise ValueError
+
+
         # Check if the book already exists in the list
         try:
             existing_book = self.extracting_book(title, author, genre, year)

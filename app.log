@@ -1764,3 +1764,21 @@
 [2025-01-13 19:03:21,354] INFO: displayed borrowed books successfully
 [2025-01-13 19:03:22,341] INFO: displayed all books successfully
 [2025-01-13 19:03:24,008] INFO: displayed all books successfully
+[2025-01-13 19:17:58,747] INFO: login successfully
+[2025-01-13 19:18:00,290] INFO: login successfully
+[2025-01-13 19:18:00,624] INFO: login successfully
+[2025-01-13 19:18:04,861] INFO: display notification to user successfully
+[2025-01-13 20:01:16,967] INFO: login successfully
+[2025-01-13 20:01:17,877] INFO: login successfully
+[2025-01-13 20:01:18,211] INFO: login successfully
+[2025-01-13 20:01:19,251] INFO: display notification to user successfully
+[2025-01-13 20:01:26,097] INFO: book added successfully
+[2025-01-13 20:01:33,676] ERROR: book added failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 20:04:03,324] INFO: login successfully
+[2025-01-13 20:04:04,165] INFO: login successfully
+[2025-01-13 20:04:04,498] INFO: login successfully
+[2025-01-13 20:04:06,051] INFO: display notification to user successfully
+[2025-01-13 20:04:11,029] ERROR: book added failed with exception: 
+[2025-01-13 20:04:15,921] ERROR: book added failed with exception: 
+[2025-01-13 20:04:22,152] ERROR: book added failed with exception: 
+[2025-01-13 20:04:49,979] ERROR: login failed with exception: The fields you are trying to submit are blank!

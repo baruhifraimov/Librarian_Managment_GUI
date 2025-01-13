@@ -34,3 +34,10 @@ class AddBook:
                                 fg="red")
             add_fail.grid(row=11, column=1, columnspan=2, pady=10)
             add_fail.after(2000, add_fail.destroy)
+        except ValueError:
+            add_fail = tk.Label(book_frame,
+                                text="Year is only allowed to be a number!",
+                                font=("Arial", 16),
+                                fg="red")
+            add_fail.grid(row=11, column=1, columnspan=2, pady=10)
+            add_fail.after(2000, add_fail.destroy)
