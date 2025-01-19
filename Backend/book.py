@@ -116,7 +116,7 @@ class Book(Subject):
         if self.__copies > self.__lent_count:
             self.__lent_count += 1
             if self.__lent_count == self.__copies:
-                self.is_lent = "Yes"
+                self.__is_lent = "Yes"
             else:
                 self.__is_lent = "No"
         else:

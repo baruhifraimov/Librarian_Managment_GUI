@@ -1910,3 +1910,71 @@
 [2025-01-19 11:29:33,028] INFO: login successfully
 [2025-01-19 11:29:33,362] INFO: login successfully
 [2025-01-19 11:29:34,797] INFO: display notification to user successfully
+[2025-01-19 18:59:26,145] INFO: login successfully
+[2025-01-19 18:59:27,706] INFO: login successfully
+[2025-01-19 18:59:28,040] INFO: login successfully
+[2025-01-19 18:59:29,194] INFO: display notification to user successfully
+[2025-01-19 18:59:41,445] INFO: displayed borrowed books successfully
+[2025-01-19 18:59:41,445] INFO: displayed borrowed books successfully
+[2025-01-19 19:00:12,645] INFO: book returned successfully
+[2025-01-19 19:00:13,742] INFO: displayed borrowed books successfully
+[2025-01-19 19:00:14,840] INFO: displayed all books successfully
+[2025-01-19 19:00:17,446] INFO: displayed all books successfully
+[2025-01-19 19:00:20,075] INFO: displayed all books successfully
+[2025-01-19 19:00:24,751] INFO: displayed borrowed books successfully
+[2025-01-19 19:00:24,752] INFO: displayed borrowed books successfully
+[2025-01-19 19:00:28,054] INFO: displayed all books successfully
+[2025-01-19 19:00:30,623] INFO: book borrowed successfully
+[2025-01-19 19:00:31,704] INFO: displayed all books successfully
+[2025-01-19 19:00:33,187] INFO: book borrowed successfully
+[2025-01-19 19:00:34,082] INFO: displayed all books successfully
+[2025-01-19 19:00:36,003] INFO: book borrowed successfully
+[2025-01-19 19:00:37,110] INFO: displayed all books successfully
+[2025-01-19 19:00:42,164] ERROR: book borrowed failed with exception: No Available Copies for lending this book , already 3 copies has been lent.
+[2025-01-19 19:00:46,006] ERROR: book borrowed failed with exception: No Available Copies for lending this book , already 3 copies has been lent.
+[2025-01-19 19:00:55,636] ERROR: book borrowed failed with exception: No Available Copies for lending this book , already 3 copies has been lent.
+[2025-01-19 19:00:59,960] INFO: displayed borrowed books successfully
+[2025-01-19 19:00:59,960] INFO: displayed borrowed books successfully
+[2025-01-19 19:01:02,106] INFO: displayed all books successfully
+[2025-01-19 19:01:02,389] INFO: displayed all books successfully
+[2025-01-19 19:01:07,091] INFO: displayed all books successfully
+[2025-01-19 19:01:07,489] INFO: displayed all books successfully
+[2025-01-19 19:01:07,891] INFO: displayed borrowed books successfully
+[2025-01-19 19:01:07,892] INFO: displayed borrowed books successfully
+[2025-01-19 19:01:08,543] INFO: displayed all books successfully
+[2025-01-19 19:01:44,754] INFO: displayed all books successfully
+[2025-01-19 19:01:45,172] INFO: displayed all books successfully
+[2025-01-19 19:01:46,805] ERROR: book borrowed failed with exception: No Available Copies for lending this book , already 3 copies has been lent.
+[2025-01-19 19:03:26,143] INFO: login successfully
+[2025-01-19 19:03:28,421] INFO: login successfully
+[2025-01-19 19:03:28,755] INFO: login successfully
+[2025-01-19 19:03:42,325] INFO: display notification to user successfully
+[2025-01-19 19:03:46,291] INFO: displayed borrowed books successfully
+[2025-01-19 19:03:46,292] INFO: displayed borrowed books successfully
+[2025-01-19 19:03:50,688] INFO: displayed all books successfully
+[2025-01-19 19:03:54,488] INFO: book borrowed successfully
+[2025-01-19 19:03:55,645] INFO: displayed all books successfully
+[2025-01-19 19:04:02,221] ERROR: book borrowed failed with exception: No Available Copies for lending this book , already 4 copies has been lent.
+[2025-01-19 19:05:21,310] INFO: login successfully
+[2025-01-19 19:05:22,407] INFO: login successfully
+[2025-01-19 19:05:22,741] INFO: login successfully
+[2025-01-19 19:05:24,040] INFO: display notification to user successfully
+[2025-01-19 19:05:26,402] INFO: displayed borrowed books successfully
+[2025-01-19 19:05:26,403] INFO: displayed borrowed books successfully
+[2025-01-19 19:05:29,421] INFO: book returned successfully
+[2025-01-19 19:05:30,390] INFO: displayed borrowed books successfully
+[2025-01-19 19:05:33,557] INFO: displayed all books successfully
+[2025-01-19 19:06:02,582] INFO: book borrowed successfully
+[2025-01-19 19:06:04,316] INFO: displayed all books successfully
+[2025-01-19 19:07:38,206] INFO: login successfully
+[2025-01-19 19:07:39,312] INFO: login successfully
+[2025-01-19 19:07:39,646] INFO: login successfully
+[2025-01-19 19:07:40,542] INFO: display notification to user successfully
+[2025-01-19 19:07:41,704] INFO: displayed all books successfully
+[2025-01-19 19:07:48,173] INFO: displayed borrowed books successfully
+[2025-01-19 19:07:48,173] INFO: displayed borrowed books successfully
+[2025-01-19 19:07:51,639] INFO: book returned successfully
+[2025-01-19 19:07:52,608] INFO: displayed borrowed books successfully
+[2025-01-19 19:07:54,439] INFO: displayed all books successfully
+[2025-01-19 19:07:56,908] INFO: book borrowed successfully
+[2025-01-19 19:07:57,765] INFO: displayed all books successfully
