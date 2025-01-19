@@ -2,8 +2,8 @@
 
 ## Instructions to Run the Project
 
-To run the project, you need to navigate to the `screens.py` file and execute the main function. From there, a GUI will be displayed to the user. The first page will present three options:
-
+To run the project, you need to navigate to the `main.py` file and execute the main function.  
+From there, a GUI will be displayed to the user. The first page will present three options:
 1. **Login with an existing user.**
 2. **Register a user.**
 3. **Exit the application.**
