@@ -1782,3 +1782,131 @@
 [2025-01-13 20:04:15,921] ERROR: book added failed with exception: 
 [2025-01-13 20:04:22,152] ERROR: book added failed with exception: 
 [2025-01-13 20:04:49,979] ERROR: login failed with exception: The fields you are trying to submit are blank!
+[2025-01-13 20:33:17,199] INFO: register successfully
+[2025-01-13 20:33:22,091] ERROR: login failed with exception: Librarian:nikol not found.
+[2025-01-13 20:33:28,678] INFO: login successfully
+[2025-01-13 20:33:29,760] INFO: login successfully
+[2025-01-13 20:33:30,094] INFO: login successfully
+[2025-01-13 20:33:31,325] INFO: display notification to user successfully
+[2025-01-13 20:33:37,447] INFO: displayed all books successfully
+[2025-01-13 20:33:38,902] INFO: displayed borrowed books successfully
+[2025-01-13 20:33:38,903] INFO: displayed borrowed books successfully
+[2025-01-13 20:33:40,758] INFO: displayed all books successfully
+[2025-01-13 20:33:42,170] INFO: displayed popular books successfully
+[2025-01-13 20:33:43,437] INFO: displayed all books successfully
+[2025-01-13 20:33:45,059] INFO: displayed books by category successfully
+[2025-01-13 20:33:45,566] INFO: displayed borrowed books successfully
+[2025-01-13 20:33:46,249] INFO: displayed all books successfully
+[2025-01-13 20:33:47,394] INFO: displayed available books successfully
+[2025-01-13 20:33:52,050] INFO: logout successfully
+[2025-01-19 10:44:58,231] INFO: login successfully
+[2025-01-19 10:45:00,117] INFO: login successfully
+[2025-01-19 10:45:00,452] ERROR: login failed with exception: Librarian:fadi  not found.
+[2025-01-19 10:45:08,262] INFO: login successfully
+[2025-01-19 10:45:09,343] INFO: login successfully
+[2025-01-19 10:45:09,676] INFO: login successfully
+[2025-01-19 10:45:10,738] INFO: display notification to user successfully
+[2025-01-19 10:45:21,987] INFO: displayed all books successfully
+[2025-01-19 10:45:24,749] INFO: displayed borrowed books successfully
+[2025-01-19 10:45:24,750] INFO: displayed borrowed books successfully
+[2025-01-19 10:45:30,465] INFO: book returned successfully
+[2025-01-19 10:45:33,971] INFO: displayed borrowed books successfully
+[2025-01-19 10:45:39,465] INFO: displayed all books successfully
+[2025-01-19 10:45:52,107] INFO: displayed borrowed books successfully
+[2025-01-19 10:45:52,108] INFO: displayed borrowed books successfully
+[2025-01-19 10:46:12,177] INFO: book returned successfully
+[2025-01-19 10:46:13,096] INFO: displayed borrowed books successfully
+[2025-01-19 10:46:15,144] INFO: book returned successfully
+[2025-01-19 10:46:16,286] INFO: displayed borrowed books successfully
+[2025-01-19 10:46:23,011] INFO: displayed all books successfully
+[2025-01-19 10:46:25,996] INFO: displayed all books successfully
+[2025-01-19 10:46:39,546] INFO: displayed popular books successfully
+[2025-01-19 10:46:39,896] INFO: displayed popular books successfully
+[2025-01-19 10:46:42,565] INFO: displayed borrowed books successfully
+[2025-01-19 10:46:42,565] INFO: displayed borrowed books successfully
+[2025-01-19 10:46:43,831] INFO: displayed popular books successfully
+[2025-01-19 10:46:44,864] INFO: displayed all books successfully
+[2025-01-19 10:46:46,860] INFO: displayed all books successfully
+[2025-01-19 10:47:11,183] ERROR: Search book 'Water' by name failed
+[2025-01-19 10:47:20,293] ERROR: Search book 'file' by author failed
+[2025-01-19 10:47:58,343] ERROR: Search book 'Harry' by name failed
+[2025-01-19 10:48:03,511] ERROR: Search book 'Hary' by name failed
+[2025-01-19 10:48:08,170] INFO: Search book '' by name completed successfully
+[2025-01-19 10:48:15,835] INFO: displayed all books successfully
+[2025-01-19 10:48:16,912] INFO: displayed borrowed books successfully
+[2025-01-19 10:48:16,913] INFO: displayed borrowed books successfully
+[2025-01-19 10:48:17,487] INFO: displayed all books successfully
+[2025-01-19 10:49:39,230] INFO: login successfully
+[2025-01-19 10:49:40,497] INFO: login successfully
+[2025-01-19 10:49:40,831] INFO: login successfully
+[2025-01-19 10:49:42,231] INFO: display notification to user successfully
+[2025-01-19 10:50:28,777] INFO: login successfully
+[2025-01-19 10:50:29,923] INFO: login successfully
+[2025-01-19 10:50:30,257] INFO: login successfully
+[2025-01-19 10:50:31,362] INFO: display notification to user successfully
+[2025-01-19 10:50:33,497] INFO: displayed borrowed books successfully
+[2025-01-19 10:50:33,498] INFO: displayed borrowed books successfully
+[2025-01-19 10:50:33,852] INFO: displayed all books successfully
+[2025-01-19 10:50:36,960] INFO: displayed borrowed books successfully
+[2025-01-19 10:50:36,961] INFO: displayed borrowed books successfully
+[2025-01-19 10:50:38,517] INFO: displayed all books successfully
+[2025-01-19 10:50:39,043] INFO: displayed borrowed books successfully
+[2025-01-19 10:50:39,044] INFO: displayed borrowed books successfully
+[2025-01-19 10:50:41,230] INFO: book returned successfully
+[2025-01-19 10:50:42,177] INFO: displayed borrowed books successfully
+[2025-01-19 10:50:45,644] INFO: book returned successfully
+[2025-01-19 10:50:46,729] INFO: displayed borrowed books successfully
+[2025-01-19 10:50:48,675] INFO: book returned successfully
+[2025-01-19 10:50:49,544] INFO: displayed borrowed books successfully
+[2025-01-19 10:50:50,844] INFO: displayed all books successfully
+[2025-01-19 10:52:10,413] INFO: login successfully
+[2025-01-19 10:52:11,312] INFO: login successfully
+[2025-01-19 10:52:11,647] INFO: login successfully
+[2025-01-19 10:52:12,717] INFO: display notification to user successfully
+[2025-01-19 10:52:23,228] INFO: displayed borrowed books successfully
+[2025-01-19 10:52:23,229] INFO: displayed borrowed books successfully
+[2025-01-19 10:52:50,911] INFO: displayed borrowed books successfully
+[2025-01-19 10:52:50,912] INFO: displayed borrowed books successfully
+[2025-01-19 10:52:51,474] INFO: displayed borrowed books successfully
+[2025-01-19 10:52:51,475] INFO: displayed borrowed books successfully
+[2025-01-19 10:56:52,110] INFO: login successfully
+[2025-01-19 10:56:53,041] INFO: login successfully
+[2025-01-19 10:56:53,375] ERROR: login failed with exception: Librarian:fadi  not found.
+[2025-01-19 10:59:09,840] INFO: login successfully
+[2025-01-19 10:59:11,173] INFO: login successfully
+[2025-01-19 10:59:11,506] INFO: login successfully
+[2025-01-19 10:59:13,591] INFO: display notification to user successfully
+[2025-01-19 10:59:21,675] INFO: login successfully
+[2025-01-19 10:59:22,725] INFO: login successfully
+[2025-01-19 10:59:23,059] ERROR: login failed with exception: Librarian:fadi  not found.
+[2025-01-19 11:19:59,277] INFO: login successfully
+[2025-01-19 11:20:00,337] INFO: login successfully
+[2025-01-19 11:20:00,671] INFO: login successfully
+[2025-01-19 11:20:01,995] INFO: display notification to user successfully
+[2025-01-19 11:20:31,882] INFO: login successfully
+[2025-01-19 11:20:32,964] INFO: login successfully
+[2025-01-19 11:20:33,298] ERROR: login failed with exception: Librarian: fadi  not found.
+[2025-01-19 11:21:41,665] INFO: login successfully
+[2025-01-19 11:21:43,152] INFO: login successfully
+[2025-01-19 11:21:43,486] ERROR: login failed with exception: Librarian:fadi  not found.
+[2025-01-19 11:21:55,227] INFO: login successfully
+[2025-01-19 11:21:56,146] INFO: login successfully
+[2025-01-19 11:21:56,479] INFO: login successfully
+[2025-01-19 11:21:57,593] INFO: display notification to user successfully
+[2025-01-19 11:23:56,030] INFO: login successfully
+[2025-01-19 11:24:07,757] INFO: login successfully
+[2025-01-19 11:24:18,768] ERROR: login failed with exception: Librarian:fadi  not found.
+[2025-01-19 11:25:06,090] INFO: login successfully
+[2025-01-19 11:25:20,582] INFO: login successfully
+[2025-01-19 11:25:23,718] ERROR: login failed with exception: Librarian:fadi  not found.
+[2025-01-19 11:27:43,172] INFO: login successfully
+[2025-01-19 11:27:44,714] INFO: login successfully
+[2025-01-19 11:27:45,048] INFO: login successfully
+[2025-01-19 11:28:01,215] INFO: login successfully
+[2025-01-19 11:28:02,070] INFO: login successfully
+[2025-01-19 11:28:02,405] INFO: login successfully
+[2025-01-19 11:28:03,578] INFO: display notification to user successfully
+[2025-01-19 11:29:31,613] INFO: login successfully
+[2025-01-19 11:29:33,028] INFO: login successfully
+[2025-01-19 11:29:33,362] INFO: login successfully
+[2025-01-19 11:29:34,797] INFO: display notification to user successfully

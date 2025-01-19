@@ -9,7 +9,7 @@ def show_register_screen(root):
     Register(root)  # Pass the root window to Register screen
 
 def show_login_screen(root):
-    from login import Login  # Import Login screen
+    from GUI.login import Login  # Import Login screen
     return Login(root)# Pass the root window to Login screen
 
 

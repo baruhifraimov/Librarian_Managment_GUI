@@ -49,6 +49,49 @@ The project uses CSV files to store essential data:
 
 The application has a custom exception system. Each exception clearly specifies potential issues that may arise during runtime.
 
+### Custom Exceptions:
+
+#### **1. `ExceptionBelowZeroExceeded`**
+**Purpose:**  
+This exception is raised when an operation results in a value below zero, which violates business logic constraints (e.g., reducing the count of available books below zero).
+
+
+#### **2. `ExceptionBlankFieldsError`**
+**Purpose:**  
+This exception is raised when a required field is left blank, ensuring mandatory information is provided before proceeding.
+
+
+#### **3. `ExceptionBookNotFound404`**
+**Purpose:**  
+Raised when a book requested by the user cannot be found in the library's catalog or database.
+
+#### **4. `ExceptionBorrowingLimitExceeded`**
+**Purpose:**  
+Raised when a user attempts to borrow more books than their account allows.
+
+#### **5. `ExceptionNoObserversError`**
+**Purpose:**  
+This exception is triggered when an operation requires at least one observer, but none are registered.
+
+#### **6. `ExceptionRecordNotFoundError`**
+**Purpose:**  
+Raised when a requested record (e.g., user profile, transaction history) is not found in the database.
+
+#### **7. `ExceptionReturnLimitExceeded`**
+**Purpose:**  
+Raised when a user attempts to return more books than they have borrowed.
+
+#### **8. `ExceptionUserAlreadyInList`**
+**Purpose:**  
+This exception is raised when a user is added to a list (e.g., waitlist) but is already present in the list.
+
+#### **9. `ExceptionUserNotFound`**
+**Purpose:**  
+Raised when a user-related operation is attempted, but the user cannot be found in the system.
+
+#### **10. `ExceptionWatchedBookRemovalError`**
+**Purpose:**  
+Raised when an attempt is made to remove a book that is being watched by users (e.g., reserved or requested).
 ---
 
 ## Logging System
@@ -113,7 +156,6 @@ If a librarian logs out and another logs in, the new librarian is presented with
 
 ### 6. **Decorator Pattern:**
 - Used in `log_decorator.py` to add logging capabilities to key functions.
-
 
 ---
 

@@ -2,11 +2,11 @@ import csv
 import os
 import tkinter as tk
 from tkinter import messagebox
-from ConfigFiles.log_decorator import log_activity
+from LogConfigurator.log_decorator import log_activity
 from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
 from Exceptions.ExceptionBookNotFound404 import BookNotFound404Error
 from Exceptions.ExceptionWatchedBookRemovalError import WatchedBookRemovalError
-from Exceptions.RecordNotFoundError import RecordNotFoundError
+from Exceptions.ExceptionRecordNotFoundError import RecordNotFoundError
 from Backend.book_factory import BookFactory
 
 

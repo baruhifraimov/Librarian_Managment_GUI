@@ -9,7 +9,7 @@ from Backend.librarian_manager import LibrarianManager
 from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
 from Exceptions.ExceptionUserNotFound import UserNotFoundError
 from GUI.menu import Menu  # Import the Login class here
-from ConfigFiles.log_decorator import log_activity
+from LogConfigurator.log_decorator import log_activity
 
 
 class Login:
@@ -98,9 +98,14 @@ class Login:
         Register(self.root)  # Pass the root window to Register screen
 
     def switch_to_menu(self):
-        logged_user = LibrarianManager.extracting_user(self.username_box.get())
-        self.frame.destroy()  # Destroy the current register frame
-        Menu(self.root, logged_user)  # Pass the root window to Login screen
+        username = self.username_box.get().lower()
+        username = ''.join(username.split())  # Remove white spaces
+        try:
+            logged_user = LibrarianManager.extracting_user(username)
+            self.frame.destroy()  # Destroy the current register frame
+            Menu(self.root, logged_user)  # Pass the root window to Login screen
+        except UserNotFoundError:
+            messagebox.showerror("Librarian 404", "user is not registered in the System.")
 
    # def get_current_user(self):
         #return self.cur

@@ -3,7 +3,7 @@ from Backend.book_manager import BookManager
 from Backend.lend_book_iter import LendBookItr
 import tkinter as tk
 from tkinter import messagebox
-from ConfigFiles.log_decorator import log_activity
+from LogConfigurator.log_decorator import log_activity
 
 
 class TreeViewLoader:
@@ -20,7 +20,7 @@ class TreeViewLoader:
         for book in BookManager.books:
             treeview.insert("", tk.END, values=(book.get_title(), book.get_author(), book.get_year(),
                                                 book.get_genre(), book.get_copies(),
-                                                book.get_is_lent(), book.get_Available_books_num()))
+                                                book.get_is_lent(), book.get_available_books_num()))
 
     @classmethod
     @log_activity("displayed available books")
@@ -35,7 +35,7 @@ class TreeViewLoader:
         for book in iterator:
             treeview.insert("", tk.END, values=(book.get_title(), book.get_author(), book.get_year(),
                                                 book.get_genre(), book.get_copies(),
-                                                book.get_is_lent(), book.get_Available_books_num()))
+                                                book.get_is_lent(), book.get_available_books_num()))
             found = True
         if not found:
             raise ValueError("Error loading available books: No available books found.")
@@ -53,7 +53,7 @@ class TreeViewLoader:
         for book in iterator:
             treeview.insert("", tk.END, values=(book.get_title(), book.get_author(), book.get_year(),
                                                 book.get_genre(), book.get_copies(),
-                                                book.get_is_lent(), book.get_Available_books_num()))
+                                                book.get_is_lent(), book.get_available_books_num()))
             found = True
         if not found:
             raise ValueError("Error loading borrowed books: No borrowed books found.")
@@ -72,7 +72,7 @@ class TreeViewLoader:
         for book in srt_cat_books:
             treeview.insert("", tk.END, values=(book.get_title(), book.get_author(), book.get_year(),
                                                 book.get_genre(), book.get_copies(),
-                                                book.get_is_lent(), book.get_Available_books_num()))
+                                                book.get_is_lent(), book.get_available_books_num()))
 
     @classmethod
     @log_activity("displayed popular books")

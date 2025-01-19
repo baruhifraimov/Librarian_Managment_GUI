@@ -1,7 +1,7 @@
 import csv
 import os
 
-from ConfigFiles.log_decorator import log_activity
+from LogConfigurator.log_decorator import log_activity
 from Exceptions.ExceptionUserNotFound import UserNotFoundError
 
 

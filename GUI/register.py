@@ -6,7 +6,7 @@ import csv
 from Backend.encryption import Encryption
 from Backend.librarian_factory import LibrarianFactory
 from Backend.librarian_manager import LibrarianManager
-from ConfigFiles.log_decorator import log_activity
+from LogConfigurator.log_decorator import log_activity
 from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
 from Exceptions.ExceptionUserAlreadyInList import UserAlreadyInListError
 from Backend.librarian import Librarian

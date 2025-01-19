@@ -1,5 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
+
+import main
 from Backend.add_book import AddBook
 from Backend.lend_book import LendBook
 from Backend.remove_book import RemoveBook
@@ -10,9 +12,7 @@ from Backend.return_book import ReturnBook
 from tkinter import messagebox
 
 from Backend.librarian_manager import LibrarianManager
-from ConfigFiles.logger_config import logger
-from ConfigFiles.log_decorator import log_activity
-from GUI import screens
+from LogConfigurator.log_decorator import log_activity
 
 
 class Menu:
@@ -99,7 +99,7 @@ class Menu:
         """
         Close the application.
         """
-        screens.on_close(self.root)
+        main.on_close(self.root)
 
     def add_book_widget(self):
         """

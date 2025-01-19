@@ -1,6 +1,6 @@
 from Backend.observer import Observer
-from ConfigFiles.log_decorator import log_activity
-from Exceptions.NoObserversError import NoObserversError
+from LogConfigurator.log_decorator import log_activity
+from Exceptions.ExceptionNoObserversError import NoObserversError
 
 # Subject class that will be observed by the observers (Librarians)
 # The subject will notify the observers about the book availability to the user

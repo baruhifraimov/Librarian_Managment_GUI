@@ -1,6 +1,6 @@
 import tkinter as tk
 from Backend.book_manager import BookManager
-from ConfigFiles.log_decorator import log_activity
+from LogConfigurator.log_decorator import log_activity
 from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
 
 

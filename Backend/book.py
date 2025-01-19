@@ -10,54 +10,54 @@ from Exceptions.ExceptionBlankFieldsError import BlankFieldsError
 from Exceptions.ExceptionBorrowingLimitExceeded import BorrowingLimitExceededError
 from Exceptions.ExceptionReturnLimitExceeded import ReturnLimitExceededError
 from Exceptions.ExceptionUserAlreadyInList import UserAlreadyInListError
-from ConfigFiles.log_decorator import log_activity
-from Exceptions.NoObserversError import NoObserversError
+from LogConfigurator.log_decorator import log_activity
+from Exceptions.ExceptionNoObserversError import NoObserversError
 
 
 class Book(Subject):
 
     def __init__(self, title, author, genre, year, copies=1, is_lent="No",lent_count = 0): # need to add availability field
         super().__init__()
-        self.title = title
-        self.author = author
-        self.year = year
-        self.genre = genre
-        self.watch_list = deque()
+        self.__title = title
+        self.__author = author
+        self.__year = year
+        self.__genre = genre
+        self.__watch_list = deque()
         # if available change to "No" else change to "Yes"
-        self.is_lent = is_lent
+        self.__is_lent = is_lent
 
         # number of borrowed book, lent_count <= copies
-        self.lent_count = lent_count
+        self.__lent_count = lent_count
 
         # if copies is not given, default is 1
         if not copies=="":
-            self.copies = int(copies)
+            self.__copies = int(copies)
         else:
-            self.copies=1
+            self.__copies=1
         #When syncing, make sure to fix kid mistakes
-        if int(self.lent_count) == int(self.copies):
-            self.is_lent = "Yes"
+        if int(self.__lent_count) == int(self.__copies):
+            self.__is_lent = "Yes"
         else:
-            self.is_lent = "No"
+            self.__is_lent = "No"
 
 
     def update_copies(self,num):
-        self.copies += num
-        self.is_lent = "No"
+        self.__copies += num
+        self.__is_lent = "No"
 
         # Clear watchlist with the size of copies (num)
         while self.get_watch_list_size()>0 and num>0:
             self.decrease_watch_list()
             num -= 1
 
-    def get_Available_books_num(self):
-        return self.copies - self.lent_count
+    def get_available_books_num(self):
+        return self.__copies - self.__lent_count
 
     def get_watch_list_size(self):
-        return len(self.watch_list)
+        return len(self.__watch_list)
 
     def get_watch_list(self):
-        return self.watch_list
+        return self.__watch_list
 
     @log_activity("user added to watch list")
     def add_to_watch_list(self,user):
@@ -68,20 +68,20 @@ class Book(Subject):
         # Perform logic to add borrower to waiting list
             if any(char.isdigit() for char in user[0]):
                 raise ValueError("Name must not contain digits")
-            if user in self.watch_list:
+            if user in self.__watch_list:
                 raise UserAlreadyInListError
             if not any(char.isdigit() for char in user[2]):
                 raise ValueError("Phone only contain digits")
             else:
-                self.watch_list.append(user)
+                self.__watch_list.append(user)
         else:
             raise BlankFieldsError()
 
     @log_activity("user removed from watch list")
     def decrease_watch_list(self):
-        if len(self.watch_list) > 0:
+        if len(self.__watch_list) > 0:
 
-            user = self.watch_list.popleft()
+            user = self.__watch_list.popleft()
             #Notifier.notify(user)
             try:
                 self.notify_observers(user,self)
@@ -99,9 +99,9 @@ class Book(Subject):
         Return the book and decrease the lent count by 1 and remove the user from the watch list if the book is returned successfully
         :return:
         """
-        if self.lent_count > 0:
-            self.lent_count -=1
-            self.is_lent = "No"
+        if self.__lent_count > 0:
+            self.__lent_count -=1
+            self.__is_lent = "No"
             if self.get_watch_list_size()>0:
                 self.decrease_watch_list()
         else:
@@ -113,46 +113,46 @@ class Book(Subject):
         Borrow the book and add +1 to book lent count
         :return:  None
         """
-        if self.copies > self.lent_count:
-            self.lent_count += 1
-            if self.lent_count == self.copies:
+        if self.__copies > self.__lent_count:
+            self.__lent_count += 1
+            if self.__lent_count == self.__copies:
                 self.is_lent = "Yes"
             else:
-                self.is_lent = "No"
+                self.__is_lent = "No"
         else:
-            raise BorrowingLimitExceededError(self.copies)
+            raise BorrowingLimitExceededError(self.__copies)
 
     def update_genre(self,new_genre):
-        self.genre = new_genre
+        self.__genre = new_genre
 
     def is_available(self):
-        return self.copies - self.lent_count > 0
+        return self.__copies - self.__lent_count > 0
 
     def get_lent_count(self):
-        return self.lent_count
+        return self.__lent_count
 
     def get_copies(self):
-        return self.copies
+        return self.__copies
 
     def get_title(self):
-        return self.title
+        return self.__title
 
     def get_author(self):
-        return self.author
+        return self.__author
 
     def get_genre(self):
-        return self.genre
+        return self.__genre
 
     def get_is_lent(self):
-        return self.is_lent
+        return self.__is_lent
 
     def get_year(self):
-        return self.year
+        return self.__year
 
     def __eq__(self, other):
         if isinstance(other, Book):
-            return (self.title == other.title and
-                    self.author == other.author and
-                    self.year == other.year and
-                    self.genre == other.genre)
+            return (self.__title == other.__title and
+                    self.__author == other.__author and
+                    self.__year == other.__year and
+                    self.__genre == other.__genre)
         return False
